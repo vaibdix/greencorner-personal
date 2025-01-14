@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.stock-ticker {
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
+  overflow: hidden;
+  user-select: none;
+  --gap: 20px;
+  display: flex;
+  gap: var(--gap);
+}
+
+.stock-ticker ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll 40s linear infinite;
+}
+
+.stock-ticker:hover ul {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.stock-ticker .company,
+.stock-ticker .price {
+  font-weight: bold;
+}
+
+.stock-ticker .price {
+  margin-inline: 4px;
+}
+
