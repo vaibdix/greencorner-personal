@@ -1,10 +1,46 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from lucide-react
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    const payload = {
+      email,
+      password,
+    };
+
+    try {
+      const response = await axios.post('http://localhost:3000/users', payload, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 200) {
+        const authenticatedUser = response.data.user;
+        if (authenticatedUser) {
+          navigate('/home');
+        }
+      } else {
+        setError(response.data.message || 'Invalid email or password');
+      }
+    } catch (err) {
+      setError('An error occurred while logging in');
+    }
   };
 
   return (
@@ -22,9 +58,9 @@ const SignIn = () => {
 
             <div className="rounded-lg py-5 md:p-8 lg:p-16">
               <div className="mb-2 text-gray-400">WELCOME BACK 👋🏻</div>
-
               <div className="mb-8 text-3xl">Continue to Your Account</div>
-              <form>
+
+              <form onSubmit={handleSubmit}>
                 <button
                   id="googleSignInBtn"
                   className="flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3"
@@ -35,8 +71,8 @@ const SignIn = () => {
                     shapeRendering="geometricPrecision"
                     textRendering="geometricPrecision"
                     imageRendering="optimizeQuality"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     className="mr-3 h-6 w-6"
                   >
                     <path
@@ -69,6 +105,8 @@ const SignIn = () => {
                   <input
                     type="email"
                     placeholder="EMAIL"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
                   />
                 </div>
@@ -77,6 +115,8 @@ const SignIn = () => {
                   <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder="PASSWORD"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
                   />
                   <button
@@ -84,44 +124,11 @@ const SignIn = () => {
                     onClick={togglePasswordVisibility}
                     className="absolute right-4 top-1/2 -translate-y-1/2 transform text-gray-400"
                   >
-                    {/* Eye Icon */}
-                    {showPassword ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="lucide lucide-eye-off"
-                      >
-                        <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
-                        <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
-                        <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
-                        <path d="m2 2 20 20" />
-                      </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="lucide lucide-eye"
-                      >
-                        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    )}
+                    {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
                   </button>
                 </div>
+
+                {error && <div className="mt-2 text-sm text-red-500">{error}</div>}
 
                 <button className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white">
                   CONTINUE

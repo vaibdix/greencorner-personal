@@ -1,14 +1,18 @@
 import React from 'react';
+import InfiniteScrollText from './InfiniteScrollText';
 
 const Hero = () => {
   return (
     <div>
-      <section className="relative bg-cover bg-center bg-no-repeat" style={{ height: '50vh' }}>
+      <section
+        className="relative bg-cover bg-center bg-no-repeat"
+        // style={{ height: '50vh' }}
+      >
         {/* Overlay */}
         <div className="absolute inset-0 z-0 bg-white opacity-70"></div>
 
         <div
-          className="mx-auto grid px-4 pl-20 lg:grid-cols-12 lg:gap-8 xl:gap-0"
+          className="mx-auto grid px-4 pl-20 sm:h-[30vh] lg:grid-cols-12 lg:gap-8 xl:gap-0"
           style={{
             backgroundImage:
               'url(https://img.freepik.com/premium-vector/white-background-with-many-autumn-foliage-vector_532963-4388.jpg)',
@@ -53,6 +57,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <InfiniteScrollText />
     </div>
   );
 };
