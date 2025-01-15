@@ -205,9 +205,9 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating }) => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-sun"
             >
               <circle cx="12" cy="12" r="4" />

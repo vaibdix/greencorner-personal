@@ -1,0 +1,44 @@
+[
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "1171d97d-0894-48e9-82d5-4532bb8c2a94"
+  },
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "aa0f0cde-574c-4970-b4bf-1684f03c4be7"
+  },
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "1dfa36c3-4995-43ed-9749-31fac697afbe"
+  },
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "13bfa22b-2f87-46d8-be23-c6f76317f3b3"
+  },
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "7b98a8cc-a89a-4f56-a341-04a0556d3802"
+  },
+  {
+    "username": "abc",
+    "password": 123,
+    "email": "abc@example.com",
+    "contact": 9876543210,
+    "userId": "636dcac1-2bc3-4e9b-ab59-b62f3cfe55dc"
+  }
+]
