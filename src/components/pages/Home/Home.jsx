@@ -5,6 +5,9 @@ import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
 import Card from '../Card';
 import Footer from '../Footer/Footer';
+import NewsLetter from '../NewsLetter/NewsLetter';
+import CateFilter from '../CateFilter/CateFilter';
+import HomeCategory from '../HomeCategory/HomeCategory';
 
 const Home = () => {
   const plants = useContext(context);
@@ -14,7 +17,12 @@ const Home = () => {
       <Header />
       <Hero />
       <Card />
-      <Outlet />
+      <HomeCategory />
+
+      {/* <Outlet /> */}
+      <Card />
+      <Card />
+      <NewsLetter />
       <Footer />
     </div>
   );

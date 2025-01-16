@@ -65,7 +65,6 @@
 //                       type="email"
 //                       placeholder="EMAIL"
 
-
 //                       className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
 //                     />
 //                   </div>
@@ -85,8 +84,6 @@
 
 //                     </button>
 //                   </div>
-
-
 
 //                   <button className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white">
 //                     CONTINUE
@@ -111,33 +108,25 @@
 
 // export default Product;
 
-
-
-
-
-
-
-
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 
 const Product = () => {
   return (
-    <section className="py-10 lg:py-24 relative">
+    <section className="relative py-10 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Product Details */}
-          <div className="pro-detail w-full flex flex-col justify-center order-last lg:order-none max-lg:max-w-[608px] max-lg:mx-auto">
-            <p className="font-medium text-lg text-indigo-600 mb-4">
+          <div className="pro-detail order-last flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px] lg:order-none">
+            <p className="mb-4 text-lg font-medium text-indigo-600">
               Travel &nbsp; / &nbsp; Menswear
             </p>
-            <h2 className="mb-2 font-manrope font-bold text-3xl leading-10 text-gray-900">
+            <h2 className="font-manrope mb-2 text-3xl font-bold leading-10 text-gray-900">
               Yellow Summer Travel Bag
             </h2>
-            <div className="flex flex-col sm:flex-row sm:items-center mb-6">
-              <h6 className="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
+              <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl font-semibold leading-9 text-gray-900 sm:border-r">
                 $220
               </h6>
               <div className="flex items-center gap-2">
@@ -165,36 +154,46 @@ const Product = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="pl-2 font-normal leading-7 text-gray-500 text-sm">1624 reviews</span>
+                <span className="pl-2 text-sm font-normal leading-7 text-gray-500">
+                  1624 reviews
+                </span>
               </div>
             </div>
-            <p className="text-gray-500 text-base font-normal mb-8">
-              The perfect companion for your next adventure! Embrace the spirit of sunny escapades with this vibrant and versatile bag designed to cater to your travel needs while adding a pop of color to your journey.
+            <p className="mb-8 text-base font-normal text-gray-500">
+              The perfect companion for your next adventure! Embrace the spirit of sunny escapades
+              with this vibrant and versatile bag designed to cater to your travel needs while
+              adding a pop of color to your journey.
             </p>
             {/* Bag Color Options */}
             <div className="block w-full">
-              <p className="font-medium text-lg leading-8 text-gray-900 mb-4">Bag Color</p>
-              <div className="flex items-center justify-start gap-3 md:gap-6 relative mb-6">
+              <p className="mb-4 text-lg font-medium leading-8 text-gray-900">Bag Color</p>
+              <div className="relative mb-6 flex items-center justify-start gap-3 md:gap-6">
                 {['#10B981', '#FBBF24', '#F43F5E', '#2563EB'].map((color, index) => (
                   <button
                     key={index}
-                    className="p-2.5 border border-gray-200 rounded-full transition-all duration-300 hover:border-emerald-500"
+                    className="rounded-full border border-gray-200 p-2.5 transition-all duration-300 hover:border-emerald-500"
                     style={{ borderColor: color }}
                   >
-                    <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <circle cx="20" cy="20" r="20" fill={color} />
                     </svg>
                   </button>
                 ))}
               </div>
               {/* Bag Size Options */}
-              <div className="block w-full mb-6">
-                <p className="font-medium text-lg leading-8 text-gray-900 mb-4">Bag Size</p>
-                <div className="grid grid-cols-2 min-[400px]:grid-cols-3 gap-3">
+              <div className="mb-6 block w-full">
+                <p className="mb-4 text-lg font-medium leading-8 text-gray-900">Bag Size</p>
+                <div className="grid grid-cols-2 gap-3 min-[400px]:grid-cols-3">
                   {['56 cm (S)', '67 cm (M)', '77 cm (L)'].map((size, index) => (
                     <button
                       key={index}
-                      className="border border-gray-200 text-gray-900 text-lg py-2 rounded-full px-1.5 sm:px-6 w-full font-semibold whitespace-nowrap shadow-sm shadow-transparent transition-all duration-300 hover:shadow-gray-300 hover:bg-gray-50 hover:border-gray-300"
+                      className="w-full whitespace-nowrap rounded-full border border-gray-200 px-1.5 py-2 text-lg font-semibold text-gray-900 shadow-sm shadow-transparent transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-gray-300 sm:px-6"
                     >
                       {size}
                     </button>
@@ -202,9 +201,9 @@ const Product = () => {
                 </div>
               </div>
               {/* Add to Cart */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                <div className="flex items-center justify-center w-full">
-                  <button className="group py-4 px-6 border border-gray-400 rounded-l-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50">
+              <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="flex w-full items-center justify-center">
+                  <button className="group rounded-l-full border border-gray-400 px-6 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:shadow-gray-300">
                     <svg
                       className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black"
                       width="22"
@@ -218,10 +217,10 @@ const Product = () => {
                   </button>
                   <input
                     type="text"
-                    className="font-semibold text-gray-900 text-lg py-[13px] px-6 w-full lg:max-w-[118px] border-y border-gray-400 bg-transparent placeholder:text-gray-900 text-center hover:bg-gray-50 focus-within:bg-gray-50 outline-0"
+                    className="w-full border-y border-gray-400 bg-transparent px-6 py-[13px] text-center text-lg font-semibold text-gray-900 outline-0 placeholder:text-gray-900 focus-within:bg-gray-50 hover:bg-gray-50 lg:max-w-[118px]"
                     placeholder="1"
                   />
-                  <button className="group py-4 px-6 border border-gray-400 rounded-r-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50">
+                  <button className="group rounded-r-full border border-gray-400 px-6 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:shadow-gray-300">
                     <svg
                       className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black"
                       width="22"
@@ -230,13 +229,16 @@ const Product = () => {
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path d="M11 5.5V16.5M16.5 11H5.5" stroke="" strokeWidth="1.6" strokeLinecap="round" />
+                      <path
+                        d="M11 5.5V16.5M16.5 11H5.5"
+                        stroke=""
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                      />
                     </svg>
                   </button>
                 </div>
-                <button
-                  className="group py-4 px-5 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-lg w-full flex items-center justify-center gap-2 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200"
-                >
+                <button className="group flex w-full items-center justify-center gap-2 rounded-full bg-indigo-50 px-5 py-4 text-lg font-semibold text-indigo-600 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <svg
                     className="stroke-indigo-600 transition-all duration-500"
                     width="22"
@@ -245,7 +247,10 @@ const Product = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9822 19.25C14.2011 19.25 13.5679 18.6344 13.5679 17.875M3.24987 2.5L3.97487 13.75C3.99987 14.249 4.24987 14.75 4.74987 14.75H15.2499C15.7499 14.75 15.9999 14.249 15.9749 13.75L15.2499 2.5C15.2249 1.99999 14.9749 1.5 14.4749 1.5H7.47487C6.97487 1.5 6.72487 1.99999 6.74987 2.5H3.24987Z" strokeWidth="1.5" />
+                    <path
+                      d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9822 19.25C14.2011 19.25 13.5679 18.6344 13.5679 17.875M3.24987 2.5L3.97487 13.75C3.99987 14.249 4.24987 14.75 4.74987 14.75H15.2499C15.7499 14.75 15.9999 14.249 15.9749 13.75L15.2499 2.5C15.2249 1.99999 14.9749 1.5 14.4749 1.5H7.47487C6.97487 1.5 6.72487 1.99999 6.74987 2.5H3.24987Z"
+                      strokeWidth="1.5"
+                    />
                   </svg>
                   <span>Add to Cart</span>
                 </button>
@@ -254,24 +259,24 @@ const Product = () => {
           </div>
 
           {/* Product Image */}
-          <div className="order-first lg:order-last w-full flex justify-center">
+          <div className="order-first flex w-full justify-center lg:order-last">
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
               navigation
               loop
-              className="max-w-lg mx-auto"
+              className="mx-auto max-w-lg"
             >
               <SwiperSlide>
                 <img
-                  className="rounded-xl object-cover w-full"
+                  className="w-full rounded-xl object-cover"
                   src="https://via.placeholder.com/500x500"
                   alt="Yellow Summer Travel Bag"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  className="rounded-xl object-cover w-full"
+                  className="w-full rounded-xl object-cover"
                   src="https://via.placeholder.com/500x500"
                   alt="Yellow Summer Travel Bag"
                 />
