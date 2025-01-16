@@ -127,6 +127,31 @@
 
 // export default Card;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// http://116.75.62.44:8000/plants
+
+
+
+
+
+
+
+
+
+
 import React from 'react';
 
 const plants = [

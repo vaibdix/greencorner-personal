@@ -6,7 +6,7 @@ const Hero = () => {
     <div>
       <section
         className="relative bg-cover bg-center bg-no-repeat"
-        // style={{ height: '50vh' }}
+        style={{ height: '55vh' }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 z-0 bg-white opacity-70"></div>
@@ -16,7 +16,7 @@ const Hero = () => {
           style={{
             backgroundImage:
               'url(https://img.freepik.com/premium-vector/white-background-with-many-autumn-foliage-vector_532963-4388.jpg)',
-            width: '100%',
+            width: '100%', height: '55vh'
           }}
         >
           <div className="relative z-10 mr-10 place-self-center lg:col-span-7">
@@ -52,7 +52,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="relative z-10 hidden lg:col-span-5 lg:mt-0 lg:flex">
+          <div className="relative z-10 hidden lg:col-span-5 lg:mt-0 lg:flex -pt-3">
             <img src="src/assets/woman.png" alt="mockup" />
           </div>
         </div>
