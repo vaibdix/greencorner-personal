@@ -4,7 +4,9 @@ import InfiniteScrollText from './InfiniteScrollText';
 const Hero = () => {
   return (
     <div>
-      <section className="relative bg-cover bg-center bg-no-repeat" style={{ height: '55vh' }}>
+      <section className="relative bg-cover bg-center bg-no-repeat"
+      // style={{ height: '55vh' }}
+      >
         {/* Overlay */}
         <div className="absolute inset-0 z-0 bg-white opacity-70"></div>
 
@@ -52,9 +54,9 @@ const Hero = () => {
 
           <div className="-pt-3 relative z-10 hidden lg:col-span-5 lg:mt-0 lg:flex">
             <img
-              src="src/assets/youngflowerpot.png"
+              src="src/assets/woman.png"
               alt="mockup"
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              // style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           </div>
         </div>

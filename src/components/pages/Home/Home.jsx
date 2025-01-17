@@ -3,11 +3,13 @@ import { context } from '../../context/AppContext';
 import Hero from '../Hero/Hero';
 import Header from '../Header/Header';
 import { Outlet } from 'react-router-dom';
-import Card from '../Card';
+
 import Footer from '../Footer/Footer';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import CateFilter from '../CateFilter/CateFilter';
 import HomeCategory from '../HomeCategory/HomeCategory';
+import CardFive from '../CardFive';
+import CardTen from '../CardTen';
 
 const Home = () => {
   const plants = useContext(context);
@@ -16,12 +18,11 @@ const Home = () => {
     <div>
       <Header />
       <Hero />
-      <Card />
+      <CardFive />
       <HomeCategory />
 
       {/* <Outlet /> */}
-      <Card />
-      <Card />
+      <CardTen />
       <NewsLetter />
       <Footer />
     </div>
