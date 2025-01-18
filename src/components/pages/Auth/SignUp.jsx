@@ -1,11 +1,92 @@
-import { useState } from 'react';
-import { Eye, EyeOff } from 'lucide-react'; // Import the Eye and EyeOff icons from lucide-react
+import React, { useState, useReducer } from "react";
+import { Eye, EyeOff } from "lucide-react"; // Import the Eye and EyeOff icons from lucide-react
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
+  const initialState = {
+    username: "",
+    password: "",
+    email: "",
+    contact: "",
+    error: "",
+    success: "",
+  };
+
+  const formReducer = (state, action) => {
+    switch (action.type) {
+      case "SET_FIELD":
+        return { ...state, [action.field]: action.value };
+      case "SET_ERROR":
+        return { ...state, error: action.value, success: "" };
+      case "SET_SUCCESS":
+        return { ...state, success: action.value, error: "" };
+      case "RESET_FORM":
+        return { ...initialState }; // Reset form to initial state
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(formReducer, initialState);
+  const navigate = useNavigate();
+
+  const validateForm = () => {
+    if (!state.email || !/\S+@\S+\.\S+/.test(state.email)) {
+      dispatch({ type: "SET_ERROR", value: "Please enter a valid email." });
+      return false;
+    }
+    if (state.password.length < 6) {
+      dispatch({
+        type: "SET_ERROR",
+        value: "Password must be at least 6 characters long.",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    const data = {
+      username: state.username,
+      password: state.password,
+      email: state.email,
+      contact: state.contact,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://116.75.62.44:8000/adduser",
+        data,
+        { headers: { "Content-Type": "application/json" } }
+      );
+      console.log("Signup successful:", response.data);
+
+      dispatch({ type: "SET_SUCCESS", value: "Sign up successful!" });
+
+      // Reset the form fields after successful submission
+      dispatch({ type: "RESET_FORM" });
+
+      // Navigate to signin after 2 seconds
+      setTimeout(() => {
+        navigate("/signin");
+      }, 2000);
+    } catch (error) {
+      console.error("Signup error:", error);
+      dispatch({
+        type: "SET_ERROR",
+        value: "Signup failed! Please try again.",
+      });
+    }
+  };
+
+  const handleChange = (field, value) => {
+    dispatch({ type: "SET_FIELD", field, value });
   };
 
   return (
@@ -15,10 +96,10 @@ const SignUp = () => {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div className="mt-5 rounded-lg py-6 md:p-8 lg:p-16">
               <div className="mb-10 text-3xl">Sign up to get Started</div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <button
                   id="googleSignInBtn"
-                  className="flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3"
+                  className="flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3 mb-4"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -60,46 +141,74 @@ const SignUp = () => {
                   <input
                     type="email"
                     placeholder="EMAIL"
+                    value={state.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    placeholder="USERNAME"
+                    value={state.username}
+                    onChange={(e) => handleChange("username", e.target.value)}
+                    className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <input
+                    type="number"
+                    placeholder="CONTACT"
+                    value={state.contact}
+                    onChange={(e) => handleChange("contact", e.target.value)}
                     className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
                   />
                 </div>
 
                 <div className="relative mt-4">
                   <input
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     placeholder="PASSWORD"
+                    value={state.password}
+                    onChange={(e) => handleChange("password", e.target.value)}
                     className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
                   />
                   <button
                     type="button"
-                    onClick={togglePasswordVisibility}
+                    onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-4 top-1/2 -translate-y-1/2 transform text-gray-400"
                   >
-                    {/* Eye Icon */}
-                    {showPassword ? (
-                      <EyeOff size={24} />
-                    ) : (
-                      <Eye size={24} />
-                    )}
+                    {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
                   </button>
                 </div>
 
                 <button className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white">
                   GET STARTED
                 </button>
+
                 <div className="mt-2 text-[12px] text-gray-400">
-                  By Signing up to Green Corner, you agree to our Privacy Policy and Terms of
-                  Service
+                  By Signing up to Green Corner, you agree to our Privacy Policy and Terms of Service
                 </div>
               </form>
               <div className="mt-8 text-center text-gray-400">
                 Already a Member ? <span className="font-bold text-gray-800">LOG IN</span>
               </div>
+
+              {/* Display success or error message */}
+              {state.success && (
+                <div className="mt-4 text-green-600 text-center">{state.success}</div>
+              )}
+              {state.error && (
+                <div className="mt-4 text-red-600 text-center">{state.error}</div>
+              )}
             </div>
+
             <div className="grid grid-cols-1 gap-12">
               <img
                 src="https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt=""
+                alt="Plant"
                 className="aspect-square rounded-lg object-cover"
               />
             </div>

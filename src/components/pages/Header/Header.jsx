@@ -16,7 +16,7 @@ const Header = () => {
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
             <Link to="/" className="flex items-center">
               <img src="src/assets/logo.png" className="mr-3 h-6 sm:h-9" alt="Plant it. Logo" />
-              <span className="self-center text-xl font-semibold">Plant it.</span>
+              <span className="self-center text-xl font-semibold">The Green Corner</span>
             </Link>
             <div className="flex items-center gap-3 lg:order-2">
               <Link to="/" className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5">

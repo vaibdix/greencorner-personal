@@ -1,8 +1,8 @@
-import { SunDim } from 'lucide-react';
-import { CloudAlert } from 'lucide-react';
-import { CloudSun } from 'lucide-react';
-import { Sun } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { SunDim, CloudAlert, CloudSun, Sun, Heart } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const sunlightRequirement = {
   'Full Sun': <Sun />,
@@ -12,13 +12,36 @@ const sunlightRequirement = {
 };
 
 const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) => {
-  // Render a single star and the rating
-  const renderStars = (rating) => {
-    return <span className="text-yellow-500">★</span>;
-  };
+  const sunlightIconRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sunlightIconRef.current,
+      { y: -10 },
+      {
+        y: 0,
+        duration: 1,
+        ease: 'bounce.out',
+        repeat: -1,
+        yoyo: true,
+      }
+    );
+
+    return () => gsap.killTweensOf(sunlightIconRef.current);
+  }, []);
 
   const getSunlightIcon = (sunlight) => {
-    return sunlightRequirement[sunlight] || <Sun />; // Default to Sun icon if no match
+    return sunlightRequirement[sunlight] || <Sun />;
+  };
+
+  // Handle adding to cart (show toast)
+  const handleAddToCart = () => {
+    toast.success('Added to Cart!');
+  };
+
+  // Handle adding to cart (show toast)
+  const handleAddToFav = () => {
+    toast.success('Added to Favourites!');
   };
 
   return (
@@ -31,7 +54,9 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
 
         {/* Circle div */}
         <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-[#1c3035]">
-          <span className="text-xs">{getSunlightIcon(sunlight)}</span>
+          <span className="text-xs" ref={sunlightIconRef}>
+            {getSunlightIcon(sunlight)}
+          </span>
         </div>
 
         <div className="flex items-center justify-center">
@@ -44,22 +69,24 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
           <span className="flex items-end">{type}</span>
 
           <div className="mt-1 flex items-center sm:ml-auto sm:mt-0">
-            <span className="text-sm">{renderStars(rating)}</span>
+            <span className="text-sm text-amber-500">★</span>
             <span className="ml-2 text-sm">{rating}</span>
           </div>
         </span>
 
-        {/* Tailwind Grid Layout */}
         <div className="grid grid-flow-row grid-cols-2 grid-rows-2">
           <div className="name col-span-1 row-span-1 text-lg">{name}</div>
 
-          {/* Basket Icon */}
-          <div className="basket col-span-1 row-span-2 mt-2 flex justify-end sm:ml-auto">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1c3035] text-white">
+          <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
+            <Heart width={18} className="text-red-400" onClick={handleAddToFav} />
+            <div
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white"
+              onClick={handleAddToCart} // Add onClick to trigger toast
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -77,7 +104,6 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
 
           <div className="price col-span-1 row-span-1 text-sm"> ₹ {price}</div>
 
-          {/* Extra Basket Column for Responsive Spacing */}
           <div className="col-span-1 row-span-1"></div>
         </div>
       </div>
@@ -86,7 +112,7 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
 };
 
 const CardFive = () => {
-  const [plants, setPlants] = useState([]);
+  const [plants, setPlants] = React.useState([]);
 
   useEffect(() => {
     fetch('http://116.75.62.44:8000/plants')
@@ -97,21 +123,22 @@ const CardFive = () => {
 
   return (
     <>
-     <h3 className='mt-12 pl-14 text-3xl -mb-5'>All Products</h3>
-    <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-      {plants.map((plant, index) => (
-        <PlantCard
-          key={index}
-          name={plant.name}
-          type={plant.categories[0]}
-          price={plant.price}
-          imageUrl={plant.primaryImage}
-          bgColor={plant.bgColor} // Pass bgColor as a prop
-          rating={plant.rating} // Pass rating as a prop
-          sunlight={plant.sunlightRequirement}
-        />
-      ))}
-    </div>
+      <h3 className="-mb-5 mt-12 pl-14 text-3xl">BestSellers</h3>
+      <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        {plants.map((plant, index) => (
+          <PlantCard
+            key={index}
+            name={plant.name}
+            type={plant.categories[0]}
+            price={plant.price}
+            imageUrl={plant.primaryImage}
+            bgColor={plant.bgColor} // Pass bgColor as a prop
+            rating={plant.rating} // Pass rating as a prop
+            sunlight={plant.sunlightRequirement}
+          />
+        ))}
+      </div>
+      <ToastContainer /> {/* Place ToastContainer in your app */}
     </>
   );
 };

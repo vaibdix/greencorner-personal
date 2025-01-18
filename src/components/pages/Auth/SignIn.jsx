@@ -1,46 +1,51 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from lucide-react
 
 const SignIn = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
+  const validateForm = () => {
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setError('Please enter a valid email.');
+      return false;
+    }
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters long.');
+      return false;
+    }
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    if (!validateForm()) return;
 
-    const payload = {
+    const data = {
       email,
       password,
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/users', payload, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await axios.post('http://116.75.62.44:8000/auth', data, {
+        headers: { 'Content-Type': 'application/json' },
       });
+      console.log('Login successful:', response.data);
 
-      if (response.status === 200) {
-        const authenticatedUser = response.data.user;
-        if (authenticatedUser) {
-          navigate('/home');
-        }
-      } else {
-        setError(response.data.message || 'Invalid email or password');
-      }
-    } catch (err) {
-      setError('An error occurred while logging in');
+      navigate('/'); // Navigate to dashboard or homepage on successful login
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Login failed! Please try again.');x``
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
   };
 
   return (
@@ -138,10 +143,7 @@ const SignIn = () => {
                   Service
                 </div>
               </form>
-              <div className="mt-8 text-center text-sm text-gray-400">
-                Already a Member ?{' '}
-                <span className="font-bold text-gray-800">GET STARTED - IT'S FREE</span>
-              </div>
+              
             </div>
           </div>
         </div>
