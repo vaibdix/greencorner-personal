@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import SignIn from '../pages/Auth/SignIn';
 import SignUp from '../pages/Auth/SignUp';
+import CateFilter from '../pages/CateFilter/CateFilter';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,9 @@ export const router = createBrowserRouter([
     path: '/signup',
     element: <SignUp />,
   },
-      // More routes can be added as necessary
-
-  ]);
+  {
+    path: '/category',
+    element: <CateFilter />,
+  },
+  
+]);

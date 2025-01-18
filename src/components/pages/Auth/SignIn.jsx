@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from lucide-react
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -37,7 +39,7 @@ const SignIn = () => {
       });
       console.log('Login successful:', response.data);
 
-      navigate('/'); // Navigate to dashboard or homepage on successful login
+      navigate('/'); 
     } catch (error) {
       console.error('Login error:', error);
       setError('Login failed! Please try again.');x``
@@ -50,6 +52,7 @@ const SignIn = () => {
 
   return (
     <div>
+      <Header />
       <section>
         <div className="container mx-auto mt-10 px-6 py-12">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
@@ -143,11 +146,12 @@ const SignIn = () => {
                   Service
                 </div>
               </form>
-              
+
             </div>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
