@@ -2,6 +2,8 @@ import React, { useState, useReducer } from "react";
 import { Eye, EyeOff } from "lucide-react"; // Import the Eye and EyeOff icons from lucide-react
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -91,10 +93,11 @@ const SignUp = () => {
 
   return (
     <div>
+      <Header />
       <section>
-        <div className="container mx-auto mt-10 px-6 py-12">
+        <div className="container mx-auto px-6 mt-5">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="mt-5 rounded-lg py-6 md:p-8 lg:p-16">
+            <div className="rounded-lg py-6 md:p-8 ">
               <div className="mb-10 text-3xl">Sign up to get Started</div>
               <form onSubmit={handleSubmit}>
                 <button
@@ -205,7 +208,7 @@ const SignUp = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-1 gap-12">
+            <div className="grid grid-cols-1 gap-12 mt-10">
               <img
                 src="https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Plant"
@@ -215,6 +218,7 @@ const SignUp = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

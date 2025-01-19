@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-3 gap-y-8 py-10 max-sm:mx-auto max-sm:max-w-sm sm:grid-cols-4 md:gap-8 lg:grid-cols-6">
           <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
             <a href="https://Plant it..io/" className="flex justify-center lg:justify-start">
-              <img src="src/assets/logo.svg" className="h-6 sm:h-9" alt="Plant it. Logo" />{' '}
+              <img src="src/assets/newlogo.png" className="h-6 sm:h-9" alt="Plant it. Logo" />{' '}
               <span className="ml-5 mt-2 text-lg font-semibold text-white"> The Green Corner</span>
             </a>
             <p className="py-8 text-center text-sm text-white lg:max-w-xs lg:text-left">
