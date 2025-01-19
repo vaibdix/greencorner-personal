@@ -3,6 +3,7 @@ import Home from '../pages/Home/Home';
 import SignIn from '../pages/Auth/SignIn';
 import SignUp from '../pages/Auth/SignUp';
 import CateFilter from '../pages/CateFilter/CateFilter';
+import Product from '../pages/Product/Product';
 
 export const router = createBrowserRouter([
   {
@@ -21,5 +22,9 @@ export const router = createBrowserRouter([
     path: '/category',
     element: <CateFilter />,
   },
-  
+  {
+    path: 'product',
+    element: <Product />
+  }
+
 ]);

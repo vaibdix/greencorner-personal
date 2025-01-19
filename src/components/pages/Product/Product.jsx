@@ -1,133 +1,83 @@
-// import React from 'react';
-
-// const Product = () => {
-//   return (
-//     <div>
-//       <div>
-//         <section>
-//           <div className="container mx-auto mt-10 px-6 py-12">
-//             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-//               <div className="grid grid-cols-1 gap-12">
-//                 <img
-//                   src="https://i.pinimg.com/736x/99/b0/d5/99b0d51b23d5f05728358a65bba3843d.jpg"
-//                   alt=""
-//                   className="aspect-square rounded-lg object-cover"
-//                 />
-//               </div>
-
-//               <div className="rounded-lg py-5 md:p-8 lg:p-16">
-//                 <div className="mb-2 text-gray-400">WELCOME BACK 👋🏻</div>
-//                 <div className="mb-8 text-3xl">Continue to Your Account</div>
-
-//                 <form>
-//                   <button
-//                     id="googleSignInBtn"
-//                     className="flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3"
-//                   >
-//                     <svg
-//                       xmlns="http://www.w3.org/2000/svg"
-//                       viewBox="0 0 326667 333333"
-//                       shapeRendering="geometricPrecision"
-//                       textRendering="geometricPrecision"
-//                       imageRendering="optimizeQuality"
-//                       fillRule="evenodd"
-//                       clipRule="evenodd"
-//                       className="mr-3 h-6 w-6"
-//                     >
-//                       <path
-//                         d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z"
-//                         fill="#4285f4"
-//                       />
-//                       <path
-//                         d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z"
-//                         fill="#34a853"
-//                       />
-//                       <path
-//                         d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z"
-//                         fill="#fbbc04"
-//                       />
-//                       <path
-//                         d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z"
-//                         fill="#ea4335"
-//                       />
-//                     </svg>
-//                     <span className="text-gray-700">Sign in with Google</span>
-//                   </button>
-
-//                   <div className="relative m-6 flex items-center justify-center">
-//                     <div className="flex-grow border-t border-gray-300"></div>
-//                     <span className="mx-4 text-gray-400">Or use Email</span>
-//                     <div className="flex-grow border-t border-gray-300"></div>
-//                   </div>
-
-//                   <div className="mt-4">
-//                     <input
-//                       type="email"
-//                       placeholder="EMAIL"
-
-//                       className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
-//                     />
-//                   </div>
-
-//                   <div className="relative mt-4">
-//                     <input
-//                      type='password'
-//                       placeholder="PASSWORD"
-
-//                       className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
-//                     />
-//                     <button
-//                       type="button"
-
-//                       className="absolute right-4 top-1/2 -translate-y-1/2 transform text-gray-400"
-//                     >
-
-//                     </button>
-//                   </div>
-
-//                   <button className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white">
-//                     CONTINUE
-//                   </button>
-//                   <div className="mt-2 text-[12px] text-gray-400">
-//                     By Signing In to Green Corner, you agree to our Privacy Policy and Terms of
-//                     Service
-//                   </div>
-//                 </form>
-//                 <div className="mt-8 text-center text-sm text-gray-400">
-//                   Already a Member ?{' '}
-//                   <span className="font-bold text-gray-800">GET STARTED - IT'S FREE</span>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Product;
-
-import React from 'react';
+import { ShoppingBag } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { Wallet } from 'lucide-react';
+import { Plus } from 'lucide-react';
+import { PlusIcon } from 'lucide-react';
+import { Minus } from 'lucide-react';
+import { PaintBucket } from 'lucide-react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import Review from '../Review/Review';
 
 const Product = () => {
-  return (
+  // State to keep track of the selected image
+  const [mainImage, setMainImage] = useState(
+    'https://www.ugaoo.com/cdn/shop/products/GroPot.jpg?v=1704867612&width=3000'
+  );
+
+  // Array of thumbnail images
+  const imageThumbnails = [
+    'https://www.ugaoo.com/cdn/shop/files/peace-lily-plant-32515294756996.jpg?v=1704867612&width=3000',
+    'https://www.ugaoo.com/cdn/shop/products/DSC_8818_afd3420f-0b8c-410a-95f8-38394ed69ec2.jpg?v=1704867612&width=3000',
+    'https://www.ugaoo.com/cdn/shop/products/DSC_9124_cfe94c59-66ce-45c0-93b1-e1049ad834a1.jpg?v=1704867612&width=3000',
+    'https://www.ugaoo.com/cdn/shop/files/PeaceLilySmall_7bc91008-bcd8-4071-8f23-a103fc7d81fd.jpg?v=1710233690&width=3000',
+  ];
+
+  // Handler to change the main image
+  const handleThumbnailClick = (image) => {
+    setMainImage(image);
+  };
+
+  return (<>
     <section className="relative py-10 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          {/* Product Image */}
+          <div className="justify-center lg:justify-start">
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation
+              loop
+              className="mx-auto max-w-lg"
+            >
+              <SwiperSlide>
+                <img
+                  className="w-full rounded-xl object-cover"
+                  src={mainImage}
+                  alt="Main Product"
+                />
+              </SwiperSlide>
+            </Swiper>
+            {/* Image Thumbnails below the main image */}
+            <div className="ml-7 mt-6 flex justify-start gap-4 p-2">
+              {imageThumbnails.map((image, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleThumbnailClick(image)} // Set main image on click
+                  className="cursor-pointer"
+                >
+                  <img
+                    className="h-16 w-16 rounded-lg border-2 border-gray-200 object-cover transition-all hover:border-indigo-600"
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Product Details */}
-          <div className="pro-detail order-last flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px] lg:order-none">
-            <p className="mb-4 text-lg font-medium text-indigo-600">
-              Travel &nbsp; / &nbsp; Menswear
-            </p>
+          {/* Product Details */}
+          <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
+            <p className="mb-4 text-lg font-medium">Travel &nbsp; / &nbsp; Menswear</p>
             <h2 className="font-manrope mb-2 text-3xl font-bold leading-10 text-gray-900">
-              Yellow Summer Travel Bag
+              Anthurium Flower
             </h2>
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
               <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl font-semibold leading-9 text-gray-900 sm:border-r">
-                $220
+                ₹ 220
               </h6>
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1">
@@ -159,134 +109,109 @@ const Product = () => {
                 </span>
               </div>
             </div>
-            <p className="mb-8 text-base font-normal text-gray-500">
-              The perfect companion for your next adventure! Embrace the spirit of sunny escapades
-              with this vibrant and versatile bag designed to cater to your travel needs while
-              adding a pop of color to your journey.
-            </p>
-            {/* Bag Color Options */}
-            <div className="block w-full">
-              <p className="mb-4 text-lg font-medium leading-8 text-gray-900">Bag Color</p>
-              <div className="relative mb-6 flex items-center justify-start gap-3 md:gap-6">
-                {['#10B981', '#FBBF24', '#F43F5E', '#2563EB'].map((color, index) => (
-                  <button
-                    key={index}
-                    className="rounded-full border border-gray-200 p-2.5 transition-all duration-300 hover:border-emerald-500"
-                    style={{ borderColor: color }}
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="20" cy="20" r="20" fill={color} />
-                    </svg>
-                  </button>
-                ))}
-              </div>
-              {/* Bag Size Options */}
-              <div className="mb-6 block w-full">
-                <p className="mb-4 text-lg font-medium leading-8 text-gray-900">Bag Size</p>
-                <div className="grid grid-cols-2 gap-3 min-[400px]:grid-cols-3">
-                  {['56 cm (S)', '67 cm (M)', '77 cm (L)'].map((size, index) => (
-                    <button
-                      key={index}
-                      className="w-full whitespace-nowrap rounded-full border border-gray-200 px-1.5 py-2 text-lg font-semibold text-gray-900 shadow-sm shadow-transparent transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-gray-300 sm:px-6"
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Add to Cart */}
-              <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div className="flex w-full items-center justify-center">
-                  <button className="group rounded-l-full border border-gray-400 px-6 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:shadow-gray-300">
-                    <svg
-                      className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M16.5 11H5.5" stroke="" strokeWidth="1.6" strokeLinecap="round" />
-                    </svg>
-                  </button>
-                  <input
-                    type="text"
-                    className="w-full border-y border-gray-400 bg-transparent px-6 py-[13px] text-center text-lg font-semibold text-gray-900 outline-0 placeholder:text-gray-900 focus-within:bg-gray-50 hover:bg-gray-50 lg:max-w-[118px]"
-                    placeholder="1"
-                  />
-                  <button className="group rounded-r-full border border-gray-400 px-6 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:shadow-gray-300">
-                    <svg
-                      className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M11 5.5V16.5M16.5 11H5.5"
-                        stroke=""
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <button className="group flex w-full items-center justify-center gap-2 rounded-full bg-indigo-50 px-5 py-4 text-lg font-semibold text-indigo-600 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
-                  <svg
-                    className="stroke-indigo-600 transition-all duration-500"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9822 19.25C14.2011 19.25 13.5679 18.6344 13.5679 17.875M3.24987 2.5L3.97487 13.75C3.99987 14.249 4.24987 14.75 4.74987 14.75H15.2499C15.7499 14.75 15.9999 14.249 15.9749 13.75L15.2499 2.5C15.2249 1.99999 14.9749 1.5 14.4749 1.5H7.47487C6.97487 1.5 6.72487 1.99999 6.74987 2.5H3.24987Z"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
-                  <span>Add to Cart</span>
-                </button>
-              </div>
+
+            <div className="mb-5 flex gap-7">
+              <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">50% off</div>
+              <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">Humidity</div>
+              <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">Winter</div>
+            </div>
+
+            <div className="mb-2 mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <img
+                  src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"
+                  width={40}
+                  alt="Plant Pot"
+                />
+                <span>Add Bucket</span>
+              </button>
+              <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <Wallet />
+                <span>+ 300</span>
+              </button>
+            </div>
+
+            <div className="mb-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button className="group flex w-full items-center justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <Minus />
+                1
+                <Plus />
+              </button>
+              <button className="group flex w-full justify-around gap-2 border px-7 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+              </button>
+            </div>
+            {/* Add to Cart and other options */}
+            <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <ShoppingBag />
+                <span>Add to Cart</span>
+              </button>
+              <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <Wallet />
+                <span>Buy Now</span>
+              </button>
+            </div>
+
+
+
+
+            <div className="space-y-4">
+              <details className="group [&_summary::-webkit-details-marker]:hidden" open>
+                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+                  <h2 className="font-medium">Description </h2>
+
+                  <PlusIcon />
+                </summary>
+
+                <p className="mt-4 px-4 leading-relaxed text-gray-700">
+                  <li>Lorem ipsum dolor sit amet consectetur molestias culpa</li>
+                  <li>recusandae laboriosam neque aliquid libero </li>
+                  <li>consequuntur distinctio corporis earum similique!</li>
+                </p>
+              </details>
+
+              <details className="group [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+                  <h2 className="font-medium">what's in box?</h2>
+
+                  <PlusIcon />
+                </summary>
+
+                <p className="mt-4 px-4 leading-relaxed text-gray-700">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
+                  molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate
+                  dicta quo officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+              </details>
+
+              <details className="group [&_summary::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+                  <h2 className="font-medium">Care & Instructions?</h2>
+
+                  <PlusIcon />
+                </summary>
+
+                <p className="mt-4 px-4 leading-relaxed text-gray-700">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
+                  molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate
+                  dicta quo officiis explicabo consequuntur distinctio corporis earum similique!
+                </p>
+              </details>
             </div>
           </div>
 
-          {/* Product Image */}
-          <div className="order-first flex w-full justify-center lg:order-last">
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={1}
-              navigation
-              loop
-              className="mx-auto max-w-lg"
-            >
-              <SwiperSlide>
-                <img
-                  className="w-full rounded-xl object-cover"
-                  src="https://via.placeholder.com/500x500"
-                  alt="Yellow Summer Travel Bag"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className="w-full rounded-xl object-cover"
-                  src="https://via.placeholder.com/500x500"
-                  alt="Yellow Summer Travel Bag"
-                />
-              </SwiperSlide>
-              {/* Add more SwiperSlides as necessary */}
-            </Swiper>
-          </div>
         </div>
+
       </div>
+
     </section>
+     <Review />
+     </>
   );
 };
 
