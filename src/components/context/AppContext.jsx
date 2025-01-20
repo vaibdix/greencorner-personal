@@ -8,7 +8,7 @@ const AppContext = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get('http://116.75.62.44:8000/plants')
+      .get('http://localhost:3000/plants')
       .then((response) => {
         setAllPlants(response.data);
         console.log(allPlants);

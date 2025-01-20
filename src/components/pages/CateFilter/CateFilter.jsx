@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 // import Header from '../Header/Header';
 // import Footer from '../Footer/Footer';
@@ -98,7 +98,7 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating }) => {
           </span>
         </div>
 
-        <div className="flex items-center justify-center pb-7 pl-14 pr-14 pt-14">
+        <div className="flex items-center justify-center ">
           <img className="rounded-xl" src={imageUrl} alt={`${name} plant`} />
         </div>
       </div>
@@ -559,12 +559,217 @@ const Card = () => {
 
 // export default CateFilter;
 
+// import Header from '../Header/Header';
+// import Footer from '../Footer/Footer';
+// import { Star } from 'lucide-react';
+// import { ChevronRight } from 'lucide-react';
+// import { ChevronLeft } from 'lucide-react';
+// import { ChevronDown } from 'lucide-react';
+
+// const CateFilter = () => {
+//   return (
+//     <div>
+//       <Header />
+//       <Section />
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// const Section = () => {
+//   return (
+//     <>
+//       <div className="grid grid-cols-[20%,1fr]">
+//         <div className="border">
+//           <div className="border-b p-5 text-xl font-semibold">Filter</div>
+//           <div className="mt-4">
+//             <h3 className="pl-5 text-lg font-medium">Category</h3>
+//             <div className="space-y-2 pl-1 pr-1">
+//               <details className="overflow-hidden rounded [&_summary::-webkit-details-marker]:hidden">
+//                 <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
+//                   <span className="text-sm font-medium"> Availability </span>
+//                   <ChevronDown />
+//                 </summary>
+//                 <div className="border-t border-gray-200 bg-white">
+//                   <header className="flex items-center justify-between p-4">
+//                     <span className="text-sm text-gray-700"> 0 Selected </span>
+//                     <button
+//                       type="button"
+//                       className="text-sm text-gray-900 underline underline-offset-4"
+//                     >
+//                       Reset
+//                     </button>
+//                   </header>
+//                   <ul className="space-y-1 border-t border-gray-200 p-4">
+//                     <li>
+//                       <label htmlFor="FilterInStock" className="inline-flex items-center gap-2">
+//                         <input
+//                           type="checkbox"
+//                           id="FilterInStock"
+//                           className="size-5 rounded border-gray-300"
+//                         />
+
+//                         <span className="text-sm font-medium text-gray-700"> In Stock (5+) </span>
+//                       </label>
+//                     </li>
+
+//                     <li>
+//                       <label htmlFor="FilterPreOrder" className="inline-flex items-center gap-2">
+//                         <input
+//                           type="checkbox"
+//                           id="FilterPreOrder"
+//                           className="size-5 rounded border-gray-300"
+//                         />
+//                         <span className="text-sm font-medium text-gray-700"> Pre Order (3+) </span>
+//                       </label>
+//                     </li>
+//                     <li>
+//                       <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
+//                         <input
+//                           type="checkbox"
+//                           id="FilterOutOfStock"
+//                           className="size-5 rounded border-gray-300"
+//                         />
+//                         <span className="text-sm font-medium text-gray-700">
+//                           Out of Stock (10+)
+//                         </span>
+//                       </label>
+//                     </li>
+//                   </ul>
+//                 </div>
+//               </details>
+
+//               <details className="overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+//                 <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
+//                   <span className="text-sm font-medium"> Price </span>
+//                   <ChevronDown />
+//                 </summary>
+
+//                 <div className="border-t border-gray-200 bg-white">
+//                   <header className="flex items-center justify-between p-4">
+//                     <span className="text-sm text-gray-700"> The highest price is $600 </span>
+//                     <button
+//                       type="button"
+//                       className="text-sm text-gray-900 underline underline-offset-4"
+//                     >
+//                       Reset
+//                     </button>
+//                   </header>
+
+//                   <div className="border-t border-gray-200 p-4">
+//                     <div className="flex justify-between gap-4">
+//                       <label htmlFor="FilterPriceFrom" className="flex items-center gap-2">
+//                         <span className="text-sm text-gray-600">$</span>
+//                         <input
+//                           type="number"
+//                           id="FilterPriceFrom"
+//                           placeholder="From"
+//                           className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+//                         />
+//                       </label>
+
+//                       <label htmlFor="FilterPriceTo" className="flex items-center gap-2">
+//                         <span className="text-sm text-gray-600">$</span>
+//                         <input
+//                           type="number"
+//                           id="FilterPriceTo"
+//                           placeholder="To"
+//                           className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+//                         />
+//                       </label>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </details>
+//             </div>
+//           </div>
+
+//           <RatingComponent />
+//         </div>
+
+//         {/* <Sort /> */}
+//         <Card />
+//         {/* <div className="col-span-4 bg-green-500">text</div>
+//         <div className="bg-yellow-400">text</div>
+//         <div className="bg-blue-400">text</div>
+//         <div className="bg-red-400">text</div> */}
+//       </div>
+
+//       <nav aria-label="Page navigation" class="mb-10 mt-5 flex justify-end pr-10">
+//         <ul class="flex h-8 -space-x-px text-sm">
+//           <li>
+//             <a
+//               href="#"
+//               class="ms-0 flex h-8 items-center justify-center rounded-s-lg border-gray-300 px-3 leading-tight text-gray-500"
+//             >
+//               <span class="sr-only">Previous</span>
+//               <ChevronLeft />
+//             </a>
+//           </li>
+//           <li>
+//             <a
+//               href="#"
+//               class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
+//             >
+//               1
+//             </a>
+//           </li>
+//           <li>
+//             <a
+//               href="#"
+//               class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
+//             >
+//               2
+//             </a>
+//           </li>
+//           <li>
+//             <a
+//               href="#"
+//               aria-current="page"
+//               class="z-10 flex h-8 items-center justify-center rounded-full border border-[#1C3035] bg-[#1C3035] px-3 leading-tight text-[#fff] opacity-90 hover:bg-[#1C3035] hover:text-[#1C3035]"
+//             >
+//               3
+//             </a>
+//           </li>
+//           <li>
+//             <a
+//               href="#"
+//               class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
+//             >
+//               4
+//             </a>
+//           </li>
+//           <li>
+//             <a
+//               href="#"
+//               class="flex h-8 items-center justify-center rounded-e-lg px-3 leading-tight text-gray-500 hover:bg-gray-100"
+//             >
+//               <span class="sr-only">Next</span>
+//               <ChevronRight />
+//             </a>
+//           </li>
+//         </ul>
+//       </nav>
+//     </>
+//   );
+// };
+
+// export default CateFilter;
+
+
+
+
+
+
+
+import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Star } from 'lucide-react';
-import { ChevronRight } from 'lucide-react';
-import { ChevronLeft } from 'lucide-react';
-import { ChevronDown } from 'lucide-react';
+import CardTen from '../CardFive'; // Assuming CardFive contains the PlantCard component
 
 const CateFilter = () => {
   return (
@@ -572,189 +777,261 @@ const CateFilter = () => {
       <Header />
       <Section />
       <Footer />
+      <ToastContainer />
     </div>
   );
 };
 
 const Section = () => {
+  const [plants, setPlants] = useState([]);
+  const [filteredPlants, setFilteredPlants] = useState([]);
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 600 });
+  const [availability, setAvailability] = useState({
+    inStock: false,
+    preOrder: false,
+    outOfStock: false,
+  });
+  const [rating, setRating] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 20;
+
+  useEffect(() => {
+    fetch('http://localhost:3000/plants')
+      .then((response) => response.json())
+      .then((data) => {
+        setPlants(data);
+        setFilteredPlants(data);
+      })
+      .catch((error) => console.error('Error fetching plants:', error));
+  }, []);
+
+  const handlePriceChange = (e) => {
+    setPriceRange({
+      ...priceRange,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleAvailabilityChange = (e) => {
+    setAvailability({
+      ...availability,
+      [e.target.name]: e.target.checked,
+    });
+  };
+
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
+
+  const applyFilters = () => {
+    let filtered = [...plants];
+
+    if (availability.inStock) {
+      filtered = filtered.filter((plant) => plant.stock > 0);
+    }
+    if (availability.preOrder) {
+      filtered = filtered.filter((plant) => plant.stock === 0);
+    }
+    if (availability.outOfStock) {
+      filtered = filtered.filter((plant) => plant.stock === 0);
+    }
+
+    if (priceRange.min && priceRange.max) {
+      filtered = filtered.filter(
+        (plant) => plant.price >= priceRange.min && plant.price <= priceRange.max
+      );
+    }
+
+    if (rating > 0) {
+      filtered = filtered.filter((plant) => plant.rating >= rating);
+    }
+
+    setFilteredPlants(filtered);
+  };
+
+  // Get the plants for the current page
+  const indexOfLastPlant = currentPage * productsPerPage;
+  const indexOfFirstPlant = indexOfLastPlant - productsPerPage;
+  const currentPlants = filteredPlants.slice(indexOfFirstPlant, indexOfLastPlant);
+
+  // Handle page change
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(filteredPlants.length / productsPerPage);
+
   return (
-    <>
-      <div className="grid grid-cols-[20%,1fr]">
-        <div className="border">
-          <div className="border-b p-5 text-xl font-semibold">Filter</div>
-          <div className="mt-4">
-            <h3 className="pl-5 text-lg font-medium">Category</h3>
-            <div className="space-y-2 pl-1 pr-1">
-              <details className="overflow-hidden rounded [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
-                  <span className="text-sm font-medium"> Availability </span>
-                  <ChevronDown />
-                </summary>
-                <div className="border-t border-gray-200 bg-white">
-                  <header className="flex items-center justify-between p-4">
-                    <span className="text-sm text-gray-700"> 0 Selected </span>
-                    <button
-                      type="button"
-                      className="text-sm text-gray-900 underline underline-offset-4"
-                    >
-                      Reset
-                    </button>
-                  </header>
-                  <ul className="space-y-1 border-t border-gray-200 p-4">
-                    <li>
-                      <label htmlFor="FilterInStock" className="inline-flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          id="FilterInStock"
-                          className="size-5 rounded border-gray-300"
-                        />
+    <div className="grid grid-cols-[20%,1fr] gap-4">
+      <div className="border p-4">
+        <div className="border-b p-5 text-xl font-semibold">Filter</div>
 
-                        <span className="text-sm font-medium text-gray-700"> In Stock (5+) </span>
-                      </label>
-                    </li>
-
-                    <li>
-                      <label htmlFor="FilterPreOrder" className="inline-flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          id="FilterPreOrder"
-                          className="size-5 rounded border-gray-300"
-                        />
-                        <span className="text-sm font-medium text-gray-700"> Pre Order (3+) </span>
-                      </label>
-                    </li>
-                    <li>
-                      <label htmlFor="FilterOutOfStock" className="inline-flex items-center gap-2">
-                        <input
-                          type="checkbox"
-                          id="FilterOutOfStock"
-                          className="size-5 rounded border-gray-300"
-                        />
-                        <span className="text-sm font-medium text-gray-700">
-                          Out of Stock (10+)
-                        </span>
-                      </label>
-                    </li>
-                  </ul>
-                </div>
-              </details>
-
-              <details className="overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
-                  <span className="text-sm font-medium"> Price </span>
-                  <ChevronDown />
-                </summary>
-
-                <div className="border-t border-gray-200 bg-white">
-                  <header className="flex items-center justify-between p-4">
-                    <span className="text-sm text-gray-700"> The highest price is $600 </span>
-                    <button
-                      type="button"
-                      className="text-sm text-gray-900 underline underline-offset-4"
-                    >
-                      Reset
-                    </button>
-                  </header>
-
-                  <div className="border-t border-gray-200 p-4">
-                    <div className="flex justify-between gap-4">
-                      <label htmlFor="FilterPriceFrom" className="flex items-center gap-2">
-                        <span className="text-sm text-gray-600">$</span>
-                        <input
-                          type="number"
-                          id="FilterPriceFrom"
-                          placeholder="From"
-                          className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-                        />
-                      </label>
-
-                      <label htmlFor="FilterPriceTo" className="flex items-center gap-2">
-                        <span className="text-sm text-gray-600">$</span>
-                        <input
-                          type="number"
-                          id="FilterPriceTo"
-                          placeholder="To"
-                          className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
-                        />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </details>
+        {/* Category */}
+        <h3 className="mt-4 pl-5 text-lg font-medium">Availability</h3>
+        <div className="space-y-2 pl-1 pr-1">
+          <details>
+            <summary className="flex cursor-pointer items-center justify-between p-4 text-sm font-medium">
+              Availability <ChevronDown />
+            </summary>
+            <div className="p-4">
+              <label className="inline-flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="inStock"
+                  checked={availability.inStock}
+                  onChange={handleAvailabilityChange}
+                  className="border-gray-300"
+                />
+                <span className="text-sm font-medium">In Stock (5+)</span>
+              </label>
+              <br />
+              <label className="inline-flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="preOrder"
+                  checked={availability.preOrder}
+                  onChange={handleAvailabilityChange}
+                  className="border-gray-300"
+                />
+                <span className="text-sm font-medium">Pre Order (3+)</span>
+              </label>
+              <br />
+              <label className="inline-flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  name="outOfStock"
+                  checked={availability.outOfStock}
+                  onChange={handleAvailabilityChange}
+                  className="border-gray-300"
+                />
+                <span className="text-sm font-medium">Out of Stock (10+)</span>
+              </label>
             </div>
-          </div>
-
-          <RatingComponent />
+          </details>
         </div>
 
-        {/* <Sort /> */}
-        <Card />
-        {/* <div className="col-span-4 bg-green-500">text</div>
-        <div className="bg-yellow-400">text</div>
-        <div className="bg-blue-400">text</div>
-        <div className="bg-red-400">text</div> */}
+        {/* Price Range */}
+        <h3 className="mt-4 pl-5 text-lg font-medium">Price</h3>
+        <div className="space-y-2 pl-1 pr-1">
+          <details>
+            <summary className="flex cursor-pointer items-center justify-between p-4 text-sm font-medium">
+              Price <ChevronDown />
+            </summary>
+            <div className="p-4">
+              <div className="flex gap-4">
+                <label htmlFor="minPrice" className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600">$</span>
+                  <input
+                    type="number"
+                    id="minPrice"
+                    name="min"
+                    value={priceRange.min}
+                    onChange={handlePriceChange}
+                    className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                  />
+                </label>
+                <label htmlFor="maxPrice" className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600">$</span>
+                  <input
+                    type="number"
+                    id="maxPrice"
+                    name="max"
+                    value={priceRange.max}
+                    onChange={handlePriceChange}
+                    className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                  />
+                </label>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        {/* Rating */}
+        <h3 className="mt-4 pl-5 text-lg font-medium">Rating</h3>
+        <div className="space-y-2 pl-1 pr-1">
+          <details>
+            <summary className="flex cursor-pointer items-center justify-between p-4 text-sm font-medium">
+              Rating <ChevronDown />
+            </summary>
+            <div className="p-4">
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`cursor-pointer ${rating >= star ? 'text-yellow-500' : 'text-gray-400'}`}
+                    onClick={() => handleRatingChange(star)}
+                  />
+                ))}
+              </div>
+            </div>
+          </details>
+        </div>
+
+        {/* Apply Filters Button */}
+        <button onClick={applyFilters} className="mt-4 rounded bg-[#1c3035] px-4 py-2 text-white">
+          Apply Filters
+        </button>
       </div>
 
-      <nav aria-label="Page navigation" class="mb-10 mt-5 flex justify-end pr-10">
-        <ul class="flex h-8 -space-x-px text-sm">
+      {/* Filtered Plant Cards */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {currentPlants.map((plant) => (
+          <PlantCard
+            key={plant.id}
+            name={plant.name}
+            type={plant.categories[0]} // Assuming first category as the type
+            price={plant.price}
+            imageUrl={plant.primaryImage}
+            rating={plant.rating}
+            sunlight={plant.sunlightRequirement}
+            bgColor={plant.bgColor}
+          />
+        ))}
+      </div>
+
+      {/* Pagination */}
+      <nav aria-label="Page navigation" className="mb-10 mt-5 flex justify-end pr-10">
+        <ul className="flex h-8 -space-x-px text-sm">
           <li>
             <a
               href="#"
-              class="ms-0 flex h-8 items-center justify-center rounded-s-lg border-gray-300 px-3 leading-tight text-gray-500"
+              onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}
+              className="ms-0 flex h-8 items-center justify-center rounded-s-lg border-gray-300 px-3 leading-tight text-gray-500"
             >
-              <span class="sr-only">Previous</span>
+              <span className="sr-only">Previous</span>
               <ChevronLeft />
             </a>
           </li>
+          {[...Array(totalPages)].map((_, index) => (
+            <li key={index}>
+              <a
+                href="#"
+                onClick={() => paginate(index + 1)}
+                className={`flex h-8 items-center justify-center px-3 leading-tight text-gray-500 ${
+                  currentPage === index + 1 ? 'bg-[#1C3035] text-white' : 'hover:bg-gray-100'
+                }`}
+              >
+                {index + 1}
+              </a>
+            </li>
+          ))}
           <li>
             <a
               href="#"
-              class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
+              onClick={() => paginate(currentPage < totalPages ? currentPage + 1 : totalPages)}
+              className="flex h-8 items-center justify-center rounded-e-lg border-gray-300 px-3 leading-tight text-gray-500"
             >
-              1
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
-            >
-              2
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              aria-current="page"
-              class="z-10 flex h-8 items-center justify-center rounded-full border border-[#1C3035] bg-[#1C3035] px-3 leading-tight text-[#fff] opacity-90 hover:bg-[#1C3035] hover:text-[#1C3035]"
-            >
-              3
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-8 items-center justify-center px-3 leading-tight text-gray-500 hover:bg-gray-100"
-            >
-              4
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="flex h-8 items-center justify-center rounded-e-lg px-3 leading-tight text-gray-500 hover:bg-gray-100"
-            >
-              <span class="sr-only">Next</span>
+              <span className="sr-only">Next</span>
               <ChevronRight />
             </a>
           </li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 
 export default CateFilter;
+
 
 export const RatingComponent = () => {
   const [rating, setRating] = useState(0); // state to track the rating
@@ -805,4 +1082,3 @@ export const RatingComponent = () => {
     </div>
   );
 };
-

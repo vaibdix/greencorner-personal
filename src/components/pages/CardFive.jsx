@@ -113,7 +113,7 @@ const CardFive = () => {
   const [plants, setPlants] = React.useState([]);
 
   useEffect(() => {
-    fetch('http://116.75.62.44:8000/plants')
+    fetch('http://localhost:3000/plants')
       .then((response) => response.json())
       .then((data) => setPlants(data.slice(0, 5))) // Display only the first 5 plants
       .catch((error) => console.error('Error fetching plants:', error));
@@ -131,7 +131,7 @@ const CardFive = () => {
             price={plant.price}
             imageUrl={plant.primaryImage}
             bgColor={plant.bgColor}
-            rating={plant.rating} 
+            rating={plant.rating}
             sunlight={plant.sunlightRequirement}
           />
         ))}

@@ -200,7 +200,7 @@ const SignIn = () => {
     const data = { email, password };
 
     try {
-      const response = await axios.post('http://116.75.62.44:8000/auth', data, {
+      const response = await axios.post('http://localhost:3000/users', data, {
         headers: { 'Content-Type': 'application/json' },
       });
       console.log('Login successful:', response.data);
