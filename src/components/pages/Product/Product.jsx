@@ -33,7 +33,6 @@ const Product = () => {
 
   return (
     <>
-      <Header />
       <section className="relative py-10 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
@@ -208,12 +207,9 @@ const Product = () => {
               </div>
             </div>
           </div>
-        <Review className='ml-10'/>
-
+          <Review className="ml-10" />
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };
