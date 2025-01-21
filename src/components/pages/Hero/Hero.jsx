@@ -1,5 +1,6 @@
 import React from 'react';
 import InfiniteScrollText from './InfiniteScrollText';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -44,12 +45,12 @@ const Hero = () => {
                 ></path>
               </svg>
             </a>
-            <a
-              href="#"
+            <Link
+              to="/category"
               className="bg-primary-700 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium underline underline-offset-4"
             >
               View All Products
-            </a>
+            </Link>
           </div>
 
           <div className="-pt-3 relative z-10 hidden lg:col-span-5 lg:mt-0 lg:flex">
