@@ -410,7 +410,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <Header />
+
       <section>
         <div className="container mx-auto mt-10 px-6 py-12">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
@@ -513,7 +513,7 @@ const SignIn = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </div>
   );
 };
