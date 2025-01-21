@@ -466,24 +466,55 @@ import Footer from "../Footer/Footer";
 import { useState, useContext } from 'react';
 import { context } from '../../context/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
-import { Eye, EyeOff } from "lucide-react"; // Import the Eye and EyeOff icons from lucide-react
+import { Eye, EyeOff } from 'lucide-react'; // Import the Eye and EyeOff icons from lucide-react
 
 const SignUp = () => {
   const { state, signup } = useContext(context);
   const [showPassword, setShowPassword] = useState(false);
-
-  // Error state for form validation
+  const [passwordRules, setPasswordRules] = useState({
+    length: false,
+    uppercase: false,
+    specialChar: false,
+  });
   const [errors, setErrors] = useState({
     email: '',
     username: '',
     contact: '',
     password: '',
   });
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false); // Track focus state for password field
 
-  const navigate = useNavigate(); // Initialize navigation hook
+  const navigate = useNavigate();
 
   const handleChange = (field, value) => {
     state[field] = value;
+  };
+
+  const validatePassword = (password) => {
+    setPasswordRules({
+      length: password.length >= 6,
+      uppercase: /[A-Z]/.test(password),
+      specialChar: /[!@#$%^&*(),.?":{}|<>]/.test(password),
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validate form before submitting
+    if (!validateForm()) {
+      alert('Some fields are incorrect. Please fix the errors.');
+      return;
+    }
+
+    signup(state.email, state.username, state.contact, state.password);
+
+    if (state.error) {
+      alert('Signup failed. Please try again.');
+    } else if (state.user) {
+      alert('Signup successful!');
+      navigate('/signin');
+    }
   };
 
   const validateForm = () => {
@@ -517,40 +548,16 @@ const SignUp = () => {
     // Password validation
     if (!state.password) {
       newErrors.password = 'Password is required';
-    } else if (state.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters long';
     }
 
     setErrors(newErrors);
 
-    // If no errors, return true
     return !newErrors.email && !newErrors.username && !newErrors.contact && !newErrors.password;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate form before submitting
-    if (!validateForm()) {
-      alert("Some fields are incorrect. Please fix the errors.");
-      return;
-    }
-
-    signup(state.email, state.username, state.contact, state.password); // Trigger signup with data
-
-    // Check if signup was successful or not
-    if (state.error) {
-      alert('Signup failed. Please try again.');
-    } else if (state.user) {
-      alert('Signup successful!');
-      // After success, navigate to the signin page
-      navigate('/signin');
-    }
   };
 
   return (
     <div>
-      <Header />
+
       <section>
         <div className="container mx-auto px-6 mt-5">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
@@ -632,7 +639,12 @@ const SignUp = () => {
                     type={showPassword ? 'text' : 'password'}
                     placeholder="PASSWORD"
                     value={state.password}
-                    onChange={(e) => handleChange('password', e.target.value)}
+                    onChange={(e) => {
+                      handleChange('password', e.target.value);
+                      validatePassword(e.target.value);
+                    }}
+                    onFocus={() => setIsPasswordFocused(true)} // Show tooltip on focus
+                    onBlur={() => setIsPasswordFocused(false)} // Hide tooltip on blur
                     className="bg-grey-300 mt-2 block h-16 w-full rounded-md bg-[#F5F5F5] p-2 px-5 py-4 text-sm text-gray-700 placeholder-gray-400"
                   />
                   <button
@@ -645,6 +657,30 @@ const SignUp = () => {
                   {errors.password && (
                     <div className="mt-2 text-sm text-red-500">
                       <p>{errors.password}</p>
+                    </div>
+                  )}
+
+                  {/* Tooltip with password rules (only visible when password field is focused) */}
+                  {isPasswordFocused && (
+                    <div
+                      id="tooltip-right"
+                      role="tooltip"
+                      className={`absolute right-0 z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-100 tooltip dark:bg-gray-700 ${passwordRules.length && passwordRules.uppercase && passwordRules.specialChar ? 'bg-green-600' : 'bg-gray-900'}`}
+                      style={{ top: 'calc(100% + 8px)' }}
+                    >
+                      <div>Password Rules:</div>
+                      <ul className="space-y-1">
+                        <li className={passwordRules.length ? 'text-green-500' : ''}>
+                          ✔ Minimum 6 characters
+                        </li>
+                        <li className={passwordRules.uppercase ? 'text-green-500' : ''}>
+                          ✔ Contains an uppercase letter
+                        </li>
+                        <li className={passwordRules.specialChar ? 'text-green-500' : ''}>
+                          ✔ Contains a special character
+                        </li>
+                      </ul>
+                      <div className="tooltip-arrow" data-popper-arrow></div>
                     </div>
                   )}
                 </div>
@@ -661,18 +697,6 @@ const SignUp = () => {
                   By Signing up to Green Corner, you agree to our Privacy Policy and Terms of Service
                 </div>
               </form>
-
-              <div className="mt-8 text-center text-gray-400">
-                Already a Member? <span className="font-bold text-gray-800">LOG IN</span>
-              </div>
-
-              {/* Display success or error message */}
-              {state.success && (
-                <div className="mt-4 text-green-600 text-center">{state.success}</div>
-              )}
-              {state.error && (
-                <div className="mt-4 text-red-600 text-center">{state.error}</div>
-              )}
             </div>
 
             <div className="grid grid-cols-1 gap-12 mt-10">
@@ -685,9 +709,12 @@ const SignUp = () => {
           </div>
         </div>
       </section>
-      <Footer />
+
     </div>
   );
 };
 
 export default SignUp;
+
+
+
