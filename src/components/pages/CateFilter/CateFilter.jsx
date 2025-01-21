@@ -98,7 +98,7 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating }) => {
           </span>
         </div>
 
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center">
           <img className="rounded-xl" src={imageUrl} alt={`${name} plant`} />
         </div>
       </div>
@@ -756,12 +756,6 @@ const Card = () => {
 
 // export default CateFilter;
 
-
-
-
-
-
-
 import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -989,8 +983,8 @@ const Section = () => {
       </div>
 
       {/* Pagination */}
-      <nav aria-label="Page navigation" className="mb-10 mt-5 flex justify-end pr-10">
-        <ul className="flex h-8 -space-x-px text-sm">
+      <nav aria-label="Page navigation" className="mb-10 mt-5 grid justify-self-end">
+        <ul className="flex text-sm">
           <li>
             <a
               href="#"
@@ -1031,7 +1025,6 @@ const Section = () => {
 };
 
 export default CateFilter;
-
 
 export const RatingComponent = () => {
   const [rating, setRating] = useState(0); // state to track the rating
