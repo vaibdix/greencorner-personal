@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-3 gap-y-8 py-10 max-sm:mx-auto max-sm:max-w-sm sm:grid-cols-4 md:gap-8 lg:grid-cols-6">
           <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
-            <a href="https://Plant it..io/" className="flex justify-center lg:justify-start">
+            <a href="#" className="flex justify-center lg:justify-start">
               <img src="src/assets/newlogo.png" className="h-6 sm:h-9" alt="Plant it. Logo" />{' '}
               <span className="ml-5 mt-2 text-lg font-semibold text-white"> The Green Corner</span>
             </a>
@@ -18,17 +18,17 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Company</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Home
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Collection
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   About us
                 </a>
               </li>
@@ -39,17 +39,17 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Site Map</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Plant Care
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   New Arrivals{' '}
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Community
                 </a>
               </li>
@@ -60,17 +60,17 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Contact</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   +91 9876543210
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   info@email.com
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   data@email.com
                 </a>
               </li>
@@ -81,17 +81,17 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Social</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Facebook
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   Instagram{' '}
                 </a>
               </li>
               <li className="mb-3">
-                <a href="javascript:;" className="text-white">
+                <a href="#" className="text-white">
                   LinkedIn{' '}
                 </a>
               </li>
@@ -106,25 +106,25 @@ const Footer = () => {
             </span>
             <div className="mt-4 flex space-x-4 sm:justify-center lg:mt-0">
               <a
-                href="javascript:;"
+                href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/277a60e5c863072a9d40ab7cf6509bfb3f8160b746ce9fc2994cb341ca4abb97?placeholderIfAbsent=true&apiKey=819dcd522c624166a0d1a35807118002" />
               </a>
               <a
-                href="javascript:;"
+                href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c1dbc792225e75003f3ccfe590dcd4550f239d4dc4e7fdd6a3a5e9732a9cc12e?placeholderIfAbsent=true&apiKey=819dcd522c624166a0d1a35807118002" />
               </a>
               <a
-                href="javascript:;"
+                href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b441ea6de15188b8e9b36f7e232b55204e635627fbd7318ea2788c3b0dc9869?placeholderIfAbsent=true&apiKey=819dcd522c624166a0d1a35807118002" />
               </a>
               <a
-                href="javascript:;"
+                href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full"
               >
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f4f50663e744445d84235d616b0e200cb69871f6a2338aacbf1e2345901022b6?placeholderIfAbsent=true&apiKey=819dcd522c624166a0d1a35807118002" />
