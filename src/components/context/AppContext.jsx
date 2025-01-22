@@ -23,9 +23,6 @@
 
 // export default AppContext;
 
-
-
-
 // import { createContext, useReducer } from 'react';
 // import axios from 'axios';
 
@@ -112,8 +109,6 @@
 
 // export default AppContext;
 
-
-
 // ================ working ================
 import { createContext, useReducer } from 'react';
 import axios from 'axios';
@@ -124,6 +119,8 @@ const ACTIONS = {
   SET_ERROR: 'SET_ERROR',
   RESET_ERROR: 'RESET_ERROR',
   LOGOUT: 'LOGOUT',
+  SET_PLANTS: 'SET_PLANTS',
+  SET_CURRENT_PLANT: 'SET_CURRENT_PLANT',
 };
 
 // Reducer function
@@ -152,6 +149,10 @@ const authReducer = (state, action) => {
         user: null,
         isAuthenticated: false,
       };
+    case ACTIONS.SET_PLANTS:
+      return { ...state, plants: action.payload };
+    case ACTIONS.SET_CURRENT_PLANT:
+      return { ...state, currentPlant: action.payload };
     default:
       return state;
   }
@@ -162,12 +163,28 @@ const initialState = {
   user: null,
   isAuthenticated: false,
   error: null,
+  plants: [],
+  currentPlant: null,
 };
 
 export const context = createContext();
 
 const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
+
+  const fetchPlants = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/plants');
+      dispatch({ type: ACTIONS.SET_PLANTS, payload: response.data });
+    } catch (error) {
+      dispatch({ type: ACTIONS.SET_ERROR, payload: 'Error fetching plants' });
+    }
+  };
+
+  const setCurrentPlant = (id) => {
+    const plant = state.plants.find((p) => p.id === parseInt(id));
+    dispatch({ type: ACTIONS.SET_CURRENT_PLANT, payload: plant });
+  };
 
   // Login function with axios call
   const login = async (email, password) => {
@@ -215,7 +232,17 @@ const AppContext = ({ children }) => {
   };
 
   return (
-    <context.Provider value={{ state, dispatch, login, signup, logout }}>
+    <context.Provider
+      value={{
+        state,
+        dispatch,
+        login,
+        signup,
+        logout,
+        fetchPlants,
+        setCurrentPlant,
+      }}
+    >
       {children}
     </context.Provider>
   );
@@ -223,15 +250,6 @@ const AppContext = ({ children }) => {
 
 export default AppContext;
 // ================ working ================
-
-
-
-
-
-
-
-
-
 
 // import { createContext, useReducer, useContext } from 'react';
 // import axios from 'axios';
@@ -303,7 +321,6 @@ export default AppContext;
 //       }
 //     }
 //   };
-
 
 //   // Filter functions
 //   const applyFilters = () => {

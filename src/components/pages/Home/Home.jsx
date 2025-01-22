@@ -46,6 +46,8 @@ const Home = () => {
   const plants = useContext(context);
   console.log(plants);
 
+
+
   return (
     <div>
       <Hero />

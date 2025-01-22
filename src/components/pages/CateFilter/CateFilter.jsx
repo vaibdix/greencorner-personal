@@ -1,10 +1,19 @@
-const PlantCard = ({ name, type, price, imageUrl, bgColor, rating }) => {
+
+const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/product/${id}`);
+  };
+
+
+
   const renderStars = (rating) => {
     return <span className="text-yellow-500">★</span>;
   };
 
   return (
-    <div className="w-auto rounded-lg">
+    <div className="w-auto rounded-lg" onClick={handleClick}>
       <div className={`${bgColor} relative`}>
         {/* 50% Off Pill */}
         <div className="absolute left-3 top-3 rounded-full bg-[#1c3035] px-3 py-[6px] text-xs text-white">
@@ -97,8 +106,20 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Star } from 'lucide-react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { context } from '../../context/AppContext';
 
 const CateFilter = () => {
+
+  const { state, fetchPlants } = useContext(context);
+  const { plants } = state;
+
+  useEffect(() => {
+    fetchPlants();
+  }, []);
+
+
   return (
     <div>
       <Section />
@@ -138,7 +159,7 @@ const Section = () => {
 
   useEffect(() => {
     axios
-      .get('http://116.75.62.44:8000/plants')
+      .get('http://localhost:3000/plants')
       .then((response) => {
         const data = response.data;
         setPlants(data);
@@ -353,6 +374,7 @@ const Section = () => {
         {currentPlants.map((plant) => (
           <PlantCard
             key={plant.id}
+            id={plant.id}
             name={plant.name}
             type={plant.categories[0]} // Assuming first category as the type
             price={plant.price}

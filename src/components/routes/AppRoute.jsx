@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
         element: <CateFilter />,
       },
       {
-        path: '/product',
+        path: '/product/:id',
         element: <Product />,
       },
       {
