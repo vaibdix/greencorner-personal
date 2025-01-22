@@ -461,8 +461,6 @@
 
 
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import { useState, useContext } from 'react';
 import { context } from '../../context/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation

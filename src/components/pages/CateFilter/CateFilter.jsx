@@ -138,7 +138,7 @@ const Section = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/plants')
+      .get('http://116.75.62.44:8000/plants')
       .then((response) => {
         const data = response.data;
         setPlants(data);
