@@ -1,8 +1,12 @@
+import React, { useContext, useEffect } from 'react';
 import { SunDim, CloudAlert, CloudSun, Sun, Heart } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import gsap from 'gsap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { context } from '../context/AppContext';
+import { useRef } from 'react';
 
 const sunlightRequirement = {
   'Full Sun': <Sun />,
@@ -11,8 +15,13 @@ const sunlightRequirement = {
   'Bright Indirect Light': <CloudAlert />,
 };
 
-const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) => {
+const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight }) => {
+  const navigate = useNavigate();
   const sunlightIconRef = useRef(null);
+
+  const handleCardClick = () => {
+    navigate(`/product/${id}`);
+  };
 
   useEffect(() => {
     gsap.fromTo(
@@ -43,9 +52,8 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
   };
 
   return (
-    <div className="w-auto rounded-lg">
+    <div className="w-auto rounded-lg" onClick={handleCardClick}>
       <div className={bgColor + ' relative'}>
-        {/* 50% Off Pill */}
         <div className="absolute left-3 top-3 rounded-full bg-[#1c3035] px-3 py-[6px] text-xs text-white">
           50% OFF
         </div>
@@ -79,7 +87,7 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
             <Heart width={18} className="text-red-400" onClick={handleAddToFav} />
             <div
               className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white"
-              onClick={handleAddToCart} // Add onClick to trigger toast
+              onClick={handleAddToCart}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,22 +118,30 @@ const PlantCard = ({ name, type, price, imageUrl, bgColor, rating, sunlight }) =
 };
 
 const CardFive = () => {
-  const [plants, setPlants] = React.useState([]);
+  const { state, fetchPlants } = useContext(context);
+  const { plants, loading, error } = state;
 
   useEffect(() => {
-    fetch('http://localhost:3000/plants')
-      .then((response) => response.json())
-      .then((data) => setPlants(data.slice(0, 5))) // Display only the first 5 plants
-      .catch((error) => console.error('Error fetching plants:', error));
+    // Fetch plants if not already loaded
+    if (plants.length === 0) {
+      fetchPlants();
+    }
   }, []);
+
+  // Get first 5 best-selling plants (you might want to add a best-seller flag in your data)
+  const bestSellerPlants = plants.slice(0, 5);
+
+  if (loading) return <div>Loading best sellers...</div>;
+  if (error) return <div>Error loading best sellers: {error}</div>;
 
   return (
     <>
       <h3 className="-mb-5 mt-12 pl-14 text-3xl">BestSellers</h3>
       <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {plants.map((plant, index) => (
+        {bestSellerPlants.map((plant) => (
           <PlantCard
-            key={index}
+            key={plant.id}
+            id={plant.id}
             name={plant.name}
             type={plant.categories[0]}
             price={plant.price}
@@ -136,7 +152,7 @@ const CardFive = () => {
           />
         ))}
       </div>
-      <ToastContainer /> {/* Place ToastContainer in your app */}
+      <ToastContainer />
     </>
   );
 };
