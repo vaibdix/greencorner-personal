@@ -1,33 +1,31 @@
-// import React, { useState, useEffect } from 'react';
-// import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/swiper-bundle.css';
+//----------------- State management fails navigations --------------------------
+// import React, { useContext, useState, useEffect } from 'react';
+// import { ShoppingBag, Wallet, PlusIcon } from 'lucide-react';
 // import Review from '../Review/Review';
+// import { useParams } from 'react-router-dom';
+// import { context } from '../../context/AppContext';
 
 // const Product = () => {
-//   // State to store product data
-//   const [product, setProduct] = useState(null);
-
-//   // State to keep track of the selected image
+//   const { id } = useParams();
+//   const { state, fetchPlants, setCurrentPlant } = useContext(context);
 //   const [mainImage, setMainImage] = useState('');
 
-//   // Fetch product data from API
 //   useEffect(() => {
-//     // Fetch product data
-//     fetch('http://localhost:3000/plants')
-//       .then((response) => response.json())
-//       .then((data) => {
-//         // Assuming the response is an array, pick the first product for demo purposes
-//         setProduct(data[0]);
-//         setMainImage(data[0]?.primaryImage);
-//       })
-//       .catch((error) => console.error('Error fetching product data:', error));
-//   }, []);
+//     if (state.plants.length === 0) {
+//       fetchPlants();
+//     } else {
+//       setCurrentPlant(id);
+//     }
+//   }, [id, state.plants, fetchPlants, setCurrentPlant]);
 
-//   // If product data is not yet fetched, show a loading message
-//   if (!product) {
-//     return <div>Loading...</div>;
-//   }
+//   useEffect(() => {
+//     if (state.currentPlant) {
+//       setMainImage(state.currentPlant.primaryImage);
+//     }
+//   }, [state.currentPlant]);
+
+//   if (state.error) return <div className="text-center p-4 text-red-500">Error: {state.error}</div>;
+//   if (!state.currentPlant) return <div className="text-center p-4">Loading...</div>;
 
 //   return (
 //     <>
@@ -36,27 +34,19 @@
 //           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
 //             {/* Product Image */}
 //             <div className="justify-center lg:justify-start">
-//               <Swiper
-//                 spaceBetween={10}
-//                 slidesPerView={1}
-//                 navigation
-//                 loop
-//                 className="mx-auto max-w-lg"
-//               >
-//                 <SwiperSlide>
-//                   <img
-//                     className="w-full rounded-xl object-cover"
-//                     src={mainImage}
-//                     alt="Main Product"
-//                   />
-//                 </SwiperSlide>
-//               </Swiper>
+//               <div className="">
+//                 <img
+//                   className="h-[500px] w-full rounded-xl object-cover"
+//                   src={mainImage}
+//                   alt="Main Product"
+//                 />
+//               </div>
 //               {/* Image Thumbnails below the main image */}
 //               <div className="ml-7 mt-6 flex justify-start gap-4 p-2">
-//                 {product.secondaryImages.map((image, index) => (
+//                 {state.currentPlant.secondaryImages.map((image, index) => (
 //                   <div
 //                     key={index}
-//                     onClick={() => setMainImage(image)} // Set main image on click
+//                     onClick={() => setMainImage(image)}
 //                     className="cursor-pointer"
 //                   >
 //                     <img
@@ -71,13 +61,13 @@
 
 //             {/* Product Details */}
 //             <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
-//               <p className="mb-4 text-lg font-medium">{product.categories.join(' / ')}</p>
+//               <p className="mb-4 text-lg font-medium">{state.currentPlant.categories.join(' / ')}</p>
 //               <h2 className="font-manrope mb-2 text-3xl font-bold leading-10 text-gray-900">
-//                 {product.name}
+//                 {state.currentPlant.name}
 //               </h2>
 //               <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
 //                 <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl font-semibold leading-9 text-gray-900 sm:border-r">
-//                   ₹ {product.price}
+//                   ₹ {state.currentPlant.price}
 //                 </h6>
 //                 <div className="flex items-center gap-2">
 //                   <div className="flex items-center gap-1">
@@ -92,26 +82,26 @@
 //                       >
 //                         <path
 //                           d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
-//                           fill={index < Math.round(product.rating) ? '#FBBF24' : '#F3F4F6'}
+//                           fill={index < Math.round(state.currentPlant.rating) ? '#FBBF24' : '#F3F4F6'}
 //                         />
 //                       </svg>
 //                     ))}
 //                   </div>
 //                   <span className="pl-2 text-sm font-normal leading-7 text-gray-500">
-//                     {product.reviews.length} reviews
+//                     {state.currentPlant.reviews.length} reviews
 //                   </span>
 //                 </div>
 //               </div>
 
 //               <div className="mb-5 flex gap-7">
 //                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
-//                   {product.availability}
+//                   {state.currentPlant.availability}
 //                 </div>
 //                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
-//                   {product.sunlightRequirement}
+//                   {state.currentPlant.sunlightRequirement}
 //                 </div>
 //                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
-//                   {product.season}
+//                   {state.currentPlant.season}
 //                 </div>
 //               </div>
 
@@ -145,19 +135,90 @@
 //               <div className="space-y-4">
 //                 <details className="group [&_summary::-webkit-details-marker]:hidden" open>
 //                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-//                     <h2 className="font-medium">Description </h2>
+//                     <h2 className="font-medium">Description</h2>
 //                     <span className="transition group-open:rotate-180">
 //                       <PlusIcon />
 //                     </span>
 //                   </summary>
 //                   <div className="px-4 pb-4">
-//                     <p className="text-gray-600">{product.description}</p>
+//                     <p className="text-gray-600">{state.currentPlant.description}</p>
+//                   </div>
+//                 </details>
+//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+//                     <h2 className="font-medium">Plant Care Information</h2>
+//                     <PlusIcon />
+//                   </summary>
+//                 </details>
+//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+//                     <h2 className="font-medium">Plant Care Information</h2>
+//                     <PlusIcon />
+//                   </summary>
+//                   <div className="mt-4 px-4 leading-relaxed text-gray-700">
+//                     {state.sunlightRequirement && (
+//                       <p>
+//                         <strong>Sunlight Requirement:</strong> {state.sunlightRequirement}
+//                       </p>
+//                     )}
+//                     {state.moistureRequirement && (
+//                       <p>
+//                         <strong>Moisture Requirement:</strong> {state.moistureRequirement}
+//                       </p>
+//                     )}
+//                     {state.soilType && (
+//                       <p>
+//                         <strong>Soil Type:</strong> {state.soilType}
+//                       </p>
+//                     )}
+//                     {state.growthRate && (
+//                       <p>
+//                         <strong>Growth Rate:</strong> {state.growthRate}
+//                       </p>
+//                     )}
+//                     {state.season && (
+//                       <p>
+//                         <strong>Season:</strong> {state.season}
+//                       </p>
+//                     )}
+//                     {state.potSizeRequired && (
+//                       <p>
+//                         <strong>Pot Size Required:</strong> {state.potSizeRequired}
+//                       </p>
+//                     )}
+//                     {state.genus && (
+//                       <p>
+//                         <strong>Genus:</strong> {state.genus}
+//                       </p>
+//                     )}
+//                     {state.localName && (
+//                       <p>
+//                         <strong>Local Name:</strong> {state.localName}
+//                       </p>
+//                     )}
+//                     {state.regionalName && (
+//                       <p>
+//                         <strong>Regional Name:</strong> {state.regionalName}
+//                       </p>
+//                     )}
+//                     {state.biologicalName && (
+//                       <p>
+//                         <strong>Biological Name:</strong> {state.biologicalName}
+//                       </p>
+//                     )}
+//                     {state.botanicalName && (
+//                       <p>
+//                         <strong>Botanical Name:</strong> {state.botanicalName}
+//                       </p>
+//                     )}
 //                   </div>
 //                 </details>
 //               </div>
 //             </div>
 //           </div>
-//           <Review reviews={product.reviews} />
+
+//           {/* Reviews */}
+//           <Review reviews={state.currentPlant.reviews} />
 //         </div>
 //       </section>
 //     </>
@@ -165,49 +226,60 @@
 // };
 
 // export default Product;
+//----------------------------------------------------------
+// TO BE FIXED ABOVE
+//----------------------------------------------------------
 
 
 
 
 
 
+
+
+
+
+// Fetch based
+//----------------------------------------------------------
 
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
 import Review from '../Review/Review';
 import { useParams } from 'react-router-dom';
 
+
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState('');
+  const [error, setError] = useState(null);
 
-  // NOT WORKING
-  // useEffect(() => {
-  //   fetch(`http://localhost:3000/plants/${id}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setProduct(data);
-  //       setMainImage(data?.primaryImage);
-  //     })
-  //     .catch((error) => console.error('Error:', error));
-  // }, [id]);
-
-  // WORKING
   useEffect(() => {
     fetch('http://localhost:3000/plants')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch plants');
+        }
+        return response.json();
+      })
       .then((data) => {
         const selectedProduct = data.find(item => item.id === parseInt(id));
-        if (selectedProduct) {
-          setProduct(selectedProduct);
-          setMainImage(selectedProduct.primaryImage);
+        if (!selectedProduct) {
+          throw new Error('Plant not found');
         }
+        setProduct(selectedProduct);
+        setMainImage(selectedProduct.primaryImage);
+        setError(null);
       })
-      .catch((error) => console.error('Error:', error));
+      .catch((error) => {
+        console.error('Error:', error);
+        setError(error.message || 'Failed to load product');
+      });
   }, [id]);
 
-  if (!product) return <div>Loading...</div>;
+  if (error) return <div className="text-center p-4 text-red-500">Error: {error}</div>;
+  if (!product) return <div className="text-center p-4">Loading...</div>;
+
 
   return (
     <>
@@ -327,7 +399,7 @@ const Product = () => {
                     <p className="text-gray-600">{product.description}</p>
                   </div>
                 </details>
-                <details className="group [&_summary::-webkit-details-marker]:hidden" close>
+                <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
                     <h2 className="font-medium">Plant Care Information</h2>
                     <PlusIcon />
