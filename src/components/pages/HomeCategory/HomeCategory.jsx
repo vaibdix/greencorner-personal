@@ -40,7 +40,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Downloads
                 </a>
@@ -48,7 +48,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Saved Files
                 </a>
@@ -56,7 +56,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Notifications
                 </a>
@@ -64,7 +64,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-red-500 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Log Out
                 </a>
@@ -106,7 +106,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Downloads
                 </a>
@@ -114,7 +114,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Saved Files
                 </a>
@@ -122,7 +122,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Notifications
                 </a>
@@ -130,7 +130,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-red-500 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Log Out
                 </a>
@@ -172,7 +172,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Downloads
                 </a>
@@ -180,7 +180,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Saved Files
                 </a>
@@ -188,7 +188,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Notifications
                 </a>
@@ -196,7 +196,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-red-500 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Log Out
                 </a>
@@ -238,7 +238,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Downloads
                 </a>
@@ -246,7 +246,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Saved Files
                 </a>
@@ -254,7 +254,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Notifications
                 </a>
@@ -262,7 +262,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-red-500 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Log Out
                 </a>
@@ -304,7 +304,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Downloads
                 </a>
@@ -312,7 +312,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Saved Files
                 </a>
@@ -320,7 +320,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-gray-900 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Notifications
                 </a>
@@ -328,7 +328,7 @@ const HomeCategory = () => {
               <li>
                 <a
                   className="block px-6 py-2 font-medium text-red-500 hover:bg-gray-100"
-                  href="javascript:;"
+                  href="#"
                 >
                   Log Out
                 </a>
