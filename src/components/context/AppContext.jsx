@@ -121,6 +121,11 @@ const ACTIONS = {
   LOGOUT: 'LOGOUT',
   SET_PLANTS: 'SET_PLANTS',
   SET_CURRENT_PLANT: 'SET_CURRENT_PLANT',
+
+  ADD_TO_CART: 'ADD_TO_CART',
+  REMOVE_FROM_CART: 'REMOVE_FROM_CART',
+  UPDATE_CART_QUANTITY: 'UPDATE_CART_QUANTITY',
+  CLEAR_CART: 'CLEAR_CART',
 };
 
 // Reducer function
@@ -153,6 +158,42 @@ const authReducer = (state, action) => {
       return { ...state, plants: action.payload };
     case ACTIONS.SET_CURRENT_PLANT:
       return { ...state, currentPlant: action.payload };
+
+    case ACTIONS.ADD_TO_CART:
+      const existingItem = state.cart.find((item) => item.id === action.payload.id);
+      if (existingItem) {
+        return {
+          ...state,
+          cart: state.cart.map((item) =>
+            item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item
+          ),
+        };
+      }
+      return {
+        ...state,
+        cart: [...state.cart, { ...action.payload, quantity: 1 }],
+      };
+
+    case ACTIONS.REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload),
+      };
+
+    case ACTIONS.UPDATE_CART_QUANTITY:
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === action.payload.id ? { ...item, quantity: action.payload.quantity } : item
+        ),
+      };
+
+    case ACTIONS.CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
+
     default:
       return state;
   }
@@ -165,6 +206,7 @@ const initialState = {
   error: null,
   plants: [],
   currentPlant: null,
+  cart: [],
 };
 
 export const context = createContext();
@@ -227,6 +269,32 @@ const AppContext = ({ children }) => {
     }
   };
 
+  const addToCart = (plant) => {
+    dispatch({ type: ACTIONS.ADD_TO_CART, payload: plant });
+  };
+
+  const removeFromCart = (plantId) => {
+    dispatch({ type: ACTIONS.REMOVE_FROM_CART, payload: plantId });
+  };
+
+  const updateCartQuantity = (plantId, quantity) => {
+    if (quantity < 1) {
+      removeFromCart(plantId);
+      return;
+    }
+    dispatch({
+      type: ACTIONS.UPDATE_CART_QUANTITY,
+      payload: { id: plantId, quantity },
+    });
+  };
+
+  const clearCart = () => {
+    dispatch({ type: ACTIONS.CLEAR_CART });
+  };
+
+  // Calculate cart total
+  const cartTotal = state.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
   const logout = () => {
     dispatch({ type: ACTIONS.LOGOUT });
   };
@@ -241,6 +309,11 @@ const AppContext = ({ children }) => {
         logout,
         fetchPlants,
         setCurrentPlant,
+        addToCart,
+        removeFromCart,
+        updateCartQuantity,
+        clearCart,
+        cartTotal,
       }}
     >
       {children}
