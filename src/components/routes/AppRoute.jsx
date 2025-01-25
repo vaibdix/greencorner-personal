@@ -89,13 +89,13 @@ export const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
+        path: '/wishlist',
+        element: <Wishlist />,
+      },
+      {
         path: '*',
         element: <NotFound />,
       },
     ],
-  },
-  {
-    path: '/wishlist',
-    element: <Wishlist />,
   },
 ]);
