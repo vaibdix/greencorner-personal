@@ -41,6 +41,7 @@ import HomeCategory from '../HomeCategory/HomeCategory';
 import CardFive from '../CardFive';
 import CardTen from '../CardTen';
 import NewsLetter from '../NewsLetter/NewsLetter';
+import CouponAdvertise from '../CouponAdvertise/CouponAdvertise';
 
 const Home = () => {
   const plants = useContext(context);
@@ -52,7 +53,8 @@ const Home = () => {
     <div>
       <Hero />
       <CardFive />
-      <HomeCategory />
+      {/* <HomeCategory /> */}
+      <CouponAdvertise />
       <CardTen />
       <NewsLetter />
     </div>

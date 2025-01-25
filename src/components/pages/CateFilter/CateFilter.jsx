@@ -412,7 +412,7 @@ const Section = ({ plants: contextPlants }) => {
     // </div>
     
     <div className="grid grid-cols-[1.5fr,5fr] gap-4">
-      <FilterSection 
+      <FilterSection className="fixed"
         availability={availability}
         priceRange={priceRange}
         rating={rating}
@@ -425,7 +425,7 @@ const Section = ({ plants: contextPlants }) => {
         predefinedCategories={predefinedCategories}
       />
       
-      <div className="grid grid-cols-1 gap-6 p-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="scroll grid grid-cols-1 gap-6 p-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {currentPlants.map((plant) => (
           <PlantCard
             key={plant.id}
