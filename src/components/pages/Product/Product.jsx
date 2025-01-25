@@ -246,6 +246,7 @@ import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
 import Review from '../Review/Review';
 import { useParams } from 'react-router-dom';
+import { StarIcon } from 'lucide-react';
 
 
 const Product = () => {
@@ -283,14 +284,38 @@ const Product = () => {
 
   return (
     <>
-      <section className="relative py-10 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative py-5 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-4">
+          <nav aria-label="Breadcrumb" className="mb-5">
+            <ol className="flex items-center gap-1 text-lg font-semibold text-gray-600">
+              <li>
+                <a href="/" className="hover:text-gray-700">
+                  Home
+                </a>
+              </li>
+              <li>
+                <span className="mx-2">/</span>
+              </li>
+              <li>
+                <a href="/products" className="hover:text-gray-700">
+                  Products
+                </a>
+              </li>
+              <li>
+                <span className="mx-2">/</span>
+              </li>
+              <li>
+                <span className="text-gray-900">{product?.name || 'Loading...'}</span>
+              </li>
+            </ol>
+          </nav>
+
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             {/* Product Image */}
             <div className="justify-center lg:justify-start">
               <div className="">
                 <img
-                  className="h-[500px] w-full rounded-xl object-contain"
+                  className="h-[600px] w-full rounded-xl object-contain"
                   // className="w-full rounded-xl object-cover"
                   src={mainImage}
                   alt="Main Product"
@@ -316,30 +341,25 @@ const Product = () => {
 
             {/* Product Details */}
             <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
-              <p className="mb-4 text-lg font-medium">{product.categories.join(' / ')}</p>
-              <h2 className="font-manrope mb-2 text-3xl font-bold leading-10 text-gray-900">
+              <h2 className="font-manrope mb-2 text-4xl font-semibold leading-10 text-gray-900">
                 {product.name}
               </h2>
+
               <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
                 <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl font-semibold leading-9 text-gray-900 sm:border-r">
                   ₹ {product.price}
                 </h6>
+
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-1">
                     {Array.from({ length: 5 }, (_, index) => (
-                      <svg
+                      <StarIcon
                         key={index}
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.10326 2.31699C9.47008 1.57374 10.5299 1.57374 10.8967 2.31699L12.7063 5.98347C12.8519 6.27862 13.1335 6.48319 13.4592 6.53051L17.5054 7.11846C18.3256 7.23765 18.6531 8.24562 18.0596 8.82416L15.1318 11.6781C14.8961 11.9079 14.7885 12.2389 14.8442 12.5632L15.5353 16.5931C15.6754 17.41 14.818 18.033 14.0844 17.6473L10.4653 15.7446C10.174 15.5915 9.82598 15.5915 9.53466 15.7446L5.91562 17.6473C5.18199 18.033 4.32456 17.41 4.46467 16.5931L5.15585 12.5632C5.21148 12.2389 5.10393 11.9079 4.86825 11.6781L1.94038 8.82416C1.34687 8.24562 1.67438 7.23765 2.4946 7.11846L6.54081 6.53051C6.86652 6.48319 7.14808 6.27862 7.29374 5.98347L9.10326 2.31699Z"
-                          fill={index < Math.round(product.rating) ? '#FBBF24' : '#F3F4F6'}
-                        />
-                      </svg>
+                        size={20}
+                        className={
+                          index < Math.round(product.rating) ? 'text-amber-400' : 'text-gray-200'
+                        }
+                      />
                     ))}
                   </div>
                   <span className="pl-2 text-sm font-normal leading-7 text-gray-500">
@@ -347,7 +367,9 @@ const Product = () => {
                   </span>
                 </div>
               </div>
-
+              {/* <p className="mb-4 text-lg py-2 font-medium">
+                Category : {product.categories.join(' / ')}
+              </p> */}
               <div className="mb-5 flex gap-7">
                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
                   {product.availability}
@@ -387,8 +409,20 @@ const Product = () => {
                 </button>
               </div>
 
+              <div className="mb-8">
+                <div className="mb-4 rounded-lg border p-4">
+                  <h3 className="mb-2 font-medium">Shipping Information</h3>
+                  <p className="text-gray-600">{product.shoppingPolicy}</p>
+                </div>
+
+                <div className="rounded-lg border p-4">
+                  <h3 className="mb-2 font-medium">Return & Refund Policy</h3>
+                  <p className="text-gray-600">{product.refundPolicy}</p>
+                </div>
+              </div>
+
               <div className="space-y-4">
-                <details className="group [&_summary::-webkit-details-marker]:hidden" open>
+                <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
                     <h2 className="font-medium">Description</h2>
                     <span className="transition group-open:rotate-180">
@@ -399,6 +433,41 @@ const Product = () => {
                     <p className="text-gray-600">{product.description}</p>
                   </div>
                 </details>
+
+                <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+                  <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+                    <h2 className="font-medium">Seller Information</h2>
+                    <PlusIcon />
+                  </summary>
+                  <div className="mt-4 px-4 leading-relaxed text-gray-700">
+                    {product?.sellerAddress?.street && (
+                      <p>
+                        <strong>Street Address:</strong> {product.sellerAddress.street}
+                      </p>
+                    )}
+                    {product?.sellerAddress?.city && (
+                      <p>
+                        <strong>City:</strong> {product.sellerAddress.city}
+                      </p>
+                    )}
+                    {product?.sellerAddress?.state && (
+                      <p>
+                        <strong>State:</strong> {product.sellerAddress.state}
+                      </p>
+                    )}
+                    {product?.sellerAddress?.pincode && (
+                      <p>
+                        <strong>Zip Code:</strong> {product.sellerAddress.pincode}
+                      </p>
+                    )}
+                    {product?.sellerAddress?.country && (
+                      <p>
+                        <strong>Country:</strong> {product.sellerAddress.country}
+                      </p>
+                    )}
+                  </div>
+                </details>
+
                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
                     <h2 className="font-medium">Plant Care Information</h2>
@@ -470,7 +539,6 @@ const Product = () => {
               </div>
             </div>
           </div>
-
           {/* Reviews */}
           <Review reviews={product.reviews} />
         </div>

@@ -42,6 +42,8 @@ import MainLayout from '../../layouts/MainLayout'; // Import MainLayout
 import NotFound from '../pages/NotFound/NotFound';
 import ProductDemo from '../pages/Product/ProductDemo';
 import Cart from '../pages/Cart/Cart';
+import PlantCare from '../pages/PlantCare/PlantCare';
+import About from '../pages/About/About';
 
 export const router = createBrowserRouter([
   {
@@ -69,19 +71,21 @@ export const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
+        path: '/cart',
+        element: <Cart />,
+      },
+      {
+        path: '/plantcare',
+        element: <PlantCare />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
         path: '*',
         element: <NotFound />,
       },
     ],
   },
-  {
-    path: '/productdemo',
-    element: <ProductDemo />,
-  },
-  {
-    path: '/cart',
-    element: <Cart />,
-  },
-
-
 ]);
