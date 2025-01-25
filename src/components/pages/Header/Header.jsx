@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="sticky top-0 z-50">
       <header>
         <nav className="border-b-2 border-gray-200 bg-white px-4 py-2.5 lg:px-6">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
@@ -57,7 +57,7 @@ const Header = () => {
                 </svg>
               </Link>
               <Link
-                to="/signin"
+                to="/cart"
                 className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
               >
                 <svg
@@ -153,31 +153,31 @@ const Header = () => {
                     to="/category"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
-                    All Plants
+                    Explore Plants
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/pots"
+                    to="/plantcare"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
-                    Pots & Accessories
+                    Plant Care
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/seeds"
+                    to="/about"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
-                    Seeds
+                    About
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/product"
+                    to="/cart"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
-                    Product
+                    Cart
                   </Link>
                 </li>
               </ul>
