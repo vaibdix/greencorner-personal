@@ -44,6 +44,7 @@ import ProductDemo from '../pages/Product/ProductDemo';
 import Cart from '../pages/Cart/Cart';
 import PlantCare from '../pages/PlantCare/PlantCare';
 import About from '../pages/About/About';
+import Checkout from '../pages/checkout/Checkout';
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/checkout',
+        element: <Checkout />,
       },
       {
         path: '*',
