@@ -18,7 +18,20 @@ const sunlightRequirement = {
 const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight }) => {
   const navigate = useNavigate();
   const sunlightIconRef = useRef(null);
-  const { addToCart } = useContext(context);
+  const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useContext(context);
+
+  const handleAddToFav = (e) => {
+    e.stopPropagation();
+    const productData = { id, name, type, price, imageUrl };
+    
+    if (isInWishlist(id)) {
+      removeFromWishlist(id);
+      toast.success('Removed from wishlist!');
+    } else {
+      addToWishlist(productData);
+      toast.success('Added to wishlist!');
+    }
+  };
 
   const handleCardClick = () => {
     navigate(`/product/${id}`);
@@ -83,10 +96,11 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
           <div className="name col-span-1 row-span-1 text-lg">{name}</div>
 
           <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
-            <Heart width={18} className="text-red-400" onClick={(e) => {
-              e.stopPropagation();
-              handleAddToFav();
-            }} />
+            <Heart 
+              width={18} 
+              className={`cursor-pointer ${isInWishlist(id) ? 'fill-red-400 text-red-400' : 'text-red-400'}`}
+              onClick={handleAddToFav}
+            />
             <div
               className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white transition-all hover:bg-[#2a454d] active:scale-95"
               onClick={handleAddToCart}
