@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/newlogo.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ const Header = () => {
         <nav className="border-b-2 border-gray-200 bg-white px-4 py-2.5 lg:px-6">
           <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
             <Link to="/" className="flex items-center">
-              <img src="src/assets/newlogo.png" className="mr-3 h-24 sm:h-9" alt="Green Corner Logo" />
+              <img src={logo} className="mr-3 h-24 sm:h-9" alt="Green Corner Logo" />
               <span className="self-center text-xl font-semibold">The Green Corner</span>
             </Link>
             <div className="flex items-center gap-3 lg:order-2">
@@ -35,7 +36,10 @@ const Header = () => {
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
               </Link>
-              <Link to="/signin" className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5">
+              <Link
+                to="/signin"
+                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -52,7 +56,10 @@ const Header = () => {
                   <path d="m21 21-4.3-4.3" />
                 </svg>
               </Link>
-              <Link to="/signin" className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5">
+              <Link
+                to="/signin"
+                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -70,7 +77,10 @@ const Header = () => {
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
               </Link>
-              <Link to="/signin" className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5">
+              <Link
+                to="/signin"
+                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -93,7 +103,7 @@ const Header = () => {
                 type="button"
                 className="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 lg:hidden"
                 aria-controls="mobile-menu-2"
-                aria-expanded={isMobileMenuOpen ? "true" : "false"}
+                aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
               >
                 <span className="sr-only">Open main menu</span>
                 <svg
@@ -124,7 +134,7 @@ const Header = () => {
             </div>
             <div
               className={`${
-                isMobileMenuOpen ? "block" : "hidden"
+                isMobileMenuOpen ? 'block' : 'hidden'
               } w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
               id="mobile-menu-2"
             >
@@ -143,7 +153,7 @@ const Header = () => {
                     to="/category"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
-                    Plants
+                    All Plants
                   </Link>
                 </li>
                 <li>

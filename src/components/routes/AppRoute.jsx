@@ -41,6 +41,7 @@ import Product from '../pages/Product/Product';
 import MainLayout from '../../layouts/MainLayout'; // Import MainLayout
 import NotFound from '../pages/NotFound/NotFound';
 import ProductDemo from '../pages/Product/ProductDemo';
+import Cart from '../pages/Cart/Cart';
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
   {
     path: '/productdemo',
     element: <ProductDemo />,
+  },
+  {
+    path: '/cart',
+    element: <Cart />,
   },
 
 

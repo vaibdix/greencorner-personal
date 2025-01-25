@@ -1,5 +1,6 @@
 ### Component Reference
-  - https://pagedone.io/blocks#product-E-commerce
+
+- https://pagedone.io/blocks#product-E-commerce
 
 ---
 
@@ -20,6 +21,7 @@ src/
 |----CartContext.jsx
 |----UserContext.jsx
 |--hooks/
+|----useFetch.js
 |----useCart.js
 |----useAuth.js
 |--layouts/
@@ -46,7 +48,6 @@ src/
 
 ---
 
-
 ## Plant API Documentation Swagger( Orignial )
 
 **Version:** 1.0.0  
@@ -67,6 +68,7 @@ src/
 ### 1. **Plants**
 
 #### `GET /plants`
+
 - **Description:** Retrieve a list of all plants available in the system.
 - **Parameters:** None
 - **Responses:**
@@ -83,6 +85,7 @@ src/
     ```
 
 #### `POST /addPlant`
+
 - **Description:** Add a new plant to the database.
 - **Parameters:** None
 - **Responses:**
@@ -91,6 +94,7 @@ src/
     - **Schema:** `{}`
 
 #### `DELETE /deletePlant/{id}`
+
 - **Description:** Delete a plant by its ID.
 - **Parameters:**
   - `id` (Path Parameter): The ID of the plant to be deleted.
@@ -112,6 +116,7 @@ src/
 ### 2. **Equipments**
 
 #### `GET /equipments`
+
 - **Description:** Retrieve a list of all equipment related to plants.
 - **Parameters:** None
 - **Responses:**
@@ -128,6 +133,7 @@ src/
     ```
 
 #### `POST /addEquipment`
+
 - **Description:** Add a new equipment item related to plant care.
 - **Parameters:** None
 - **Responses:**
@@ -142,6 +148,7 @@ src/
     ```
 
 #### `DELETE /deleteEquipment/{id}`
+
 - **Description:** Delete equipment by its ID.
 - **Parameters:**
   - `id` (Path Parameter): The ID of the equipment to be deleted.
@@ -160,6 +167,7 @@ src/
 ### 3. **Users**
 
 #### `GET /auth`
+
 - **Description:** Retrieve authentication information (e.g., user details).
 - **Parameters:** None
 - **Responses:**
@@ -174,6 +182,7 @@ src/
     ```
 
 #### `POST /addUser`
+
 - **Description:** Add a new user to the system.
 - **Parameters:** None
 - **Responses:**
@@ -182,6 +191,7 @@ src/
     - **Schema:** `{}`
 
 #### `DELETE /deleteUser/{userId}`
+
 - **Description:** Delete a user by their ID.
 - **Parameters:**
   - `userId` (Path Parameter): The ID of the user to be deleted.
@@ -200,6 +210,7 @@ src/
 ### 4. **Soils**
 
 #### `GET /soils`
+
 - **Description:** Retrieve a list of all soils available in the system.
 - **Parameters:** None
 - **Responses:**
@@ -216,6 +227,7 @@ src/
     ```
 
 #### `POST /addSoil`
+
 - **Description:** Add a new soil type to the system.
 - **Parameters:** None
 - **Responses:**
@@ -230,6 +242,7 @@ src/
     ```
 
 #### `DELETE /deleteSoil/{id}`
+
 - **Description:** Delete a soil type by its ID.
 - **Parameters:**
   - `id` (Path Parameter): The ID of the soil type to be deleted.
@@ -246,11 +259,13 @@ src/
 ---
 
 ## General Observations:
+
 - **Clearer API Endpoints:** Removed redundant descriptions and streamlined endpoint purposes.
 - **Consistent Response Formats:** Example responses are now consistent for clarity.
 - **Path Parameters:** Defined path parameters like `id` and `userId` where necessary.
 - **Descriptive Responses:** More accurate and meaningful response messages, especially for `DELETE` operations.
 
 ## Suggestions for Improvement:
+
 - **Authorization:** Consider adding authentication details (e.g., API keys, OAuth) for secure endpoints like `/auth`.
 - **Validations:** For `POST /addPlant` and similar endpoints, consider specifying request body validation (schema).

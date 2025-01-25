@@ -290,7 +290,7 @@ const Product = () => {
             <div className="justify-center lg:justify-start">
               <div className="">
                 <img
-                  className="h-[500px] w-full rounded-xl object-cover"
+                  className="h-[500px] w-full rounded-xl object-contain"
                   // className="w-full rounded-xl object-cover"
                   src={mainImage}
                   alt="Main Product"
