@@ -18,6 +18,9 @@ const sunlightRequirement = {
 const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight }) => {
   const navigate = useNavigate();
   const sunlightIconRef = useRef(null);
+  const { addToCart } = useContext(context);
+
+  
 
   const handleCardClick = () => {
     navigate(`/product/${id}`);
@@ -43,12 +46,10 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
     return sunlightRequirement[sunlight] || <Sun />;
   };
 
-  const handleAddToCart = () => {
-    toast.success('Added to Cart!');
-  };
-
-  const handleAddToFav = () => {
-    toast.success('Added to Favourites!');
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Prevent navigation
+    addToCart({ id, name, price, imageUrl, quantity: 1 });
+    toast.success('Added to cart!');
   };
 
   return (
@@ -84,9 +85,12 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
           <div className="name col-span-1 row-span-1 text-lg">{name}</div>
 
           <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
-            <Heart width={18} className="text-red-400" onClick={handleAddToFav} />
+            <Heart width={18} className="text-red-400" onClick={(e) => {
+              e.stopPropagation();
+              handleAddToFav();
+            }} />
             <div
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white"
+              className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white transition-all hover:bg-[#2a454d] active:scale-95"
               onClick={handleAddToCart}
             >
               <svg
@@ -134,27 +138,27 @@ const CardFive = () => {
   if (loading) return <div>Loading best sellers...</div>;
   if (error) return <div>Error loading best sellers: {error}</div>;
 
+  // In the CardFive component's return, remove ToastContainer
   return (
-    <>
-      <h3 className="-mb-5 mt-12 pl-14 text-3xl">BestSellers</h3>
-      <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {bestSellerPlants.map((plant) => (
-          <PlantCard
-            key={plant.id}
-            id={plant.id}
-            name={plant.name}
-            type={plant.categories[0]}
-            price={plant.price}
-            imageUrl={plant.primaryImage}
-            bgColor={plant.bgColor}
-            rating={plant.rating}
-            sunlight={plant.sunlightRequirement}
-          />
-        ))}
-      </div>
-      <ToastContainer />
-    </>
-  );
+      <>
+        <h3 className="-mb-5 mt-12 pl-14 text-3xl">BestSellers</h3>
+        <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {bestSellerPlants.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              id={plant.id}
+              name={plant.name}
+              type={plant.categories[0]}
+              price={plant.price}
+              imageUrl={plant.primaryImage}
+              bgColor={plant.bgColor}
+              rating={plant.rating}
+              sunlight={plant.sunlightRequirement}
+            />
+          ))}
+        </div>
+      </>
+    );
 };
 
 export default CardFive;

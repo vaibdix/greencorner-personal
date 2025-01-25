@@ -1,8 +1,12 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { context } from '../../../context/AppContext';
+import { toast } from 'react-hot-toast';
 
 const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, primaryImage }) => {
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const { addToCart } = useContext(context);
+  
     const displayImage = imageUrl || primaryImage;
 
     console.log('Plant Card Props:', { id, name, type, price, imageUrl, primaryImage, bgColor, rating });
@@ -19,6 +23,12 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, primaryIm
 
   const renderStars = (rating) => {
     return <span className="text-yellow-500">★</span>;
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Prevent navigation when clicking the cart button
+    addToCart({ id, name, price, imageUrl: displayImage, quantity: 1 });
+    toast.success('Added to cart!');
   };
 
   return (
@@ -82,12 +92,15 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, primaryIm
         <div className="grid grid-flow-row grid-cols-2 grid-rows-2">
           <div className="name text-md col-span-1 row-span-1">{name}</div>
 
-          {/* Basket Icon */}
+          {/* Updated Basket Icon with onClick handler */}
           <div className="basket col-span-1 row-span-2 mt-2 flex justify-end sm:ml-auto">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1c3035] text-white">
+            <div 
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1c3035] text-white transition-all hover:bg-[#2a454d] active:scale-95"
+              onClick={handleAddToCart}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22" // Adjust the size of the SVG
+                width="22"
                 height="22"
                 viewBox="0 0 24 24"
                 fill="none"
