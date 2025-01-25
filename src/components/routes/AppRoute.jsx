@@ -45,6 +45,7 @@ import Cart from '../pages/Cart/Cart';
 import PlantCare from '../pages/PlantCare/PlantCare';
 import About from '../pages/About/About';
 import Checkout from '../pages/checkout/Checkout';
+import Wishlist from '../pages/Wishlist/Wishlist';
 
 export const router = createBrowserRouter([
   {
@@ -92,5 +93,9 @@ export const router = createBrowserRouter([
         element: <NotFound />,
       },
     ],
+  },
+  {
+    path: '/wishlist',
+    element: <Wishlist />,
   },
 ]);
