@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { context } from '../../context/AppContext';
 import logo from '../../../assets/newlogo.png';
 
 const Header = () => {
+  const { state } = useContext(context);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Calculate total items in cart
+  const cartItemsCount = state.cart.reduce((total, item) => total + item.quantity, 0);
 
   // Function to toggle mobile menu visibility
   const toggleMobileMenu = () => {
@@ -58,7 +63,7 @@ const Header = () => {
               </Link>
               <Link
                 to="/cart"
-                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+                className="relative rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +81,11 @@ const Header = () => {
                   <path d="M3 6h18" />
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
+                {cartItemsCount > 0 && (
+                  <span className="absolute -right-2 -top-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                    {cartItemsCount}
+                  </span>
+                )}
               </Link>
               <Link
                 to="/signin"
@@ -178,6 +188,14 @@ const Header = () => {
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
                     Cart
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/checkout"
+                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
+                  >
+                    Checkout
                   </Link>
                 </li>
               </ul>
