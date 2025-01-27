@@ -4,6 +4,23 @@
 
 ---
 
+#### upgrade react to version 19 and use react compiler for memoization benefits
+
+```jsx
+export default defineConfig({
+  plugins: [
+    react({
+      babel: {
+        plugins: [['babel-plugin-react-compiler']]
+      }
+    })
+  ]
+})
+```
+
+
+---
+
 ### Restructure Application
 
 src/
