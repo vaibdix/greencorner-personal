@@ -147,7 +147,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group rounded-lg bg-white p-8 text-center shadow-sm transition-all hover:shadow-md"
+                className="group rounded-lg bg-white p-8 text-center shadow-xs transition-all hover:shadow-md"
               >
                 <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-sage-100 text-sage-600 transition-all group-hover:bg-sage-200">
                   {value.icon}

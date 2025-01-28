@@ -134,9 +134,9 @@
 //                 </button>
 
 //                 <div className="relative m-6 flex items-center justify-center">
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                   <span className="mx-4 text-gray-400">Or use Email</span>
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                 </div>
 
 //                 <div className="mt-4">
@@ -340,9 +340,9 @@
 //                 </button>
 
 //                 <div className="relative m-6 flex items-center justify-center">
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                   <span className="mx-4 text-gray-400">Or use Email</span>
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                 </div>
 
 //                 <div className="mt-4">
@@ -582,9 +582,9 @@ const SignUp = () => {
                 </button>
 
                 <div className="relative m-6 flex items-center justify-center">
-                  <div className="flex-grow border-t border-gray-300"></div>
+                  <div className="grow border-t border-gray-300"></div>
                   <span className="mx-4 text-gray-400">Or use Email</span>
-                  <div className="flex-grow border-t border-gray-300"></div>
+                  <div className="grow border-t border-gray-300"></div>
                 </div>
 
                 <div className="mt-4">
@@ -663,7 +663,7 @@ const SignUp = () => {
                     <div
                       id="tooltip-right"
                       role="tooltip"
-                      className={`absolute right-0 z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-100 tooltip dark:bg-gray-700 ${passwordRules.length && passwordRules.uppercase && passwordRules.specialChar ? 'bg-green-600' : 'bg-gray-900'}`}
+                      className={`absolute right-0 z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-xs opacity-100 tooltip dark:bg-gray-700 ${passwordRules.length && passwordRules.uppercase && passwordRules.specialChar ? 'bg-green-600' : 'bg-gray-900'}`}
                       style={{ top: 'calc(100% + 8px)' }}
                     >
                       <div>Password Rules:</div>

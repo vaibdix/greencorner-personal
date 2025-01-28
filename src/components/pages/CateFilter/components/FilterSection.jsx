@@ -68,7 +68,7 @@ const FilterSection = ({
                     value={priceRange.min}
                     onChange={handlePriceChange}
                     min={0}
-                    className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                    className="w-full rounded-md border-gray-200 shadow-xs sm:text-sm"
                   />
                 </label>
                 <label htmlFor="maxPrice" className="flex items-center gap-2">
@@ -80,7 +80,7 @@ const FilterSection = ({
                     value={priceRange.max}
                     onChange={handlePriceChange}
                     min={0}
-                    className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+                    className="w-full rounded-md border-gray-200 shadow-xs sm:text-sm"
                   />
                 </label>
               </div>
@@ -128,7 +128,7 @@ const FilterSection = ({
         {/* Apply Filters Button */}
         <button
           onClick={applyFilters}
-          className="ml-5 mt-5 rounded bg-[#1c3035] px-4 py-2 text-white"
+          className="ml-5 mt-5 rounded-sm bg-[#1c3035] px-4 py-2 text-white"
         >
           Apply Filters
         </button>

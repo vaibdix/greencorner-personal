@@ -21,7 +21,7 @@ const OrderSummary = () => {
                   Order Payment : <span className="font-medium text-gray-400"> 18th march 2021</span>
                 </p>
               </div>
-              <button className="rounded-full bg-indigo-600 px-7 py-3 text-sm font-semibold leading-7 text-white shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-400 max-lg:mt-5">
+              <button className="rounded-full bg-indigo-600 px-7 py-3 text-sm font-semibold leading-7 text-white shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-400 max-lg:mt-5">
                 Track Your Order
               </button>
             </div>

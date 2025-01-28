@@ -12,7 +12,7 @@ const HomeCategory = () => {
           <button
             id="dropdown-hover"
             type="button"
-            className="dropdown-toggle shadow-xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
+            className="dropdown-toggle shadow-2xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
           >
             <Sun size={24} />
             Sun Sensitivity
@@ -78,7 +78,7 @@ const HomeCategory = () => {
           <button
             id="dropdown-hover"
             type="button"
-            className="dropdown-toggle shadow-xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
+            className="dropdown-toggle shadow-2xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
           >
             <Droplets size={24} />
             Moisture Req
@@ -144,7 +144,7 @@ const HomeCategory = () => {
           <button
             id="dropdown-hover"
             type="button"
-            className="dropdown-toggle shadow-xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
+            className="dropdown-toggle shadow-2xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
           >
             <Earth size={24} />
             Soil Type
@@ -210,7 +210,7 @@ const HomeCategory = () => {
           <button
             id="dropdown-hover"
             type="button"
-            className="dropdown-toggle shadow-xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
+            className="dropdown-toggle shadow-2xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
           >
             <SunSnow size={24} />
             Season
@@ -276,7 +276,7 @@ const HomeCategory = () => {
           <button
             id="dropdown-hover"
             type="button"
-            className="dropdown-toggle shadow-xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
+            className="dropdown-toggle shadow-2xs inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-center text-sm font-semibold transition-all duration-500"
           >
             <Shrub size={24} />
             Growth Rate

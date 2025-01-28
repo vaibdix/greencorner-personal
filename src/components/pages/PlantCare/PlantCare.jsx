@@ -111,7 +111,7 @@ const PlantCare = () => {
   ];
 
   return (
-    <div className="from-sage-50 to-sage-100 min-h-screen bg-gradient-to-b">
+    <div className="from-sage-50 to-sage-100 min-h-screen bg-linear-to-b">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ const PlantCare = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 + 0.5 }}
-              className="group rounded-lg bg-white p-8 shadow-sm transition-all hover:shadow-md"
+              className="group rounded-lg bg-white p-8 shadow-xs transition-all hover:shadow-md"
             >
               <div className="bg-sage-100 text-sage-600 group-hover:bg-sage-200 mb-4 inline-block rounded-full p-3 transition-all">
                 {item.icon}
@@ -248,7 +248,7 @@ const PlantCare = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="overflow-hidden rounded-lg bg-white shadow-sm"
+                className="overflow-hidden rounded-lg bg-white shadow-xs"
               >
                 <div className="h-48 overflow-hidden">
                   <img

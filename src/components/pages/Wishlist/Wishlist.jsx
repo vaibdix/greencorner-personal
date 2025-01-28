@@ -34,7 +34,7 @@ const WishlistCard = ({ id, name, price, imageUrl, type }) => {
         </button>
       </div>
 
-      <div className="mt-4 flex flex-grow flex-col">
+      <div className="mt-4 flex grow flex-col">
         <span className="text-sm text-gray-500">{type}</span>
         <h3 className="text-lg font-semibold">{name}</h3>
         <div className="mt-2 flex items-center justify-between">

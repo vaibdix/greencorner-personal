@@ -109,9 +109,9 @@ import Footer from '../Footer/Footer';
 //                 </button>
 
 //                 <div className="relative m-6 flex items-center justify-center">
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                   <span className="mx-4 text-gray-400">Or use Email</span>
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                 </div>
 
 //                 <div className="mt-4">
@@ -279,9 +279,9 @@ import Footer from '../Footer/Footer';
 //                 </button>
 
 //                 <div className="relative m-6 flex items-center justify-center">
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                   <span className="mx-4 text-gray-400">Or use Email</span>
-//                   <div className="flex-grow border-t border-gray-300"></div>
+//                   <div className="grow border-t border-gray-300"></div>
 //                 </div>
 
 //                 <div className="mt-4">
@@ -447,9 +447,9 @@ const SignIn = () => {
                 </button>
 
                 <div className="relative m-6 flex items-center justify-center">
-                  <div className="flex-grow border-t border-gray-300"></div>
+                  <div className="grow border-t border-gray-300"></div>
                   <span className="mx-4 text-gray-400">Or use Email</span>
-                  <div className="flex-grow border-t border-gray-300"></div>
+                  <div className="grow border-t border-gray-300"></div>
                 </div>
 
                 <div className="mt-4">

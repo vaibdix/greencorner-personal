@@ -234,7 +234,7 @@ const Section = ({ plants: contextPlants }) => {
   const totalPages = Math.ceil(filteredPlants.length / productsPerPage);
 
   return (
-    // <div className="grid grid-cols-[1.5fr,5fr] gap-4">
+    // <div className="grid grid-cols-[1.5fr_5fr] gap-4">
     //   {/* Filter Section (Left Sidebar) */}
     //   <aside className="border p-4">
     //     <div className="border-b p-5 text-xl font-semibold">Filter</div>
@@ -290,7 +290,7 @@ const Section = ({ plants: contextPlants }) => {
     //                 value={priceRange.min}
     //                 onChange={handlePriceChange}
     //                 min={0}
-    //                 className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+    //                 className="w-full rounded-md border-gray-200 shadow-xs sm:text-sm"
     //               />
     //             </label>
     //             <label htmlFor="maxPrice" className="flex items-center gap-2">
@@ -302,7 +302,7 @@ const Section = ({ plants: contextPlants }) => {
     //                 value={priceRange.max}
     //                 onChange={handlePriceChange}
     //                 min={0}
-    //                 className="w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+    //                 className="w-full rounded-md border-gray-200 shadow-xs sm:text-sm"
     //               />
     //             </label>
     //           </div>
@@ -350,7 +350,7 @@ const Section = ({ plants: contextPlants }) => {
     //     {/* Apply Filters Button */}
     //     <button
     //       onClick={applyFilters}
-    //       className="ml-5 mt-5 rounded bg-[#1c3035] px-4 py-2 text-white"
+    //       className="ml-5 mt-5 rounded-sm bg-[#1c3035] px-4 py-2 text-white"
     //     >
     //       Apply Filters
     //     </button>
@@ -411,7 +411,7 @@ const Section = ({ plants: contextPlants }) => {
     //   </div>
     // </div>
     
-    <div className="grid grid-cols-[1.5fr,5fr] gap-4">
+    <div className="grid grid-cols-[1.5fr_5fr] gap-4">
       <FilterSection className="fixed"
         availability={availability}
         priceRange={priceRange}

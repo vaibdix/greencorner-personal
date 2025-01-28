@@ -106,7 +106,7 @@
 //               </div>
 
 //               <div className="mb-2 mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
 //                   <img
 //                     src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"
 //                     width={40}
@@ -114,7 +114,7 @@
 //                   />
 //                   <span>Add Bucket</span>
 //                 </button>
-//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
 //                   <Wallet />
 //                   <span>+ 300</span>
 //                 </button>
@@ -122,11 +122,11 @@
 
 //               {/* Add to Cart and other options */}
 //               <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
 //                   <ShoppingBag />
 //                   <span>Add to Cart</span>
 //                 </button>
-//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
 //                   <Wallet />
 //                   <span>Buy Now</span>
 //                 </button>
@@ -383,7 +383,7 @@ const Product = () => {
               </div>
 
               <div className="mb-2 mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <img
                     src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"
                     width={40}
@@ -391,7 +391,7 @@ const Product = () => {
                   />
                   <span>Add Bucket</span>
                 </button>
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <Wallet />
                   <span>+ 300</span>
                 </button>
@@ -399,11 +399,11 @@ const Product = () => {
 
               {/* Add to Cart and other options */}
               <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <ShoppingBag />
                   <span>Add to Cart</span>
                 </button>
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <Wallet />
                   <span>Buy Now</span>
                 </button>

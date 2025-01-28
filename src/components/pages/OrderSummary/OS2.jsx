@@ -75,7 +75,7 @@ const OS2 = () => {
                     </svg>
                     <input
                       type="text"
-                      className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white px-2.5 text-lg font-medium leading-relaxed text-gray-900 placeholder-gray-900 focus:outline-none"
+                      className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white px-2.5 text-lg font-medium leading-relaxed text-gray-900 placeholder-gray-900 focus:outline-hidden"
                       placeholder="02"
                     />
                     <svg
@@ -193,7 +193,7 @@ const OS2 = () => {
                     </svg>
                     <input
                       type="text"
-                      className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white px-2.5 text-lg font-medium leading-relaxed text-gray-900 placeholder-gray-900 focus:outline-none"
+                      className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white px-2.5 text-lg font-medium leading-relaxed text-gray-900 placeholder-gray-900 focus:outline-hidden"
                       placeholder="02"
                     />
                     <svg
