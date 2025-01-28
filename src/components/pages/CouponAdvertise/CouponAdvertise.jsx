@@ -2,9 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import flowerskin from '../../../assets/flowerskin.png';
-import redpot from '../../../assets/redpot.png';
-import pot from '../../../assets/pot.png';
+import flowerskin from '../../../assets/images/flowerskin.png';
+import redpot from '../../../assets/images/redpot.png';
+import pot from '../../../assets/images/pot.png';
 
 
 const CouponAdvertise = () => {

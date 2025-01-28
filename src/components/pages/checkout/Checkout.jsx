@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { context } from '../../context/AppContext';
-import googlelogo from '../../../assets/gpay.svg'
-import applelogo from '../../../assets/applepay.svg'
+import googlelogo from '../../../assets/svg/gpay.svg'
+import applelogo from '../../../assets/svg/applepay.svg'
 
 const Checkout = () => {
   const { state, cartTotal } = useContext(context);

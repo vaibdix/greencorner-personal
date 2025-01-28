@@ -1,4 +1,5 @@
 import React from 'react';
+import yellowleaf from '../../../assets/images/yellowleaf.png';
 
 const InfiniteScrollText = () => {
   return (
@@ -35,7 +36,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
 
@@ -45,7 +46,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
 
@@ -55,7 +56,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
         </ul>
@@ -67,7 +68,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
 
@@ -77,7 +78,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
 
@@ -87,7 +88,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
 
@@ -97,7 +98,7 @@ const InfiniteScrollText = () => {
 
           <li className="plus">
             <span className="company">
-              <img src="src/assets/yellowleaf.png" alt="leaf" />
+              <img src={yellowleaf} alt="leaf" />
             </span>
           </li>
         </ul>

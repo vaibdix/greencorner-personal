@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { context } from '../../context/AppContext';
-import logo from '../../../assets/newlogo.png';
+import logo from '../../../assets/images/newlogo.png';
 
 const Header = () => {
   const { state } = useContext(context);

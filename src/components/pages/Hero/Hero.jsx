@@ -1,5 +1,6 @@
 import React from 'react';
 import InfiniteScrollText from './InfiniteScrollText';
+import womanImage from '../../../assets/images/woman.png';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -55,7 +56,7 @@ const Hero = () => {
 
           <div className="-pt-3 relative z-10 hidden lg:col-span-5 lg:mt-0 lg:flex">
             <img
-              src="src/assets/woman.png"
+              src={womanImage}
               alt="mockup"
               // style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
