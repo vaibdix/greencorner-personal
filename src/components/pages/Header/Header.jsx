@@ -205,6 +205,14 @@ const Header = () => {
                     Checkout
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/addnewplant"
+                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pl-3 pr-4 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
+                  >
+                    Add New Plant
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

@@ -1,6 +1,8 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { context } from '../../context/AppContext';
+import googlelogo from '../../../assets/gpay.svg'
+import applelogo from '../../../assets/applepay.svg'
 
 const Checkout = () => {
   const { state, cartTotal } = useContext(context);
@@ -36,7 +38,7 @@ const Checkout = () => {
             {/* Left Section - Form */}
             <div className="w-full pb-8 pt-14 lg:py-14">
               <h2 className="font-manrope mb-8 text-2xl font-semibold">Shipping Information</h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <input
                   type="email"
@@ -115,11 +117,11 @@ const Checkout = () => {
                 <div className="mt-8">
                   <h3 className="font-manrope mb-4 text-xl font-semibold">Payment Method</h3>
                   <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                    <div className="flex items-center justify-center rounded-lg border border-gray-200 p-4">
-                      <img src="/gpay.png" alt="Google Pay" className="h-8" />
+                    <div className="flex items-center justify-center ">
+                      <img src={googlelogo} alt="Google Pay" className="" />
                     </div>
-                    <div className="flex items-center justify-center rounded-lg border border-gray-200 p-4">
-                      <img src="/applepay.png" alt="Apple Pay" className="h-8" />
+                    <div className="flex items-center justify-center">
+                      <img src={applelogo} alt="Apple Pay" className="" />
                     </div>
                     <div className="flex items-center justify-center rounded-lg border border-gray-200 p-4">
                       <img src="/paytm.png" alt="Paytm" className="h-8" />
@@ -135,7 +137,7 @@ const Checkout = () => {
             {/* Right Section - Order Summary */}
             <div className="w-full bg-gray-50 p-8">
               <h2 className="font-manrope mb-6 text-2xl font-semibold">Order Summary</h2>
-              
+
               <div className="space-y-4">
                 {cart.map((item) => (
                   <div key={item.id} className="flex items-center gap-4">

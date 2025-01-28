@@ -23,7 +23,7 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
   const handleAddToFav = (e) => {
     e.stopPropagation();
     const productData = { id, name, type, price, imageUrl };
-    
+
     if (isInWishlist(id)) {
       removeFromWishlist(id);
       toast.success('Removed from wishlist!');
@@ -96,8 +96,8 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
           <div className="name col-span-1 row-span-1 text-lg">{name}</div>
 
           <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
-            <Heart 
-              width={18} 
+            <Heart
+              width={18}
               className={`cursor-pointer ${isInWishlist(id) ? 'fill-red-400 text-red-400' : 'text-red-400'}`}
               onClick={handleAddToFav}
             />
@@ -153,7 +153,7 @@ const CardTen = () => {
 
   return (
     <>
-      <h3 className="-mb-5 mt-12 pl-14 text-3xl">BestSellers</h3>
+      <h3 className="-mb-5 mt-12 pl-14 text-3xl">All Products</h3>
       <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {bestSellerPlants.map((plant) => (
           <PlantCard
@@ -171,8 +171,8 @@ const CardTen = () => {
       </div>
       <ToastContainer />
       <div className="flex justify-center w-full">
-        <button 
-          onClick={() => navigate('/category')} 
+        <button
+          onClick={() => navigate('/category')}
           className='px-4 py-2 bg-[#1c3035] text-white rounded-md'
         >
           Show More

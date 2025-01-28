@@ -46,6 +46,7 @@ import PlantCare from '../pages/PlantCare/PlantCare';
 import About from '../pages/About/About';
 import Checkout from '../pages/checkout/Checkout';
 import Wishlist from '../pages/Wishlist/Wishlist';
+import AddPlant from '../pages/AddPlant/AddPlant';
 
 export const router = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
         path: '*',
         element: <NotFound />,
       },
+      {
+        path: '/addnewplant',
+        element: <AddPlant />,
+      }
     ],
   },
 ]);
