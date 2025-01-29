@@ -4,6 +4,7 @@ import { MoveUpRight } from 'lucide-react';
 import { Plus } from 'lucide-react';
 import React, { useContext } from 'react';
 import { context } from '../../store/AppContext';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   // const { state, updateCartQuantity, removeFromCart, cartTotal } = useContext(context);
@@ -185,12 +186,15 @@ const Cart = () => {
                     <line x1="0" y1="1" x2="100%" y2="1" stroke="#E5E7EB" strokeWidth="2" />
                   </svg>
 
-                  <button className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#1c3035] px-6 py-3 text-center text-lg font-semibold text-white transition-all duration-500 hover:bg-indigo-700">
+                  <Link 
+                    to="/checkout"
+                    className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#1c3035] px-6 py-3 text-center text-lg font-semibold text-white transition-all duration-500 hover:bg-indigo-700"
+                  >
                     Checkout
                     <span className="ml-5 rounded-full bg-white p-1">
                       <ArrowUpRight color="black" />
                     </span>
-                  </button>
+                  </Link>
                 </form>
               </div>
             </div>
