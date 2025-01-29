@@ -9,10 +9,35 @@ import { context } from '../../../../store/AppContext';
 import { useRef } from 'react';
 
 const sunlightRequirement = {
-  'Full Sun': <Sun />,
-  'Partial Shade': <SunDim />,
-  'Indirect Light': <CloudSun />,
-  'Bright Indirect Light': <CloudAlert />,
+  'Full Sun': { icon: <Sun />, animation: (ref) => ({
+    rotate: 15,
+    duration: 4,
+    repeat: -1,
+    yoyo: true,
+    ease: "power1.inOut"
+  })},
+  'Partial Shade': { icon: <SunDim />, animation: (ref) => ({
+    x: 5,
+    duration: 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "power2.inOut"
+  })},
+  'Indirect Light': { icon: <CloudSun />, animation: (ref) => ({
+    y: 3,
+    x: 3,
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  })},
+  'Bright Indirect Light': { icon: <CloudAlert />, animation: (ref) => ({
+    scale: 1.2,
+    duration: 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "back.inOut(1.7)"
+  })},
 };
 
 const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight }) => {
@@ -38,23 +63,14 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
   };
 
   useEffect(() => {
-    gsap.fromTo(
-      sunlightIconRef.current,
-      { y: -10 },
-      {
-        y: 0,
-        duration: 1,
-        ease: 'bounce.out',
-        repeat: -1,
-        yoyo: true,
-      }
-    );
+    const animation = sunlightRequirement[sunlight]?.animation || sunlightRequirement['Full Sun'].animation;
+    gsap.to(sunlightIconRef.current, animation());
 
     return () => gsap.killTweensOf(sunlightIconRef.current);
-  }, []);
+  }, [sunlight]);
 
   const getSunlightIcon = (sunlight) => {
-    return sunlightRequirement[sunlight] || <Sun />;
+    return sunlightRequirement[sunlight]?.icon || sunlightRequirement['Full Sun'].icon;
   };
 
   const handleAddToCart = (e) => {
