@@ -2,13 +2,13 @@ import logo from '../../../assets/images/newlogo.png';
 
 const Footer = () => {
   return (
-    <footer className="bottom-0 left-0 right-0 m-5 rounded-lg bg-[#1C3035]">
+    <footer className="right-0 bottom-0 left-0 m-5 rounded-lg bg-[#1C3035]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-3 gap-y-8 py-10 max-sm:mx-auto max-sm:max-w-sm sm:grid-cols-4 md:gap-8 lg:grid-cols-6">
           <div className="col-span-full mb-10 lg:col-span-2 lg:mb-0">
             <a href="#" className="flex justify-center lg:justify-start">
               <img src={logo} className="h-6 sm:h-9" alt="Plant it. Logo" />{' '}
-              <span className="ml-5 mt-2 text-lg font-semibold text-white"> The Green Corner</span>
+              <span className="mt-2 ml-5 text-lg font-semibold text-white"> The Green Corner</span>
             </a>
             <p className="py-8 text-center text-sm text-white lg:max-w-xs lg:text-left">
               The Planet Kingdom encompassed <br /> all living things that were not <br />

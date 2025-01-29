@@ -275,9 +275,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                           <p className="text-sm text-gray-400">₹{plant.price}</p>
                         </div>
                       </div>
-                      <span className="text-sm text-white">
-                        View details
-                      </span>
+                      <span className="text-sm text-white">View details</span>
                     </div>
                   </div>
                 ))}

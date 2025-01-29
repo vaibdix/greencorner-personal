@@ -28,11 +28,11 @@ const Review = ({ reviews }) => {
                     alt={`${review.username} image`}
                     className="h-8 w-8 rounded-full object-cover"
                   />
-                  <h6 className="text-lg font-semibold leading-8 text-indigo-600">
+                  <h6 className="text-lg leading-8 font-semibold text-indigo-600">
                     {review.username}
                   </h6>
                 </div>
-                <p className="text-lg font-normal leading-8 text-gray-400">{review.date}</p>
+                <p className="text-lg leading-8 font-normal text-gray-400">{review.date}</p>
               </div>
 
               {/* Rating Stars */}
@@ -46,12 +46,12 @@ const Review = ({ reviews }) => {
               </div>
 
               {/* Review Text */}
-              <p className="ml-10 text-lg font-normal leading-8 text-gray-400 max-xl:text-justify">
+              <p className="ml-10 text-lg leading-8 font-normal text-gray-400 max-xl:text-justify">
                 {review.comment}
               </p>
 
               {/* Likes and Dislikes */}
-              <div className="ml-10 mt-4 flex items-center gap-6">
+              <div className="mt-4 ml-10 flex items-center gap-6">
                 <button className="flex items-center text-green-600 hover:text-green-800">
                   <span className="mt-1 pr-2 font-semibold">{review.likes}</span> <ThumbsUp />
                 </button>

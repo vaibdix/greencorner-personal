@@ -1,11 +1,9 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import flowerskin from '../../../../assets/images/flowerskin.png';
 import redpot from '../../../../assets/images/redpot.png';
 import pot from '../../../../assets/images/pot.png';
-
 
 const CouponAdvertise = () => {
   return (
@@ -43,7 +41,7 @@ const CouponAdvertise = () => {
             <img
               src={flowerskin}
               alt="Interior Plant"
-              className="h-128 w-128 absolute bottom-0 right-0 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="absolute right-0 bottom-0 h-128 w-128 object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </motion.div>
 
@@ -65,7 +63,7 @@ const CouponAdvertise = () => {
               <img
                 src={pot}
                 alt="Monstera Plant"
-                className="absolute bottom-5 right-0 h-32 w-32 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="absolute right-0 bottom-5 h-32 w-32 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </motion.div>
 
@@ -87,7 +85,7 @@ const CouponAdvertise = () => {
               <img
                 src={redpot}
                 alt="Garden Plant"
-                className="absolute bottom-0 right-0 h-32 w-32 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="absolute right-0 bottom-0 h-32 w-32 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </motion.div>
           </div>

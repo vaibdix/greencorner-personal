@@ -98,7 +98,6 @@ const AddPlantDemo = () => {
     }
   };
 
-  
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
     setPlantData((prev) => ({

@@ -75,7 +75,8 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
   };
 
   useEffect(() => {
-    const animation = sunlightRequirement[sunlight]?.animation || sunlightRequirement['Full Sun'].animation;
+    const animation =
+      sunlightRequirement[sunlight]?.animation || sunlightRequirement['Full Sun'].animation;
     gsap.to(sunlightIconRef.current, animation());
 
     return () => gsap.killTweensOf(sunlightIconRef.current);

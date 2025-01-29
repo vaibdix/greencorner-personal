@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <div>
-      <section className="relative bg-cover bg-center bg-no-repeat"
-      // style={{ height: '55vh' }}
+      <section
+        className="relative bg-cover bg-center bg-no-repeat"
+        // style={{ height: '55vh' }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 z-0 bg-white opacity-70"></div>

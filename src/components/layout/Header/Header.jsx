@@ -2,10 +2,9 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { context } from '../../../store/AppContext';
 import logo from '../../../assets/images/newlogo.png';
-import userImage from '../../../assets/images/user.jpg';  // Add this import
+import userImage from '../../../assets/images/user.jpg'; // Add this import
 import SearchModal from './SearchModal';
 import { Command } from 'lucide-react';
-
 
 const Header = () => {
   const { state, logout } = useContext(context);

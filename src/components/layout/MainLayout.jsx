@@ -6,11 +6,11 @@ import Footer from './Footer/Footer';
 const MainLayout = () => {
   return (
     <div>
-      <Header /> {/* Always show the header */}
+      <Header />
       <main>
-        <Outlet /> {/* This will render the content of each route */}
+        <Outlet />
       </main>
-      <Footer /> {/* Always show the footer */}
+      <Footer />
     </div>
   );
 };

@@ -132,7 +132,6 @@
 //                 </button>
 //               </div>
 
-              
 //             </div>
 //           </div>
 
@@ -148,15 +147,6 @@
 //----------------------------------------------------------
 // TO BE FIXED ABOVE
 //----------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 // Fetch based
 //----------------------------------------------------------
@@ -182,7 +172,7 @@ const Product = () => {
         return response.json();
       })
       .then((data) => {
-        const selectedProduct = data.find(item => item.id === parseInt(id));
+        const selectedProduct = data.find((item) => item.id === parseInt(id));
         if (!selectedProduct) {
           throw new Error('Plant not found');
         }
@@ -196,9 +186,8 @@ const Product = () => {
       });
   }, [id]);
 
-  if (error) return <div className="text-center p-4 text-red-500">Error: {error}</div>;
-  if (!product) return <div className="text-center p-4">Loading...</div>;
-
+  if (error) return <div className="p-4 text-center text-red-500">Error: {error}</div>;
+  if (!product) return <div className="p-4 text-center">Loading...</div>;
 
   return (
     <>
@@ -240,7 +229,7 @@ const Product = () => {
                 />
               </div>
               {/* Image Thumbnails below the main image */}
-              <div className="ml-7 mt-6 flex justify-start gap-4 p-2">
+              <div className="mt-6 ml-7 flex justify-start gap-4 p-2">
                 {product.secondaryImages.map((image, index) => (
                   <div
                     key={index}
@@ -259,12 +248,12 @@ const Product = () => {
 
             {/* Product Details */}
             <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
-              <h2 className="font-manrope mb-2 text-4xl font-semibold leading-10 text-gray-900">
+              <h2 className="font-manrope mb-2 text-4xl leading-10 font-semibold text-gray-900">
                 {product.name}
               </h2>
 
               <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
-                <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl font-semibold leading-9 text-gray-900 sm:border-r">
+                <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl leading-9 font-semibold text-gray-900 sm:border-r">
                   ₹ {product.price}
                 </h6>
 
@@ -280,7 +269,7 @@ const Product = () => {
                       />
                     ))}
                   </div>
-                  <span className="pl-2 text-sm font-normal leading-7 text-gray-500">
+                  <span className="pl-2 text-sm leading-7 font-normal text-gray-500">
                     {product.reviews.length} reviews
                   </span>
                 </div>
@@ -300,7 +289,7 @@ const Product = () => {
                 </div>
               </div>
 
-              <div className="mb-2 mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="mt-5 mb-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <img
                     src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"

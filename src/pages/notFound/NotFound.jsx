@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <section className="">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="inline-flex w-full flex-col items-center justify-start gap-10 pb-12 pt-12 lg:gap-16 lg:pb-28 lg:pt-[180px]">
+        <div className="inline-flex w-full flex-col items-center justify-start gap-10 pt-12 pb-12 lg:gap-16 lg:pt-[180px] lg:pb-28">
           <div className="h-[550px] w-full rounded-lg border border-indigo-300">
             <div className="flex items-center justify-between border-b border-indigo-100 p-8">
               <div className="block">
@@ -122,7 +122,7 @@ const NotFound = () => {
                 <circle cx="147.131" cy="31.0854" r="1.36752" fill="#4F46E5" />
               </svg>
               <div className="mt-5 block text-center">
-                <h5 className="mb-1.5 text-lg font-medium leading-8 text-gray-900 md:text-xl">
+                <h5 className="mb-1.5 text-lg leading-8 font-medium text-gray-900 md:text-xl">
                   <span className="font-semibold text-indigo-600">Oops!</span> It seems like you've
                   taken a wrong turn
                 </h5>

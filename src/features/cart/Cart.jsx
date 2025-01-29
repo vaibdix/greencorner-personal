@@ -186,7 +186,7 @@ const Cart = () => {
                     <line x1="0" y1="1" x2="100%" y2="1" stroke="#E5E7EB" strokeWidth="2" />
                   </svg>
 
-                  <Link 
+                  <Link
                     to="/checkout"
                     className="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-[#1c3035] px-6 py-3 text-center text-lg font-semibold text-white transition-all duration-500 hover:bg-indigo-700"
                   >

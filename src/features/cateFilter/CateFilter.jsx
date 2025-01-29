@@ -156,11 +156,7 @@ const Section = ({ plants: contextPlants }) => {
           <PlantCard key={plant.id} {...plant} type={plant.categories[0]} />
         ))}
       </div>
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        paginate={paginate} 
-      />
+      <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
     </div>
   );
 };

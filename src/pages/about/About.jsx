@@ -81,7 +81,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <h2 className="mb-2 text-4xl font-light text-sage-600">{stat.number}</h2>
+                <h2 className="text-sage-600 mb-2 text-4xl font-light">{stat.number}</h2>
                 <p className="text-gray-600">{stat.label}</p>
               </motion.div>
             ))}
@@ -101,14 +101,14 @@ const About = () => {
               <h2 className="mb-6 text-3xl font-light">Our Story</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Founded in 2008, GreenCorner began with a simple mission: to connect people with the
-                  perfect plants for their spaces. What started as a small greenhouse has grown into a
-                  thriving community of plant lovers.
+                  Founded in 2008, GreenCorner began with a simple mission: to connect people with
+                  the perfect plants for their spaces. What started as a small greenhouse has grown
+                  into a thriving community of plant lovers.
                 </p>
                 <p>
-                  We carefully select and nurture each plant in our collection, ensuring they're healthy
-                  and ready to thrive in their new homes. Our team of expert horticulturists provides
-                  guidance and support throughout your plant parenthood journey.
+                  We carefully select and nurture each plant in our collection, ensuring they're
+                  healthy and ready to thrive in their new homes. Our team of expert horticulturists
+                  provides guidance and support throughout your plant parenthood journey.
                 </p>
               </div>
             </motion.div>
@@ -149,7 +149,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group rounded-lg bg-white p-8 text-center shadow-xs transition-all hover:shadow-md"
               >
-                <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-sage-100 text-sage-600 transition-all group-hover:bg-sage-200">
+                <div className="bg-sage-100 text-sage-600 group-hover:bg-sage-200 mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full transition-all">
                   {value.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-medium">{value.title}</h3>
@@ -159,8 +159,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
- 
     </div>
   );
 };

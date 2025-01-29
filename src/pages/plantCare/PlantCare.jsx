@@ -2,39 +2,45 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Droplets, Wind, Thermometer, Clock, Calendar, Check } from 'lucide-react';
 const PlantCare = () => {
-    const [activeSection, setActiveSection] = useState('basics');
-    const [activeGuide, setActiveGuide] = useState('indoor');
+  const [activeSection, setActiveSection] = useState('basics');
+  const [activeGuide, setActiveGuide] = useState('indoor');
 
   const careBasics = [
     {
       icon: <Sun size={24} />,
       title: 'Light Requirements',
-      description: 'Most indoor plants thrive in bright, indirect sunlight. Avoid direct sun exposure which can burn leaves.',
+      description:
+        'Most indoor plants thrive in bright, indirect sunlight. Avoid direct sun exposure which can burn leaves.',
     },
     {
       icon: <Droplets size={24} />,
       title: 'Watering Schedule',
-      description: 'Water thoroughly when the top 1-2 inches of soil feels dry. Avoid overwatering which can lead to root rot.',
+      description:
+        'Water thoroughly when the top 1-2 inches of soil feels dry. Avoid overwatering which can lead to root rot.',
     },
     {
       icon: <Wind size={24} />,
       title: 'Air Circulation',
-      description: 'Good air flow prevents fungal growth and strengthens stems. Avoid cold drafts from windows or AC units.',
+      description:
+        'Good air flow prevents fungal growth and strengthens stems. Avoid cold drafts from windows or AC units.',
     },
     {
       icon: <Thermometer size={24} />,
       title: 'Temperature',
-      description: 'Most indoor plants prefer temperatures between 65-75°F (18-24°C). Protect from extreme temperature changes.',
+      description:
+        'Most indoor plants prefer temperatures between 65-75°F (18-24°C). Protect from extreme temperature changes.',
     },
     {
       icon: <Clock size={24} />,
       title: 'Maintenance Time',
-      description: 'Dedicate a few minutes each week to inspect your plants, remove dead leaves, and check moisture levels.',
+      description:
+        'Dedicate a few minutes each week to inspect your plants, remove dead leaves, and check moisture levels.',
     },
     {
       icon: <Calendar size={24} />,
       title: 'Seasonal Care',
-      description: 'Adjust care routines with the seasons. Plants need less water and fertilizer during winter months.',
+      description:
+        'Adjust care routines with the seasons. Plants need less water and fertilizer during winter months.',
     },
   ];
 
@@ -176,7 +182,6 @@ const PlantCare = () => {
       </section>
 
       {/* Interactive Care Guide */}
-      
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4">
