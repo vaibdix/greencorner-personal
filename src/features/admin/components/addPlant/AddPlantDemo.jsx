@@ -54,10 +54,34 @@ const AddPlantDemo = () => {
     refundPolicy: '',
   });
 
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   if (name.startsWith('seller_')) {
+  //     // Handle seller address fields
+  //     const addressField = name.replace('seller_', '');
+  //     setPlantData((prev) => ({
+  //       ...prev,
+  //       sellerAddress: {
+  //         ...prev.sellerAddress,
+  //         [addressField]: value,
+  //       },
+  //     }));
+  //   } else {
+  //     // Handle all other fields
+  //     setPlantData((prev) => ({
+  //       ...prev,
+  //       [name]: value,
+  //     }));
+  //   }
+  // };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    // Convert string to number for numeric fields
+    const numericFields = ['id', 'price', 'rating', 'totalSalesLastMonth', 'quantityAvailable'];
+    const processedValue = numericFields.includes(name) ? Number(value) : value;
+
     if (name.startsWith('seller_')) {
-      // Handle seller address fields
       const addressField = name.replace('seller_', '');
       setPlantData((prev) => ({
         ...prev,
@@ -67,14 +91,14 @@ const AddPlantDemo = () => {
         },
       }));
     } else {
-      // Handle all other fields
       setPlantData((prev) => ({
         ...prev,
-        [name]: value,
+        [name]: processedValue,
       }));
     }
   };
 
+  
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
     setPlantData((prev) => ({
@@ -106,7 +130,7 @@ const AddPlantDemo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://116.75.62.44:8000/plants', plantData);
+      const response = await axios.post('http://localhost:3000/plants', plantData);
       if (response.status === 200 || response.status === 201) {
         alert('Plant added successfully!');
         // Reset form or redirect as needed
@@ -115,6 +139,15 @@ const AddPlantDemo = () => {
       console.error('Error adding plant:', error);
       alert('Error adding plant. Please try again.');
     }
+  };
+
+  const handleReviewChange = (e) => {
+    const { name, value } = e.target;
+    const processedValue = name === 'rating' ? Number(value) : value;
+    setNewReview({
+      ...newReview,
+      [name]: processedValue,
+    });
   };
 
   return (
@@ -199,7 +232,7 @@ const AddPlantDemo = () => {
                   type="text"
                   name="username"
                   value={newReview.username}
-                  onChange={(e) => setNewReview({ ...newReview, username: e.target.value })}
+                  onChange={handleReviewChange}
                   placeholder="Reviewer Name"
                   className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-xs"
                 />
@@ -209,7 +242,7 @@ const AddPlantDemo = () => {
                   type="number"
                   name="rating"
                   value={newReview.rating}
-                  onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
+                  onChange={handleReviewChange}
                   placeholder="Rating (1-5)"
                   min="1"
                   max="5"
@@ -220,7 +253,7 @@ const AddPlantDemo = () => {
                 <textarea
                   name="comment"
                   value={newReview.comment}
-                  onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+                  onChange={handleReviewChange}
                   placeholder="Write a review"
                   rows="4"
                   className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-xs"
@@ -231,7 +264,7 @@ const AddPlantDemo = () => {
                   type="text"
                   name="productDelivered"
                   value={newReview.productDelivered}
-                  onChange={(e) => setNewReview({ ...newReview, productDelivered: e.target.value })}
+                  onChange={handleReviewChange}
                   placeholder="Product Delivered Status"
                   className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-xs"
                 />
