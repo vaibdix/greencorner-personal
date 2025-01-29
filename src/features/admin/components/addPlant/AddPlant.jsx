@@ -96,7 +96,7 @@ const AddPlant = () => {
     console.log('Plant data being sent to server:', plant);
 
     try {
-      const response = await axios.post('http://116.75.62.44:8000/plants', plant, {
+      const response = await axios.post('http://localhost:3000/plants', plant, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -113,34 +113,34 @@ const AddPlant = () => {
       {/* Plant Details */}
       <div>
         <label>Name:</label>
-        <input type="text" name="name" value={plant.name} onChange={handleChange} />
+        <input type="text" className="border" name="name" value={plant.name} onChange={handleChange} />
       </div>
       <div>
         <label>ID:</label>
-        <input type="number" name="id" value={plant.id} onChange={handleChange} />
+        <input type="number" className="border" name="id" value={plant.id} onChange={handleChange} />
       </div>
       <div>
         <label>Description:</label>
-        <input type="text" name="description" value={plant.description} onChange={handleChange} />
+        <input type="text" className="border" name="description" value={plant.description} onChange={handleChange} />
       </div>
       <div>
         <label>Price:</label>
-        <input type="number" name="price" value={plant.price} onChange={handleChange} />
+        <input type="number" className="border" name="price" value={plant.price} onChange={handleChange} />
       </div>
 
       {/* Review Section */}
       <h3>Review</h3>
       <div>
         <label>Username:</label>
-        <input type="text" name="username" value={review.username} onChange={handleReviewChange} />
+        <input type="text" className="border" name="username" value={review.username} onChange={handleReviewChange} />
       </div>
       <div>
         <label>Rating:</label>
-        <input type="number" name="rating" value={review.rating} onChange={handleReviewChange} />
+        <input type="number" className="border" name="rating" value={review.rating} onChange={handleReviewChange} />
       </div>
       <div>
         <label>Comment:</label>
-        <input type="text" name="comment" value={review.comment} onChange={handleReviewChange} />
+        <input type="text" className="border" name="comment" value={review.comment} onChange={handleReviewChange} />
       </div>
       <div>
         <label>Product Delivered:</label>
@@ -153,7 +153,7 @@ const AddPlant = () => {
       </div>
       <div>
         <label>Likes:</label>
-        <input type="number" name="likes" value={review.likes} onChange={handleReviewChange} />
+        <input type="number" className="border" name="likes" value={review.likes} onChange={handleReviewChange} />
       </div>
       <div>
         <label>Dislikes:</label>
@@ -169,7 +169,7 @@ const AddPlant = () => {
       {/* Seller Details */}
       <div>
         <label>Seller Name:</label>
-        <input type="text" name="sellerName" value={plant.sellerName} onChange={handleChange} />
+        <input type="text" className="border" name="sellerName" value={plant.sellerName} onChange={handleChange} />
       </div>
       <div>
         <label>Seller Address:</label>
@@ -248,7 +248,7 @@ const AddPlant = () => {
       {/* Other Plant Details */}
       <div>
         <label>Availability:</label>
-        <input type="text" name="availability" value={plant.availability} onChange={handleChange} />
+        <input type="text" className="border" name="availability" value={plant.availability} onChange={handleChange} />
       </div>
       <div>
         <label>Quantity Available:</label>
@@ -279,15 +279,15 @@ const AddPlant = () => {
       </div>
       <div>
         <label>Soil Type:</label>
-        <input type="text" name="soilType" value={plant.soilType} onChange={handleChange} />
+        <input type="text" className="border" name="soilType" value={plant.soilType} onChange={handleChange} />
       </div>
       <div>
         <label>Season:</label>
-        <input type="text" name="season" value={plant.season} onChange={handleChange} />
+        <input type="text" className="border" name="season" value={plant.season} onChange={handleChange} />
       </div>
       <div>
         <label>Growth Rate:</label>
-        <input type="text" name="growthRate" value={plant.growthRate} onChange={handleChange} />
+        <input type="text" className="border" name="growthRate" value={plant.growthRate} onChange={handleChange} />
       </div>
       <div>
         <label>Pot Size Required:</label>
@@ -300,15 +300,15 @@ const AddPlant = () => {
       </div>
       <div>
         <label>Genus:</label>
-        <input type="text" name="genus" value={plant.genus} onChange={handleChange} />
+        <input type="text" className="border" name="genus" value={plant.genus} onChange={handleChange} />
       </div>
       <div>
         <label>Local Name:</label>
-        <input type="text" name="localName" value={plant.localName} onChange={handleChange} />
+        <input type="text" className="border" name="localName" value={plant.localName} onChange={handleChange} />
       </div>
       <div>
         <label>Regional Name:</label>
-        <input type="text" name="regionalName" value={plant.regionalName} onChange={handleChange} />
+        <input type="text" className="border" name="regionalName" value={plant.regionalName} onChange={handleChange} />
       </div>
       <div>
         <label>Biological Name:</label>
