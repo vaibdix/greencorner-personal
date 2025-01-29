@@ -2,19 +2,31 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { context } from '../../../store/AppContext';
 import logo from '../../../assets/images/newlogo.png';
+import userImage from '../../../assets/images/user.jpg';  // Add this import
+import SearchModal from './SearchModal';
+import { Command } from 'lucide-react';
+
 
 const Header = () => {
-  const { state } = useContext(context);
+  const { state, logout } = useContext(context);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isLoginDropdownOpen, setIsLoginDropdownOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
-  // Calculate total items in cart
   const cartItemsCount = state.cart.reduce((total, item) => total + item.quantity, 0);
-  // Calculate total items in wishlist
   const wishlistCount = state.wishlist.length;
 
-  // Function to toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
+  const toggleLoginDropdown = () => {
+    setIsLoginDropdownOpen(!isLoginDropdownOpen);
   };
 
   return (
@@ -27,6 +39,35 @@ const Header = () => {
               <span className="self-center text-xl font-semibold">The Green Corner</span>
             </Link>
             <div className="flex items-center gap-3 lg:order-2">
+              <button
+                onClick={() => setIsSearchModalOpen(true)}
+                className="flex items-center gap-2 rounded-md border border-[#1C3035] bg-[#fafafa] px-3 py-1.5 text-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#1C3035]"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span>Search</span>
+                </div>
+                <div className="flex items-center gap-1 rounded bg-[#1C3035] px-1.5 py-0.5 text-white">
+                  <Command size={12} />
+                  <span className="text-xs">K</span>
+                </div>
+              </button>
+              <SearchModal isOpen={isSearchModalOpen} onClose={() => setIsSearchModalOpen(false)} />
+
               <Link
                 to="/wishlist"
                 className="relative rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
@@ -51,26 +92,7 @@ const Header = () => {
                   </span>
                 )}
               </Link>
-              <Link
-                to="/signin"
-                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-search"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-              </Link>
+
               <Link
                 to="/cart"
                 className="relative rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
@@ -97,27 +119,81 @@ const Header = () => {
                   </span>
                 )}
               </Link>
-              <Link
-                to="/signin"
-                className="rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-user-round"
-                >
-                  <path d="M18 20a6 6 0 0 0-12 0" />
-                  <circle cx="12" cy="10" r="4" />
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-              </Link>
+              {state.isAuthenticated ? (
+                <div className="relative">
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="flex items-center rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+                  >
+                    <span className="mr-2">{state.user?.username}</span>
+                    <img src={userImage} alt="User" className="h-6 w-6 rounded-full object-cover" />
+                  </button>
+
+                  {isProfileDropdownOpen && (
+                    <div className="ring-opacity-5 absolute right-0 mt-2 w-48 rounded-md bg-white py-1 ring-1 shadow-lg ring-black">
+                      <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Profile
+                      </Link>
+                      <Link
+                        to="/orders"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Orders
+                      </Link>
+                      <button
+                        onClick={logout}
+                        className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Sign out
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="relative">
+                  <button
+                    onClick={toggleLoginDropdown}
+                    className="flex items-center rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-circle-user-round"
+                    >
+                      <path d="M18 20a6 6 0 0 0-12 0" />
+                      <circle cx="12" cy="10" r="4" />
+                      <circle cx="12" cy="12" r="10" />
+                    </svg>
+                  </button>
+
+                  {isLoginDropdownOpen && (
+                    <div className="ring-opacity-5 absolute right-0 mt-2 w-48 rounded-md bg-white py-1 ring-1 shadow-lg ring-black">
+                      <Link
+                        to="/signin"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        User Login
+                      </Link>
+                      <Link
+                        to="/addnewplant"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Admin Login
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
               <button
                 onClick={toggleMobileMenu}
                 type="button"
@@ -194,26 +270,10 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/cart"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
-                  >
-                    Cart
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/checkout"
                     className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
                   >
                     Checkout
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/addnewplant"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
-                  >
-                    Add New Plant
                   </Link>
                 </li>
               </ul>
