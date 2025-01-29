@@ -3,7 +3,7 @@
 // import { ShoppingBag, Wallet, PlusIcon } from 'lucide-react';
 // import Review from '../Review/Review';
 // import { useParams } from 'react-router-dom';
-// import { context } from '../../context/AppContext';
+// import { context } from '../../store/AppContext';
 
 // const Product = () => {
 //   const { id } = useParams();
@@ -132,88 +132,7 @@
 //                 </button>
 //               </div>
 
-//               <div className="space-y-4">
-//                 <details className="group [&_summary::-webkit-details-marker]:hidden" open>
-//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-//                     <h2 className="font-medium">Description</h2>
-//                     <span className="transition group-open:rotate-180">
-//                       <PlusIcon />
-//                     </span>
-//                   </summary>
-//                   <div className="px-4 pb-4">
-//                     <p className="text-gray-600">{state.currentPlant.description}</p>
-//                   </div>
-//                 </details>
-//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
-//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-//                     <h2 className="font-medium">Plant Care Information</h2>
-//                     <PlusIcon />
-//                   </summary>
-//                 </details>
-//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
-//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-//                     <h2 className="font-medium">Plant Care Information</h2>
-//                     <PlusIcon />
-//                   </summary>
-//                   <div className="mt-4 px-4 leading-relaxed text-gray-700">
-//                     {state.sunlightRequirement && (
-//                       <p>
-//                         <strong>Sunlight Requirement:</strong> {state.sunlightRequirement}
-//                       </p>
-//                     )}
-//                     {state.moistureRequirement && (
-//                       <p>
-//                         <strong>Moisture Requirement:</strong> {state.moistureRequirement}
-//                       </p>
-//                     )}
-//                     {state.soilType && (
-//                       <p>
-//                         <strong>Soil Type:</strong> {state.soilType}
-//                       </p>
-//                     )}
-//                     {state.growthRate && (
-//                       <p>
-//                         <strong>Growth Rate:</strong> {state.growthRate}
-//                       </p>
-//                     )}
-//                     {state.season && (
-//                       <p>
-//                         <strong>Season:</strong> {state.season}
-//                       </p>
-//                     )}
-//                     {state.potSizeRequired && (
-//                       <p>
-//                         <strong>Pot Size Required:</strong> {state.potSizeRequired}
-//                       </p>
-//                     )}
-//                     {state.genus && (
-//                       <p>
-//                         <strong>Genus:</strong> {state.genus}
-//                       </p>
-//                     )}
-//                     {state.localName && (
-//                       <p>
-//                         <strong>Local Name:</strong> {state.localName}
-//                       </p>
-//                     )}
-//                     {state.regionalName && (
-//                       <p>
-//                         <strong>Regional Name:</strong> {state.regionalName}
-//                       </p>
-//                     )}
-//                     {state.biologicalName && (
-//                       <p>
-//                         <strong>Biological Name:</strong> {state.biologicalName}
-//                       </p>
-//                     )}
-//                     {state.botanicalName && (
-//                       <p>
-//                         <strong>Botanical Name:</strong> {state.botanicalName}
-//                       </p>
-//                     )}
-//                   </div>
-//                 </details>
-//               </div>
+              
 //             </div>
 //           </div>
 
@@ -247,7 +166,6 @@ import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
 import Review from '../review/Review';
 import { useParams } from 'react-router-dom';
 import { StarIcon } from 'lucide-react';
-
 
 const Product = () => {
   const { id } = useParams();

@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const Pagination = ({ currentPage, totalPages, paginate }) => {
   return (
     
-    <nav aria-label="Page navigation" className="mb-10 mt-5 grid justify-self-end">
+    <nav aria-label="Page navigation" className="mb-10 -mt-5 grid col-start-2 justify-end">
     <ul className="flex text-sm">
       <li>
         <a

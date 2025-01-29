@@ -111,16 +111,16 @@ const FilterSection = ({
 
         {/* Categories */}
         <h3 className="mt-4 pl-5 text-lg font-medium">Categories</h3>
-        <div className="space-y-2 pl-1 pr-1">
+        <div className="space-y-1 pl-1 pr-1">
           {predefinedCategories.map((category) => (
-            <label key={category} className="mt-5 block">
+            <label key={category} className="mt-3 block">
               <input
                 type="checkbox"
                 value={category}
                 onChange={handleCategoryChange}
                 className="ml-5 border-gray-300"
               />
-              <span className="gap-10 p-5 text-sm font-medium">{category}</span>
+              <span className="gap-5 p-5 text-sm font-medium">{category}</span>
             </label>
           ))}
         </div>

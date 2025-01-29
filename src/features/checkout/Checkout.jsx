@@ -3,6 +3,8 @@ import { ArrowUpRight } from 'lucide-react';
 import { context } from '../../store/AppContext';
 import googlelogo from '../../assets/svg/gpay.svg';
 import applelogo from '../../assets/svg/applepay.svg';
+import card from '../../assets/svg/card.svg';
+import paytm from '../../assets/svg/paytm.svg';
 
 const Checkout = () => {
   const { state, cartTotal } = useContext(context);
@@ -123,11 +125,11 @@ const Checkout = () => {
                     <div className="flex items-center justify-center">
                       <img src={applelogo} alt="Apple Pay" className="" />
                     </div>
-                    <div className="flex items-center justify-center rounded-lg border border-gray-200 p-4">
-                      <img src="/paytm.png" alt="Paytm" className="h-8" />
+                    <div className="flex items-center justify-center">
+                      <img src={paytm} alt="Paytm" className="" />
                     </div>
-                    <div className="flex items-center justify-center rounded-lg border border-gray-200 p-4">
-                      <img src="/card.png" alt="Card" className="h-8" />
+                    <div className="flex items-center justify-center">
+                      <img src={card} alt="Card" className="" />
                     </div>
                   </div>
                 </div>
