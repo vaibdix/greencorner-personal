@@ -34,6 +34,8 @@ export const authReducer = (state, action) => {
         ...state,
         user: null,
         isAuthenticated: false,
+        cart: [],
+        wishlist: [],
       };
     case ACTIONS.SET_PLANTS:
       return { ...state, plants: action.payload };

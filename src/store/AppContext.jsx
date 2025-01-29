@@ -98,6 +98,9 @@ const AppContext = ({ children }) => {
 
   const logout = () => {
     dispatch({ type: ACTIONS.LOGOUT });
+    localStorage.removeItem('user');
+    localStorage.removeItem('cart');
+    localStorage.removeItem('wishlist');
   };
 
   const addToWishlist = (plant) => {
