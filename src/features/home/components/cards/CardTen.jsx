@@ -182,8 +182,8 @@ const CardTen = () => {
 
   return (
     <>
-      <h3 className="mt-12 -mb-5 pl-14 text-3xl">All Products</h3>
-      <div className="grid grid-cols-1 gap-7 p-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <h3 className="mt-12 -mb-5 pl-4 text-2xl sm:pl-14 sm:text-3xl">All Products</h3>
+      <div className="grid grid-cols-2 gap-3 p-4 sm:grid-cols-2 sm:gap-7 sm:p-14 md:grid-cols-3 lg:grid-cols-5">
         {bestSellerPlants.map((plant) => (
           <PlantCard
             key={plant.id}
@@ -199,7 +199,7 @@ const CardTen = () => {
         ))}
       </div>
       <ToastContainer />
-      <div className="flex w-full justify-center">
+      <div className="flex w-full justify-center pb-8">
         <button
           onClick={() => navigate('/category')}
           className="rounded-md bg-[#1c3035] px-4 py-2 text-white"
