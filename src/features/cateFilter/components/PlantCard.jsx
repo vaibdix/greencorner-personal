@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { context } from '../../../store/AppContext';
 import { toast } from 'react-hot-toast';
 import { Heart, SunDim, CloudAlert, CloudSun, Sun } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const sunlightRequirement = {
   'Full Sun': <Sun />,
@@ -63,7 +64,14 @@ const PlantCard = ({
   };
 
   return (
-    <div className="w-auto rounded-lg" onClick={handleClick}>
+    <motion.div 
+      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="w-auto rounded-lg"
+      onClick={handleClick}
+    >
       <div className={`${bgColor} relative`}>
         <div className="absolute top-3 left-3 rounded-full bg-[#1c3035] px-3 py-[6px] text-xs text-white">
           50% OFF
@@ -129,7 +137,7 @@ const PlantCard = ({
           <div className="col-span-1 row-span-1"></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

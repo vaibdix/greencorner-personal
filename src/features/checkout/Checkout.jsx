@@ -1,14 +1,18 @@
 import { useContext, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { context } from '../../store/AppContext';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import googlelogo from '../../assets/svg/gpay.svg';
 import applelogo from '../../assets/svg/applepay.svg';
 import card from '../../assets/svg/card.svg';
 import paytm from '../../assets/svg/paytm.svg';
 
 const Checkout = () => {
-  const { state, cartTotal } = useContext(context);
+  const { state, cartTotal, clearCart } = useContext(context);
   const { cart } = state;
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     email: '',
     firstName: '',
@@ -20,18 +24,69 @@ const Checkout = () => {
     country: '',
   });
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.email) newErrors.email = 'Email is required';
+    if (!formData.firstName) newErrors.firstName = 'First name is required';
+    if (!formData.lastName) newErrors.lastName = 'Last name is required';
+    if (!formData.address) newErrors.address = 'Address is required';
+    if (!formData.phone) newErrors.phone = 'Phone is required';
+    if (!formData.country) newErrors.country = 'Country is required';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle checkout logic here
+    
+    if (!validateForm()) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+
+    try {
+      // Create order object
+      const order = {
+        id: Date.now(),
+        orderDate: new Date().toISOString(),
+        customer: formData,
+        items: cart,
+        total: cartTotal + 50,
+        status: 'pending'
+      };
+
+      // In a real app, you'd make an API call here
+      // For now, we'll simulate saving to local storage
+      const existingOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      localStorage.setItem('orders', JSON.stringify([...existingOrders, order]));
+
+      // Clear cart and redirect
+      clearCart();
+      toast.success('Order placed successfully!');
+      navigate('/order-confirmation', { state: { order } });
+    } catch (error) {
+      toast.error('Failed to place order. Please try again.');
+    }
   };
 
+  // Update input handling to clear errors
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error when user types
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: '',
+      }));
+    }
+  };
+
+  // In the JSX, add error messages below inputs
   return (
     <div>
       <section className="relative z-10">
@@ -46,10 +101,15 @@ const Checkout = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="w-full rounded-lg border border-gray-200 p-4"
+                  className={`w-full rounded-lg border ${
+                    errors.email ? 'border-red-500' : 'border-gray-200'
+                  } p-4`}
                   value={formData.email}
                   onChange={handleInputChange}
                 />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                )}
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <input

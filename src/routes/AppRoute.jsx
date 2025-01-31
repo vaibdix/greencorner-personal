@@ -14,6 +14,7 @@ import Checkout from '../features/checkout/Checkout';
 import Wishlist from '../features/Wishlist/Wishlist';
 // import AddPlant from '../../features/admin/components/addPlant/AddPlant';
 import AddPlant from '../features/admin/components/addPlant/AddPlantDemo';
+import OrderConfirmation from '../features/checkout/OrderConfirmation';
 
 const About = lazy(() => import('../pages/about/About'));
 const PlantCare = lazy(() => import('../pages/plantCare/PlantCare'));
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
       {
         path: '/profile',
         element: <Profile />,
+      },
+      {
+        path: '/order-confirmation',
+        element: <OrderConfirmation />,
       },
     ],
   },
