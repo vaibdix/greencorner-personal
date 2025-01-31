@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { context } from '../../store/AppContext';
+import { Filter } from 'lucide-react';
 
 import PlantCard from './components/PlantCard';
 import FilterSection from './components/FilterSection';
@@ -31,6 +32,7 @@ const CateFilter = () => {
 };
 
 const Section = ({ plants: contextPlants }) => {
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [filteredPlants, setFilteredPlants] = useState([]);
   const [priceRange, setPriceRange] = useState({ min: 0, max: 600 });
   const [availability, setAvailability] = useState({
@@ -136,27 +138,42 @@ const Section = ({ plants: contextPlants }) => {
   const totalPages = Math.ceil(filteredPlants.length / productsPerPage);
 
   return (
-    <div className="grid grid-cols-[1.5fr_5fr] gap-4">
-      <FilterSection
-        className="fixed"
-        availability={availability}
-        priceRange={priceRange}
-        rating={rating}
-        categories={categories}
-        handleAvailabilityChange={handleAvailabilityChange}
-        handlePriceChange={handlePriceChange}
-        handleCategoryChange={handleCategoryChange}
-        handleRatingChange={handleRatingChange}
-        applyFilters={applyFilters}
-        predefinedCategories={predefinedCategories}
-      />
+    <div className="relative">
+      {/* Mobile Filter Button */}
+      <button
+        onClick={() => setIsMobileFilterOpen(true)}
+        className="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-full bg-[#1c3035] p-4 text-white shadow-lg lg:hidden"
+      >
+        <Filter size={20} />
+        <span className="sr-only">Open Filters</span>
+      </button>
 
-      <div className="scroll grid grid-cols-1 gap-6 p-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {currentPlants.map((plant) => (
-          <PlantCard key={plant.id} {...plant} type={plant.categories[0]} />
-        ))}
+      <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_5fr] lg:gap-4">
+        <FilterSection
+          className="fixed"
+          availability={availability}
+          priceRange={priceRange}
+          rating={rating}
+          categories={categories}
+          handleAvailabilityChange={handleAvailabilityChange}
+          handlePriceChange={handlePriceChange}
+          handleCategoryChange={handleCategoryChange}
+          handleRatingChange={handleRatingChange}
+          applyFilters={applyFilters}
+          predefinedCategories={predefinedCategories}
+          isMobileFilterOpen={isMobileFilterOpen}
+          setIsMobileFilterOpen={setIsMobileFilterOpen}
+        />
+
+        <div className="scroll grid grid-cols-2 gap-3 p-4 sm:grid-cols-2 sm:gap-6 sm:p-7 md:grid-cols-3 lg:grid-cols-4">
+          {currentPlants.map((plant) => (
+            <PlantCard key={plant.id} {...plant} type={plant.categories[0]} />
+          ))}
+        </div>
+        <div className="col-span-full">
+          <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
+        </div>
       </div>
-      <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
     </div>
   );
 };
