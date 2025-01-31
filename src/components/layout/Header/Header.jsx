@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { context } from '../../../store/AppContext';
 import logo from '../../../assets/images/newlogo.png';
-import userImage from '../../../assets/images/user.jpg'; // Add this import
+import userImage from '../../../assets/images/user.jpg';
 import SearchModal from './SearchModal';
 import { Command } from 'lucide-react';
 
@@ -31,16 +31,48 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-50">
       <header>
-        <nav className="border-b-2 border-gray-200 bg-white px-4 py-2.5 lg:px-6">
-          <div className="mx-auto flex max-w-(--breakpoint-xl) flex-wrap items-center justify-between">
+        <nav className="border-b-2 border-gray-200 bg-white px-2 py-2 sm:px-4 lg:px-6">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between">
+            {/* Logo Section */}
             <Link to="/" className="flex items-center">
-              <img src={logo} className="mr-3 h-24 sm:h-9" alt="Green Corner Logo" />
-              <span className="self-center text-xl font-semibold">The Green Corner</span>
+              <img src={logo} className="mr-2 h-8 w-auto sm:h-9" alt="Green Corner Logo" />
+              <span className="hidden self-center text-xl font-semibold sm:block">
+                The Green Corner
+              </span>
             </Link>
-            <div className="flex items-center gap-3 lg:order-2">
+
+            {/* Navigation Links - Desktop */}
+            <div className="hidden lg:order-1 lg:flex lg:w-auto">
+              <ul className="flex space-x-8 font-medium">
+                <li>
+                  <Link to="/" className="text-gray-700 hover:text-[#1C3035]">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/category" className="text-gray-700 hover:text-[#1C3035]">
+                    Explore Plants
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/plantcare" className="text-gray-700 hover:text-[#1C3035]">
+                    Plant Care
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about" className="text-gray-700 hover:text-[#1C3035]">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Right Section - Search, Cart, Profile */}
+            <div className="flex items-center gap-1 sm:gap-3 lg:order-2">
+              {/* Search Button - Desktop */}
               <button
                 onClick={() => setIsSearchModalOpen(true)}
-                className="flex items-center gap-2 rounded-md border border-[#1C3035] bg-[#fafafa] px-3 py-1.5 text-sm"
+                className="hidden items-center gap-2 rounded-md border border-[#1C3035] bg-[#fafafa] px-2 py-1.5 text-sm sm:flex sm:px-3"
               >
                 <div className="flex items-center gap-2">
                   <svg
@@ -58,73 +90,92 @@ const Header = () => {
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.3-4.3" />
                   </svg>
-                  <span>Search</span>
+                  <span className="hidden sm:inline">Search</span>
                 </div>
-                <div className="flex items-center gap-1 rounded bg-[#1C3035] px-1.5 py-0.5 text-white">
+                <div className="hidden items-center gap-1 rounded bg-[#1C3035] px-1.5 py-0.5 text-white sm:flex">
                   <Command size={12} />
                   <span className="text-xs">K</span>
                 </div>
               </button>
-              <SearchModal isOpen={isSearchModalOpen} onClose={() => setIsSearchModalOpen(false)} />
 
-              <Link
-                to="/wishlist"
-                className="relative rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
-              >
+              {/* Search Button - Mobile */}
+              <button onClick={() => setIsSearchModalOpen(true)} className="relative p-2 sm:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1"
+                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-heart"
+                  className="text-gray-700"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </button>
+              <SearchModal isOpen={isSearchModalOpen} onClose={() => setIsSearchModalOpen(false)} />
+
+              {/* Wishlist Icon */}
+              <Link to="/wishlist" className="relative p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-gray-700"
                 >
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-0 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                     {wishlistCount}
                   </span>
                 )}
               </Link>
 
-              <Link
-                to="/cart"
-                className="relative rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
-              >
+              {/* Cart Icon */}
+              <Link to="/cart" className="relative p-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1"
+                  strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="lucide lucide-shopping-bag"
+                  className="text-gray-700"
                 >
                   <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
                   <path d="M3 6h18" />
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
                 {cartItemsCount > 0 && (
-                  <span className="absolute -top-0 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                     {cartItemsCount}
                   </span>
                 )}
               </Link>
+
+              {/* Profile/Login Section */}
               {state.isAuthenticated ? (
                 <div className="relative">
                   <button
                     onClick={toggleProfileDropdown}
-                    className="flex items-center rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
+                    className="flex items-center space-x-2 rounded-lg p-2"
                   >
-                    <span className="mr-2">{state.user?.username}</span>
+                    <span className="hidden text-sm font-medium text-gray-700 sm:block">
+                      {state.user?.username}
+                    </span>
                     <img src={userImage} alt="User" className="h-6 w-6 rounded-full object-cover" />
                   </button>
 
@@ -153,21 +204,17 @@ const Header = () => {
                 </div>
               ) : (
                 <div className="relative">
-                  <button
-                    onClick={toggleLoginDropdown}
-                    className="flex items-center rounded-lg py-2 text-sm font-medium text-gray-800 lg:py-2.5"
-                  >
+                  <button onClick={toggleLoginDropdown} className="rounded-lg p-2 text-gray-700">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="lucide lucide-circle-user-round"
                     >
                       <path d="M18 20a6 6 0 0 0-12 0" />
                       <circle cx="12" cy="10" r="4" />
@@ -193,52 +240,31 @@ const Header = () => {
                   )}
                 </div>
               )}
+
+              {/* Mobile Menu Button */}
               <button
                 onClick={toggleMobileMenu}
-                type="button"
-                className="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-hidden lg:hidden"
-                aria-controls="mobile-menu-2"
-                aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
+                className="inline-flex items-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none lg:hidden"
               >
                 <span className="sr-only">Open main menu</span>
-                <svg
-                  className="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <svg
-                  className="hidden h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d={isMobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                  />
                 </svg>
               </button>
             </div>
-            <div
-              className={`${
-                isMobileMenuOpen ? 'block' : 'hidden'
-              } w-full items-center justify-between lg:order-1 lg:flex lg:w-auto`}
-              id="mobile-menu-2"
-            >
-              <ul className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-8">
+
+            {/* Mobile Navigation Menu */}
+            <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} w-full lg:hidden`}>
+              <ul className="mt-4 flex flex-col space-y-2 pb-4">
                 <li>
                   <Link
                     to="/"
-                    className="bg-primary-700 lg:text-primary-700 block rounded-sm py-2 pr-4 pl-3 lg:bg-transparent lg:p-0"
-                    aria-current="page"
+                    className="block rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
                     Home
                   </Link>
@@ -246,7 +272,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/category"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
+                    className="block rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
                     Explore Plants
                   </Link>
@@ -254,7 +280,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/plantcare"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
+                    className="block rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
                     Plant Care
                   </Link>
@@ -262,17 +288,9 @@ const Header = () => {
                 <li>
                   <Link
                     to="/about"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
+                    className="block rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
                     About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/checkout"
-                    className="lg:hover:text-primary-700 border-b border-gray-100 py-2 pr-4 pl-3 text-gray-700 lg:border-0 lg:p-0 lg:hover:bg-transparent"
-                  >
-                    Checkout
                   </Link>
                 </li>
               </ul>
