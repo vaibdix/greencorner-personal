@@ -5,6 +5,7 @@ import logo from '../../../assets/images/newlogo.png';
 import userImage from '../../../assets/images/user.jpg';
 import SearchModal from './SearchModal';
 import { Command } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Header = () => {
   const { state, logout } = useContext(context);
@@ -27,6 +28,22 @@ const Header = () => {
   const toggleLoginDropdown = () => {
     setIsLoginDropdownOpen(!isLoginDropdownOpen);
   };
+
+  useEffect(() => {
+    const handleCommandK = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchModalOpen(true); 
+      }
+    };
+
+    window.addEventListener('keydown', handleCommandK);
+
+    return () => {
+      window.removeEventListener('keydown', handleCommandK);
+    };
+  }, []);
+
 
   return (
     <div className="sticky top-0 z-50">
