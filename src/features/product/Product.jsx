@@ -151,17 +151,326 @@
 // Fetch based
 //----------------------------------------------------------
 
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
+// import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
+// import Review from '../review/Review';
+// import { useParams } from 'react-router-dom';
+// import { StarIcon } from 'lucide-react';
+
+// const Product = () => {
+//   const { id } = useParams();
+//   const [product, setProduct] = useState(null);
+//   const [mainImage, setMainImage] = useState('');
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     fetch('http://localhost:3000/plants')
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error('Failed to fetch plants');
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         const selectedProduct = data.find((item) => item.id === parseInt(id));
+//         if (!selectedProduct) {
+//           throw new Error('Plant not found');
+//         }
+//         setProduct(selectedProduct);
+//         setMainImage(selectedProduct.primaryImage);
+//         setError(null);
+//       })
+//       .catch((error) => {
+//         console.error('Error:', error);
+//         setError(error.message || 'Failed to load product');
+//       });
+//   }, [id]);
+
+//   if (error) return <div className="p-4 text-center text-red-500">Error: {error}</div>;
+//   if (!product) return <div className="p-4 text-center">Loading...</div>;
+
+//   return (
+//     <>
+//       <section className="relative py-5 lg:py-14">
+//         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-4">
+//           <nav aria-label="Breadcrumb" className="mb-5">
+//             <ol className="flex items-center gap-1 text-lg font-semibold text-gray-600">
+//               <li>
+//                 <a href="/" className="hover:text-gray-700">
+//                   Home
+//                 </a>
+//               </li>
+//               <li>
+//                 <span className="mx-2">/</span>
+//               </li>
+//               <li>
+//                 <a href="/products" className="hover:text-gray-700">
+//                   Products
+//                 </a>
+//               </li>
+//               <li>
+//                 <span className="mx-2">/</span>
+//               </li>
+//               <li>
+//                 <span className="text-gray-900">{product?.name || 'Loading...'}</span>
+//               </li>
+//             </ol>
+//           </nav>
+
+//           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+//             {/* Product Image */}
+//             <div className="justify-center lg:justify-start">
+//               <div className="">
+//                 <img
+//                   className="h-[600px] w-full rounded-xl object-contain"
+//                   // className="w-full rounded-xl object-cover"
+//                   src={mainImage}
+//                   alt="Main Product"
+//                 />
+//               </div>
+//               {/* Image Thumbnails below the main image */}
+//               <div className="mt-6 ml-7 flex justify-start gap-4 p-2">
+//                 {product.secondaryImages.map((image, index) => (
+//                   <div
+//                     key={index}
+//                     onClick={() => setMainImage(image)} // Set main image on click
+//                     className="cursor-pointer"
+//                   >
+//                     <img
+//                       className="h-16 w-16 rounded-lg border-2 border-gray-200 object-cover transition-all hover:border-indigo-600"
+//                       src={image}
+//                       alt={`Thumbnail ${index + 1}`}
+//                     />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+
+//             {/* Product Details */}
+//             <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
+//               <h2 className="font-manrope mb-2 text-4xl leading-10 font-semibold text-gray-900">
+//                 {product.name}
+//               </h2>
+
+//               <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
+//                 <h6 className="font-manrope mr-5 border-gray-200 pr-5 text-2xl leading-9 font-semibold text-gray-900 sm:border-r">
+//                   ₹ {product.price}
+//                 </h6>
+
+//                 <div className="flex items-center gap-2">
+//                   <div className="flex items-center gap-1">
+//                     {Array.from({ length: 5 }, (_, index) => (
+//                       <StarIcon
+//                         key={index}
+//                         size={20}
+//                         className={
+//                           index < Math.round(product.rating) ? 'text-amber-400' : 'text-gray-200'
+//                         }
+//                       />
+//                     ))}
+//                   </div>
+//                   <span className="pl-2 text-sm leading-7 font-normal text-gray-500">
+//                     {product.reviews.length} reviews
+//                   </span>
+//                 </div>
+//               </div>
+//               {/* <p className="mb-4 text-lg py-2 font-medium">
+//                 Category : {product.categories.join(' / ')}
+//               </p> */}
+//               <div className="mb-5 flex gap-7">
+//                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
+//                   {product.availability}
+//                 </div>
+//                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
+//                   {product.sunlightRequirement}
+//                 </div>
+//                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
+//                   {product.season}
+//                 </div>
+//               </div>
+
+//               <div className="mt-5 mb-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                   <img
+//                     src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"
+//                     width={40}
+//                     alt="Plant Pot"
+//                   />
+//                   <span>Add Bucket</span>
+//                 </button>
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                   <Wallet />
+//                   <span>+ 300</span>
+//                 </button>
+//               </div>
+
+//               {/* Add to Cart and other options */}
+//               <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                   <ShoppingBag />
+//                   <span>Add to Cart</span>
+//                 </button>
+//                 <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+//                   <Wallet />
+//                   <span>Buy Now</span>
+//                 </button>
+//               </div>
+
+//               <div className="mb-8">
+//                 <div className="mb-4 rounded-lg border p-4">
+//                   <h3 className="mb-2 font-medium">Shipping Information</h3>
+//                   <p className="text-gray-600">{product.shoppingPolicy}</p>
+//                 </div>
+
+//                 <div className="rounded-lg border p-4">
+//                   <h3 className="mb-2 font-medium">Return & Refund Policy</h3>
+//                   <p className="text-gray-600">{product.refundPolicy}</p>
+//                 </div>
+//               </div>
+
+//               <div className="space-y-4">
+//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+//                     <h2 className="font-medium">Description</h2>
+//                     <span className="transition group-open:rotate-180">
+//                       <PlusIcon />
+//                     </span>
+//                   </summary>
+//                   <div className="px-4 pb-4">
+//                     <p className="text-gray-600">{product.description}</p>
+//                   </div>
+//                 </details>
+
+//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+//                     <h2 className="font-medium">Seller Information</h2>
+//                     <PlusIcon />
+//                   </summary>
+//                   <div className="mt-4 px-4 leading-relaxed text-gray-700">
+//                     {product?.sellerAddress?.street && (
+//                       <p>
+//                         <strong>Street Address:</strong> {product.sellerAddress.street}
+//                       </p>
+//                     )}
+//                     {product?.sellerAddress?.city && (
+//                       <p>
+//                         <strong>City:</strong> {product.sellerAddress.city}
+//                       </p>
+//                     )}
+//                     {product?.sellerAddress?.state && (
+//                       <p>
+//                         <strong>State:</strong> {product.sellerAddress.state}
+//                       </p>
+//                     )}
+//                     {product?.sellerAddress?.pincode && (
+//                       <p>
+//                         <strong>Zip Code:</strong> {product.sellerAddress.pincode}
+//                       </p>
+//                     )}
+//                     {product?.sellerAddress?.country && (
+//                       <p>
+//                         <strong>Country:</strong> {product.sellerAddress.country}
+//                       </p>
+//                     )}
+//                   </div>
+//                 </details>
+
+//                 <details className="group [&_summary::-webkit-details-marker]:hidden" close="true">
+//                   <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+//                     <h2 className="font-medium">Plant Care Information</h2>
+//                     <PlusIcon />
+//                   </summary>
+//                   <div className="mt-4 px-4 leading-relaxed text-gray-700">
+//                     {product.sunlightRequirement && (
+//                       <p>
+//                         <strong>Sunlight Requirement:</strong> {product.sunlightRequirement}
+//                       </p>
+//                     )}
+//                     {product.moistureRequirement && (
+//                       <p>
+//                         <strong>Moisture Requirement:</strong> {product.moistureRequirement}
+//                       </p>
+//                     )}
+//                     {product.soilType && (
+//                       <p>
+//                         <strong>Soil Type:</strong> {product.soilType}
+//                       </p>
+//                     )}
+//                     {product.growthRate && (
+//                       <p>
+//                         <strong>Growth Rate:</strong> {product.growthRate}
+//                       </p>
+//                     )}
+//                     {product.season && (
+//                       <p>
+//                         <strong>Season:</strong> {product.season}
+//                       </p>
+//                     )}
+//                     {product.potSizeRequired && (
+//                       <p>
+//                         <strong>Pot Size Required:</strong> {product.potSizeRequired}
+//                       </p>
+//                     )}
+//                     {product.genus && (
+//                       <p>
+//                         <strong>Genus:</strong> {product.genus}
+//                       </p>
+//                     )}
+//                     {product.localName && (
+//                       <p>
+//                         <strong>Local Name:</strong> {product.localName}
+//                       </p>
+//                     )}
+//                     {product.regionalName && (
+//                       <p>
+//                         <strong>Regional Name:</strong> {product.regionalName}
+//                       </p>
+//                     )}
+//                     {product.biologicalName && (
+//                       <p>
+//                         <strong>Biological Name:</strong> {product.biologicalName}
+//                       </p>
+//                     )}
+//                     {product.botanicalName && (
+//                       <p>
+//                         <strong>Botanical Name:</strong> {product.botanicalName}
+//                       </p>
+//                     )}
+//                     {product.tags && product.tags.length > 0 && (
+//                       <p>
+//                         <strong>Tags:</strong> {product.tags.join(', ')}
+//                       </p>
+//                     )}
+//                   </div>
+//                 </details>
+//               </div>
+//             </div>
+//           </div>
+//           {/* Reviews */}
+//           <Review reviews={product.reviews} />
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default Product;
+
+import React, { useState, useEffect, useContext } from 'react';
 import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
+import { StarIcon } from 'lucide-react';
 import Review from '../review/Review';
 import { useParams } from 'react-router-dom';
-import { StarIcon } from 'lucide-react';
+import { context } from '../../store/AppContext'; // adjust the import path as needed
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState('');
   const [error, setError] = useState(null);
+
+  // Extract addToCart function from context
+  const { addToCart } = useContext(context);
 
   useEffect(() => {
     fetch('http://localhost:3000/plants')
@@ -186,8 +495,12 @@ const Product = () => {
       });
   }, [id]);
 
-  if (error) return <div className="p-4 text-center text-red-500">Error: {error}</div>;
-  if (!product) return <div className="p-4 text-center">Loading...</div>;
+  if (error) {
+    return <div className="p-4 text-center text-red-500">Error: {error}</div>;
+  }
+  if (!product) {
+    return <div className="p-4 text-center">Loading...</div>;
+  }
 
   return (
     <>
@@ -220,10 +533,9 @@ const Product = () => {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             {/* Product Image */}
             <div className="justify-center lg:justify-start">
-              <div className="">
+              <div>
                 <img
                   className="h-[600px] w-full rounded-xl object-contain"
-                  // className="w-full rounded-xl object-cover"
                   src={mainImage}
                   alt="Main Product"
                 />
@@ -274,9 +586,7 @@ const Product = () => {
                   </span>
                 </div>
               </div>
-              {/* <p className="mb-4 text-lg py-2 font-medium">
-                Category : {product.categories.join(' / ')}
-              </p> */}
+
               <div className="mb-5 flex gap-7">
                 <div className="rounded-full bg-[#1C3035] px-7 py-2 text-white">
                   {product.availability}
@@ -290,7 +600,10 @@ const Product = () => {
               </div>
 
               <div className="mt-5 mb-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button
+                  className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200"
+                  // Here you can attach other handlers if needed
+                >
                   <img
                     src="https://www.ikea.com/in/en/images/products/gradvis-plant-pot-pink__0614220_pe686849_s5.jpg?f=xl"
                     width={40}
@@ -298,19 +611,31 @@ const Product = () => {
                   />
                   <span>Add Bucket</span>
                 </button>
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <Wallet />
                   <span>+ 300</span>
                 </button>
               </div>
 
-              {/* Add to Cart and other options */}
+              {/* Add to Cart and Buy Now buttons */}
               <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+                {/* <button
+                  className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200"
+                  onClick={() => addToCart(product)}
+                >
+                  <ShoppingBag />
+                  <span>Add to Cart</span>
+                </button> */}
+
+                <button
+                  className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200"
+                  onClick={() => addToCart({ ...product, imageUrl: product.primaryImage })}
+                >
                   <ShoppingBag />
                   <span>Add to Cart</span>
                 </button>
-                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
+
+                <button className="group flex w-full justify-around gap-2 border px-5 py-4 shadow-xs transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
                   <Wallet />
                   <span>Buy Now</span>
                 </button>
