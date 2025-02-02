@@ -136,7 +136,7 @@ const PlantCare = () => {
 
         <div className="relative z-10 flex h-full items-center justify-center text-center">
           <div className="max-w-3xl px-4">
-            <h1 className="mb-6 font-serif text-5xl font-light tracking-tight text-white sm:text-7xl">
+            <h1 className="mb-6 text-5xl font-light tracking-tight text-white sm:text-7xl">
               The Art of Plant Care
             </h1>
             <p className="text-lg text-gray-200 sm:text-xl">
