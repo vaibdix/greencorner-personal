@@ -58,7 +58,7 @@ const About = () => {
             transition={{ delay: 0.5 }}
             className="text-center text-white"
           >
-            <h1 className="mb-6 font-serif text-5xl font-light tracking-tight sm:text-7xl">
+            <h1 className="mb-6 text-5xl font-light tracking-tight sm:text-7xl">
               Growing Green Dreams
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-200">
