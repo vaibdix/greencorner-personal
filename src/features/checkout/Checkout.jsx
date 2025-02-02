@@ -39,7 +39,7 @@ const Checkout = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       toast.error('Please fill in all required fields');
       return;
@@ -53,7 +53,7 @@ const Checkout = () => {
         customer: formData,
         items: cart,
         total: cartTotal + 50,
-        status: 'pending'
+        status: 'pending',
       };
 
       // In a real app, you'd make an API call here
@@ -73,13 +73,13 @@ const Checkout = () => {
   // Update input handling to clear errors
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
     // Clear error when user types
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
         [name]: '',
       }));
@@ -107,9 +107,7 @@ const Checkout = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                 />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
-                )}
+                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <input

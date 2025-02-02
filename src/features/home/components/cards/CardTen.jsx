@@ -122,7 +122,7 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
         </span>
 
         <div className="grid grid-flow-row grid-cols-2 grid-rows-2">
-          <div className="name col-span-1 row-span-1 text-md">{name}</div>
+          <div className="name text-md col-span-1 row-span-1">{name}</div>
 
           <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
             <Heart

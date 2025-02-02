@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { context } from '../../store/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
 import { Eye, EyeOff } from 'lucide-react'; // Import the Eye and EyeOff icons from lucide-react
-import google from '../../assets/svg/light.svg'
+import google from '../../assets/svg/light.svg';
 
 const SignUp = () => {
   const { state, signup } = useContext(context);
@@ -99,8 +99,7 @@ const SignUp = () => {
             <div className="rounded-lg py-6 md:p-8">
               <div className="mb-10 text-3xl">Sign up to get Started</div>
               <form onSubmit={handleSubmit}>
-                
-                <img src={google} alt='google'/>
+                <img src={google} alt="google" />
 
                 <div className="relative m-6 flex items-center justify-center">
                   <div className="grow border-t border-gray-300"></div>

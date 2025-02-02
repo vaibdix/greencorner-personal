@@ -132,9 +132,9 @@ const AppContext = ({ children }) => {
         name: userData.name,
         picture: userData.picture,
         username: userData.given_name,
-        provider: 'google'
+        provider: 'google',
       };
-      
+
       dispatch({ type: ACTIONS.SET_USER, payload: googleUser });
       localStorage.setItem('user', JSON.stringify(googleUser));
     } catch (error) {

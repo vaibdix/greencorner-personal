@@ -64,7 +64,7 @@ const PlantCard = ({
   };
 
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}

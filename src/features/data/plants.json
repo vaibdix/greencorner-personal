@@ -110,11 +110,7 @@
     },
     "availability": "In Stock",
     "quantityAvailable": 100,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Flowering Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Flowering Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Medium",
     "soilType": "Loamy soil",
@@ -126,16 +122,8 @@
     "regionalName": "गुलाब (Gulab)",
     "biologicalName": "Rosa spp.",
     "botanicalName": "Rosa hybrida",
-    "tags": [
-      "Gift Ideas",
-      "Flowering Plants",
-      "Indoor Decor"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Karnataka"
-    ],
+    "tags": ["Gift Ideas", "Flowering Plants", "Indoor Decor"],
+    "shippingStates": ["Maharashtra", "Goa", "Karnataka"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-miniature-rose-button-rose-yellow-plant_600x600.jpg?v=1634224134",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-rose-orange-plant_600x600.jpg?v=1634227422",
@@ -248,11 +236,7 @@
     "sellerName": "Maharashtra Green Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -264,16 +248,8 @@
     "regionalName": "Kanchora",
     "biologicalName": "Aloe barbadensis miller",
     "botanicalName": "Aloe vera",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)",
-      "Goa (India)",
-      "Karnataka (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra (India)", "Goa (India)", "Karnataka (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-aloe-juvenna-succulent-plant_600x600.jpg?v=1634213142",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-aloe-juvenna-succulent-plant-2_540x720.jpg?v=1634213134",
@@ -386,12 +362,7 @@
     "sellerName": "Seller 3",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -403,12 +374,7 @@
     "regionalName": "Regional Name 3",
     "biologicalName": "Biological Name 3",
     "botanicalName": "Botanical Name 3",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Utah (United States (US))",
       "Idaho (United States (US))",
@@ -527,13 +493,7 @@
     "sellerName": "Seller 4",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Purifying",
-      "Bedroom",
-      "Office"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Air Purifying", "Bedroom", "Office"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Sandy Loam",
@@ -545,13 +505,7 @@
     "regionalName": "Nagin Plant",
     "biologicalName": "Sansevieria trifasciata",
     "botanicalName": "Sansevieria trifasciata",
-    "tags": [
-      "Air Purifying",
-      "Low Maintenance",
-      "Stylish",
-      "Beginner-Friendly",
-      "Gift Ideas"
-    ],
+    "tags": ["Air Purifying", "Low Maintenance", "Stylish", "Beginner-Friendly", "Gift Ideas"],
     "shippingStates": [
       "Mumbai (Maharashtra, India)",
       "Pune (Maharashtra, India)",
@@ -788,11 +742,7 @@
     "regionalName": "Rubber Tree",
     "biologicalName": "Ficus elastica",
     "botanicalName": "Ficus elastica",
-    "tags": [
-      "House Warming",
-      "Indoor Gardening",
-      "Office Plants"
-    ],
+    "tags": ["House Warming", "Indoor Gardening", "Office Plants"],
     "shippingStates": [
       "Maharashtra",
       "Goa",
@@ -914,10 +864,7 @@
     "sellerName": "MaharashtraPlants",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Air Purifying"
-    ],
+    "categories": ["Indoor Plants", "Air Purifying"],
     "sunlightRequirement": "Indirect Sunlight",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained, sandy loam",
@@ -929,11 +876,7 @@
     "regionalName": "Makdi Paudha",
     "biologicalName": "Chlorophytum comosum",
     "botanicalName": "Chlorophytum comosum",
-    "tags": [
-      "Air Purifier",
-      "Home Decor",
-      "Low Maintenance"
-    ],
+    "tags": ["Air Purifier", "Home Decor", "Low Maintenance"],
     "shippingStates": [
       "Maharashtra",
       "Goa",
@@ -1054,11 +997,7 @@
     "sellerName": "Maharashtra Seller",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Air Purifying Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Air Purifying Plants"],
     "sunlightRequirement": "Indirect Sunlight",
     "moistureRequirement": "Medium",
     "soilType": "Well-drained loamy soil",
@@ -1070,15 +1009,8 @@
     "regionalName": "Chrysalidocarpus Lutescens",
     "biologicalName": "Chrysalidocarpus Lutescens",
     "botanicalName": "Dypsis Lutescens",
-    "tags": [
-      "Housewarming Gift",
-      "Indoor Plants",
-      "Air Purifiers",
-      "Easy Care"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["Housewarming Gift", "Indoor Plants", "Air Purifiers", "Easy Care"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-areca-palm-plant_600x600.jpg?v=1636456218",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-areca-palm-plant-2_540x720.jpg?v=1637585273",
@@ -1191,12 +1123,7 @@
     "sellerName": "Seller Maharashtra",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Purifying",
-      "Decorative Plants"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Air Purifying", "Decorative Plants"],
     "sunlightRequirement": "Bright, Indirect Light",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained Loamy Soil",
@@ -1208,16 +1135,8 @@
     "regionalName": "Ficus Lyrata",
     "biologicalName": "Ficus lyrata",
     "botanicalName": "Ficus lyrata",
-    "tags": [
-      "Housewarming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Air Purifier",
-      "Indoor Plant"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Housewarming", "Gift Ideas", "Low Maintenance", "Air Purifier", "Indoor Plant"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/ficus-lyrata-bambino-dwarf-fiddle-leaf-fig-plant-in-4inch_10cm_-black-pot-429036_600x600.jpg?v=1692966811",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-ficus-lyrata-bambino-dwarf-fiddle-leaf-fig-plant-1-277792_540x720.jpg?v=1679750031",
@@ -1348,18 +1267,8 @@
     "regionalName": "Sambhaji Farn",
     "biologicalName": "Nephrolepis exaltata",
     "botanicalName": "Nephrolepis exaltata",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Indoor Greens"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)",
-      "Gujarat (India)",
-      "Karnataka (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Indoor Greens"],
+    "shippingStates": ["Maharashtra (India)", "Gujarat (India)", "Karnataka (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-nephrolepis-exaltata-bosteniensis-boston-fern-plant-129726_600x600.jpg?v=1679750689",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-nephrolepis-exaltata-bosteniensis-boston-fern-plant-2-922107_540x720.jpg?v=1679750689",
@@ -1490,16 +1399,8 @@
     "regionalName": "Devil's Ivy",
     "biologicalName": "Epipremnum aureum",
     "botanicalName": "Pothos",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Air Purifying",
-      "Easy to Grow",
-      "Indoor Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Air Purifying", "Easy to Grow", "Indoor Plants"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-money-plant-scindapsus-green-plant-in-4-inch-10-cm-black-pot-224662_600x600.jpg?v=1685021448",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plant-money-plant-scindapsus-green-plant-in-4.5-inch-11-cm-ronda-no-1110-round-plastic-turquoise-plant-1-661701_540x720.jpg?v=1679750636",
@@ -1631,15 +1532,8 @@
     "regionalName": "Jade Plant",
     "biologicalName": "Crassula ovata",
     "botanicalName": "Crassula ovata",
-    "tags": [
-      "Housewarming",
-      "Succulent",
-      "Indoor Plant",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Housewarming", "Succulent", "Indoor Plant", "Low Maintenance"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-jade-plant-elephant-bush-green-succulent-plant-in-4-inch-10-cm-black-pot-434709_600x600.jpg?v=1684935612",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-plant-elephant-bush-portulacaria-afra-jade-green-plant-in-4.5-inch-11-cm-ronda-No-1110-round-plastic-green-planter-558634_600x600.jpg?v=1679749890",
@@ -1771,12 +1665,7 @@
     "regionalName": "Lucky Bamboo",
     "biologicalName": "Dracaena sanderiana",
     "botanicalName": "Dracaena sanderiana",
-    "tags": [
-      "Housewarming Gift",
-      "Good Luck",
-      "Indoor Decoration",
-      "Home Office"
-    ],
+    "tags": ["Housewarming Gift", "Good Luck", "Indoor Decoration", "Home Office"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -1896,11 +1785,7 @@
     "sellerName": "Seller 14",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance Plants",
-      "Gift Ideas"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance Plants", "Gift Ideas"],
     "sunlightRequirement": "Indirect Sunlight",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -1912,19 +1797,8 @@
     "regionalName": "ZZ Plant",
     "biologicalName": "Zamioculcas zamiifolia",
     "botanicalName": "Zamioculcas zamiifolia",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Karnataka",
-      "Gujarat",
-      "Madhya Pradesh",
-      "Rajasthan"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra", "Goa", "Karnataka", "Gujarat", "Madhya Pradesh", "Rajasthan"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-zamioculcas-zamiifolia-zz-plant-plant_1140x1140.jpg?v=1635852693",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-zamioculcas-zamiifolia-zz-plant-plant-2-672792_540x720.jpg?v=1679751823",
@@ -2037,10 +1911,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -2052,12 +1923,7 @@
     "regionalName": "धनिया (Dhaniya",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -2177,11 +2043,7 @@
     "sellerName": "Seller 16",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Purifying"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Air Purifying"],
     "sunlightRequirement": "Indirect Light",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -2193,16 +2055,8 @@
     "regionalName": "Chandramukhi",
     "biologicalName": "Syngonium podophyllum",
     "botanicalName": "Syngonium podophyllum",
-    "tags": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Purifying",
-      "Easy to Grow",
-      "Popular Plant"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Indoor Plants", "Low Maintenance", "Air Purifying", "Easy to Grow", "Popular Plant"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-syngonium-podophyllum-silver-pearl-plant-764560_600x600.jpg?v=1679751755",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-syngonium-podophyllum-silver-pearl-plant-1-182532_540x720.jpg?v=1679751755",
@@ -2315,12 +2169,7 @@
     "sellerName": "Seller 17",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Purifiers",
-      "Decorative Plants"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Air Purifiers", "Decorative Plants"],
     "sunlightRequirement": "Indirect Bright Light",
     "moistureRequirement": "Medium",
     "soilType": "Well-drained loamy soil",
@@ -2340,9 +2189,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-calathea-concinna-freddie-calathea-concinna-plant-1-382960_600x600.jpg?v=1679749390",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-calathea-concinna-freddie-calathea-concinna-plant-1-249830_540x720.jpg?v=1679749390",
@@ -2455,13 +2302,7 @@
     "sellerName": "Seller 18",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room",
-      "Decorative Plants"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Patio", "Living Room", "Decorative Plants"],
     "sunlightRequirement": "Partial Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -2473,14 +2314,8 @@
     "regionalName": "Rangoli Phool",
     "biologicalName": "Begonia semperflorens",
     "botanicalName": "Begonia spp.",
-    "tags": [
-      "House Warming",
-      "Gifts",
-      "Indoor Gardening"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gifts", "Indoor Gardening"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-hardy-begonia-plant_600x600.jpg?v=1634223205",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-hardy-begonia-plant_600x600.jpg?v=1634223205",
@@ -2612,10 +2447,7 @@
     "regionalName": "Variegated Croton",
     "biologicalName": "Codiaeum variegatum",
     "botanicalName": "Codiaeum variegatum",
-    "tags": [
-      "Housewarming Gifts",
-      "Gift Ideas"
-    ],
+    "tags": ["Housewarming Gifts", "Gift Ideas"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -2752,12 +2584,7 @@
     "regionalName": "Chincheva Vanaspati",
     "biologicalName": "Aglaonema commutatum",
     "botanicalName": "Aglaonema",
-    "tags": [
-      "Housewarming Gift",
-      "Low Maintenance",
-      "Indoor Decor",
-      "Plant Lover"
-    ],
+    "tags": ["Housewarming Gift", "Low Maintenance", "Indoor Decor", "Plant Lover"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -2877,10 +2704,7 @@
     "sellerName": "Seller Maharashtra",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "House Plants"
-    ],
+    "categories": ["Indoor Plants", "House Plants"],
     "sunlightRequirement": "Indirect Light",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -2892,15 +2716,8 @@
     "regionalName": "Maharashtrian Anthurium",
     "biologicalName": "Anthurium andraeanum",
     "botanicalName": "Anthurium andraeanum",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Indoor Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Indoor Plants"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-anthurium-andreanum-princess-amalia-elegance-plant_600x600.jpg?v=1634213376",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-anthurium-andreanum-princess-amalia-elegance-plant_600x600.jpg?v=1634213376",
@@ -3013,11 +2830,7 @@
     "sellerName": "Seller 22",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Exotic Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Exotic Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -3029,21 +2842,8 @@
     "regionalName": "पक्षी का फूल (Pakshi Ka Phool)",
     "biologicalName": "Strelitzia reginae",
     "botanicalName": "Strelitzia reginae",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Gujarat",
-      "Goa",
-      "Karnataka",
-      "Madhya Pradesh",
-      "Rajasthan"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra", "Gujarat", "Goa", "Karnataka", "Madhya Pradesh", "Rajasthan"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-bird-of-paradise-plant-16968640528524_600x600.jpg?v=1634214531",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-bird-of-paradise-plant-16968640561292_600x600.jpg?v=1634214528",
@@ -3156,11 +2956,7 @@
     "sellerName": "Seller 23",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Air Cleaner Plants"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Air Cleaner Plants"],
     "sunlightRequirement": "Indirect sunlight",
     "moistureRequirement": "Medium",
     "soilType": "Well-drained, fertile soil",
@@ -3299,12 +3095,7 @@
     "sellerName": "Seller 24",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Low Maintenance",
-      "Decorative Plants",
-      "Office Plants"
-    ],
+    "categories": ["Indoor Plants", "Low Maintenance", "Decorative Plants", "Office Plants"],
     "sunlightRequirement": "Indirect Sunlight",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -3316,13 +3107,8 @@
     "regionalName": "Swarna Patta",
     "biologicalName": "Dieffenbachia spp.",
     "botanicalName": "Dieffenbachia",
-    "tags": [
-      "House Warming",
-      "Office Decor"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Office Decor"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-dieffenbachia-compacta-perfecta-plant_600x600.jpg?v=1634218562",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-dieffenbachia-compacta-perfecta-plant_600x600.jpg?v=1634218562",
@@ -3453,13 +3239,8 @@
     "regionalName": "Dragon Tree",
     "biologicalName": "Dracaena marginata",
     "botanicalName": "Dracaena marginata",
-    "tags": [
-      "Housewarming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Housewarming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-marginata-dracaena-marginata-plant_600x600.jpg?v=1634223794",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-marginata-dracaena-marginata-plant-2_540x720.jpg?v=1634223790",
@@ -3591,14 +3372,8 @@
     "regionalName": "Sonal",
     "biologicalName": "Echinopsis species",
     "botanicalName": "Echinopsis spp.",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-echinopsis-species-cactus-plant_600x600.jpg?v=1634218499",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-echinopsis-species-cactus-plant-2_540x720.jpg?v=1634218496",
@@ -3730,15 +3505,8 @@
     "regionalName": "Sohal",
     "biologicalName": "Sansevieria trifasciata",
     "botanicalName": "Sansevieria trifasciata Hahnii",
-    "tags": [
-      "Housewarming Gift",
-      "Easy to Care",
-      "Indoor Plants",
-      "Air Purifier"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Housewarming Gift", "Easy to Care", "Indoor Plants", "Air Purifier"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-sansevieria-trifasciata-hahnii-snake-plant-plant-16969295855756_600x600.jpg?v=1634228043",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-sansevieria-trifasciata-hahnii-snake-plant-plant-16969295855756_600x600.jpg?v=1634228043",
@@ -3851,9 +3619,7 @@
     "sellerName": "Shree Hari Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants"
-    ],
+    "categories": ["Indoor Plants"],
     "sunlightRequirement": "Bright Indirect Light",
     "moistureRequirement": "Low",
     "soilType": "Well-drained Potting Mix",
@@ -3865,13 +3631,7 @@
     "regionalName": "Maranta Arundinacea",
     "biologicalName": "Maranta Arundinacea",
     "botanicalName": "Maranta Arundinacea",
-    "tags": [
-      "Gift Ideas",
-      "Indoor Decor",
-      "Low Maintenance",
-      "Easy to Grow",
-      "Exotic Plants"
-    ],
+    "tags": ["Gift Ideas", "Indoor Decor", "Low Maintenance", "Easy to Grow", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -3991,10 +3751,7 @@
     "sellerName": "Shivam Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Air Purifying Plants"
-    ],
+    "categories": ["Indoor Plants", "Air Purifying Plants"],
     "sunlightRequirement": "Indirect light",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained fertile soil",
@@ -4013,13 +3770,7 @@
       "Air Purifying",
       "Exotic Plants"
     ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Gujarat",
-      "Karnataka",
-      "Madhya Pradesh"
-    ],
+    "shippingStates": ["Maharashtra", "Goa", "Gujarat", "Karnataka", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-alocasia-hybrid-plant_600x600.jpg?v=1635938666",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-alocasia-hybrid-plant-2-857375_540x720.jpg?v=1679749040",
@@ -4132,11 +3883,7 @@
     "sellerName": "Hindu Plant Company",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -4148,9 +3895,7 @@
     "regionalName": "Gudhal",
     "biologicalName": "Hibiscus rosa-sinensis",
     "botanicalName": "Hibiscus rosa-sinensis",
-    "tags": [
-      "House Warming"
-    ],
+    "tags": ["House Warming"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -4287,11 +4032,7 @@
     "regionalName": "बोगनवेल",
     "biologicalName": "Bougainvillea glabra",
     "botanicalName": "Bougainvillea spectabilis",
-    "tags": [
-      "Balcony Decor",
-      "Affordable Plants",
-      "Garden Charm"
-    ],
+    "tags": ["Balcony Decor", "Affordable Plants", "Garden Charm"],
     "shippingStates": [
       "Pune (Maharashtra)",
       "Mumbai (Maharashtra)",
@@ -4432,15 +4173,8 @@
     "regionalName": "Chafa",
     "biologicalName": "Chrysanthemum indicum",
     "botanicalName": "Chrysanthemum morifolium",
-    "tags": [
-      "Gift Ideas",
-      "Low Maintenance",
-      "Housewarming",
-      "Balcony Garden"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Gift Ideas", "Low Maintenance", "Housewarming", "Balcony Garden"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-shevanti-yellow-plant-949958_600x600.jpg?v=1679751737",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-shevanti-yellow-plant-949958_600x600.jpg?v=1679751737",
@@ -4571,12 +4305,7 @@
     "regionalName": "मोगरा",
     "biologicalName": "Jasminum sambac",
     "botanicalName": "Jasminum sambac",
-    "tags": [
-      "Maharashtra Plants",
-      "Fragrant Flowers",
-      "Home Garden",
-      "Gifting Ideas"
-    ],
+    "tags": ["Maharashtra Plants", "Fragrant Flowers", "Home Garden", "Gifting Ideas"],
     "shippingStates": [
       "Mumbai (Maharashtra, India)",
       "Pune (Maharashtra, India)",
@@ -4714,18 +4443,8 @@
     "regionalName": "Lavand Marathi",
     "biologicalName": "Lavandula angustifolia",
     "botanicalName": "Lavandula spp.",
-    "tags": [
-      "Relaxation",
-      "Aromatic",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Indoor Aesthetic"
-    ],
-    "shippingStates": [
-      "Mumbai (Maharashtra)",
-      "Pune (Maharashtra)",
-      "Nagpur (Maharashtra)"
-    ],
+    "tags": ["Relaxation", "Aromatic", "Gift Ideas", "Low Maintenance", "Indoor Aesthetic"],
+    "shippingStates": ["Mumbai (Maharashtra)", "Pune (Maharashtra)", "Nagpur (Maharashtra)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-cuphea-hyssopifolia-lavender-plant_600x600.jpg?v=1634217256",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-cuphea-hyssopifolia-lavender-plant-2_540x720.jpg?v=1634217247",
@@ -4838,11 +4557,7 @@
     "sellerName": "Mahalakshmi Plants",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Herbs",
-      "Medicinal Plants",
-      "Culinary Plants"
-    ],
+    "categories": ["Herbs", "Medicinal Plants", "Culinary Plants"],
     "sunlightRequirement": "Partial Sunlight",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy and Well-Drained",
@@ -4854,17 +4569,8 @@
     "regionalName": "पुदीना",
     "biologicalName": "Mentha spicata",
     "botanicalName": "Mentha arvensis",
-    "tags": [
-      "Medicinal",
-      "Culinary",
-      "Herbal",
-      "Refreshing",
-      "Easy to Grow",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["Medicinal", "Culinary", "Herbal", "Refreshing", "Easy to Grow", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-common-mint-plant-pudina-plant-16968793620620_600x600.jpg?v=1634216630",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-common-mint-plant-pudina-plant-16968793620620_600x600.jpg?v=1634216630",
@@ -4977,10 +4683,7 @@
     "sellerName": "Ganesh Enterprises",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Herbs",
-      "Ayurvedic Plants"
-    ],
+    "categories": ["Herbs", "Ayurvedic Plants"],
     "sunlightRequirement": "Partial to Full Sun",
     "moistureRequirement": "Moderate to High",
     "soilType": "Loamy soil with good drainage",
@@ -4992,11 +4695,7 @@
     "regionalName": "पवित्र तुलसी",
     "biologicalName": "Ocimum tenuiflorum",
     "botanicalName": "Ocimum sanctum",
-    "tags": [
-      "Ayurveda",
-      "Medicinal Plant",
-      "Herbal Remedy"
-    ],
+    "tags": ["Ayurveda", "Medicinal Plant", "Herbal Remedy"],
     "shippingStates": [
       "Pune (Maharashtra)",
       "Mumbai (Maharashtra)",
@@ -5116,11 +4815,7 @@
     "sellerName": "Shree Garden Supplies",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Herbal Plants",
-      "Indoor Plants",
-      "Medicinal Plants"
-    ],
+    "categories": ["Herbal Plants", "Indoor Plants", "Medicinal Plants"],
     "sunlightRequirement": "Full Sun to Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy, Well-Drained Soil",
@@ -5132,11 +4827,7 @@
     "regionalName": "वृंदावन तुलसी",
     "biologicalName": "Ocimum tenuiflorum",
     "botanicalName": "Holy Basil",
-    "tags": [
-      "Medicinal",
-      "Spiritual",
-      "Easy Care"
-    ],
+    "tags": ["Medicinal", "Spiritual", "Easy Care"],
     "shippingStates": [
       "Mumbai (Maharashtra, India)",
       "Pune (Maharashtra, India)",
@@ -5257,11 +4948,7 @@
     "sellerName": "Shree Garden Supplies",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Herbal Plants",
-      "Indoor Plants",
-      "Medicinal Plants"
-    ],
+    "categories": ["Herbal Plants", "Indoor Plants", "Medicinal Plants"],
     "sunlightRequirement": "Full Sun to Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy, Well-Drained Soil",
@@ -5273,11 +4960,7 @@
     "regionalName": "वृंदावन तुलसी",
     "biologicalName": "Ocimum tenuiflorum",
     "botanicalName": "Holy Basil",
-    "tags": [
-      "Medicinal",
-      "Spiritual",
-      "Easy Care"
-    ],
+    "tags": ["Medicinal", "Spiritual", "Easy Care"],
     "shippingStates": [
       "Mumbai (Maharashtra, India)",
       "Pune (Maharashtra, India)",
@@ -5416,12 +5099,7 @@
     "regionalName": "Shepu",
     "biologicalName": "Anethum graveolens",
     "botanicalName": "Anethum graveolens",
-    "tags": [
-      "Indian Cuisine",
-      "Medicinal Use",
-      "Herb Garden",
-      "Low Maintenance"
-    ],
+    "tags": ["Indian Cuisine", "Medicinal Use", "Herb Garden", "Low Maintenance"],
     "shippingStates": [
       "Pune (Maharashtra, India)",
       "Mumbai (Maharashtra, India)",
@@ -5563,16 +5241,8 @@
     "regionalName": "Ajmoda",
     "biologicalName": "Petroselinum crispum",
     "botanicalName": "Petroselinum crispum",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-parsley-moss-curled-herb-seeds-16969106718860_600x600.jpg?v=1634204508",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-parsley-moss-curled-herb-seeds-16969106718860_600x600.jpg?v=1634204508",
@@ -5713,10 +5383,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra (India)",
-      "Gujarat (India)"
-    ],
+    "shippingStates": ["Maharashtra (India)", "Gujarat (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-cilantro-split-seeds-imported-coriander-microgreen-seeds-16968784314508_540x540_34e4b945-417a-44d2-ac44-1a1ae6f2e508_600x600.jpg?v=1634203641",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-cilantro-split-seeds-imported-coriander-microgreen-seeds-16968784314508_540x540_34e4b945-417a-44d2-ac44-1a1ae6f2e508_600x600.jpg?v=1634203641",
@@ -5829,10 +5496,7 @@
     "sellerName": "Shivaji Enterprises",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Herbs"
-    ],
+    "categories": ["Outdoor Plants", "Herbs"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -5844,13 +5508,8 @@
     "regionalName": "Lemon Tulsi",
     "biologicalName": "Melissa officinalis",
     "botanicalName": "Melissa officinalis",
-    "tags": [
-      "House Warming",
-      "Herb Garden"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Herb Garden"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-lemon-balm-plant_600x600.jpg?v=1634227083",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-lemon-balm-plant_600x600.jpg?v=1634227083",
@@ -5963,10 +5622,7 @@
     "sellerName": "Shree Hari Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -5978,10 +5634,7 @@
     "regionalName": "Karipatta",
     "biologicalName": "Murraya koenigii",
     "botanicalName": "Murraya koenigii",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -6100,11 +5753,7 @@
     "sellerName": "Shree Hari Nurseries",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -6116,11 +5765,7 @@
     "regionalName": "Kadi Patta",
     "biologicalName": "Murraya koenigii",
     "botanicalName": "Murraya koenigii",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -6258,13 +5903,7 @@
     "regionalName": "Tulsi",
     "biologicalName": "Ocimum tenuiflorum",
     "botanicalName": "Ocimum tenuiflorum",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Medicinal"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Medicinal"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -6384,13 +6023,7 @@
     "sellerName": "Shree Ganesh Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -6402,13 +6035,7 @@
     "regionalName": "Jeevanam",
     "biologicalName": "Narcissus spp.",
     "botanicalName": "Narcissus",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -6555,13 +6182,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Gujarat",
-      "Karnataka",
-      "Madhya Pradesh"
-    ],
+    "shippingStates": ["Maharashtra", "Goa", "Gujarat", "Karnataka", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-bulbs-tulip-don-quichotte-flower-bulbs_600x600.jpg?v=1634230629",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-bulbs-tulip-don-quichotte-flower-bulbs_600x600.jpg?v=1634230629",
@@ -6694,12 +6315,8 @@
     "regionalName": "Shevanti",
     "biologicalName": "Rosa spp.",
     "botanicalName": "Rosa",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-miniature-rose-button-rose-yellow-plant_600x600.jpg?v=1634224134",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-rose-orange-plant_600x600.jpg?v=1634227422",
@@ -6831,12 +6448,8 @@
     "regionalName": "Orchids",
     "biologicalName": "Dendrobium spp.",
     "botanicalName": "Dendrobium",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-phalaenopsis-orchid-any-variety-white-plant-16969183330444_600x600.jpg?v=1634225844",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-phalaenopsis-orchid-any-variety-white-plant-16969183330444_600x600.jpg?v=1634225844",
@@ -6949,10 +6562,7 @@
     "sellerName": "Shivansh Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -6964,14 +6574,8 @@
     "regionalName": "Gulabi Genda",
     "biologicalName": "Pelargonium peltatum",
     "botanicalName": "Pelargonium peltatum",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-geranium-ivy-geranium-creeper-baby-pink-plant-754345_600x600.jpg?v=1679750119",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-geranium-ivy-geranium-creeper-baby-pink-plant-1-242634_540x720.jpg?v=1679750119",
@@ -7084,12 +6688,7 @@
     "sellerName": "Shree Krushna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Flowering Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Flowering Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -7101,16 +6700,8 @@
     "regionalName": "Suryakamal",
     "biologicalName": "Helianthus annuus",
     "botanicalName": "Helianthus annuus",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Bright Flowers"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Bright Flowers"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-sunflower-minature-flower-seeds-16969123725452_600x600.jpg?v=1634204985",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-sunflower-minature-flower-seeds-16969123725452_600x600.jpg?v=1634204985",
@@ -7223,12 +6814,7 @@
     "sellerName": "Sri Krishna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -7240,13 +6826,7 @@
     "regionalName": "Golap",
     "biologicalName": "Petunia x hybrida",
     "botanicalName": "Petunia x hybrida",
-    "tags": [
-      "Housewarming Gift",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
+    "tags": ["Housewarming Gift", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -7366,13 +6946,7 @@
     "sellerName": "Shree Garden Enterprises",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -7392,14 +6966,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra",
-      "Gujarat",
-      "Karnataka",
-      "Rajasthan",
-      "Goa",
-      "Madhya Pradesh"
-    ],
+    "shippingStates": ["Maharashtra", "Gujarat", "Karnataka", "Rajasthan", "Goa", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-african-marigold-yellow-plant-398336_600x600.jpg?v=1679749016",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-african-marigold-yellow-plant-1-908475_540x720.jpg?v=1679749016",
@@ -7531,16 +7098,8 @@
     "regionalName": "Zinnia",
     "biologicalName": "Zinnia elegans",
     "botanicalName": "Zinnia elegans",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Gujarat",
-      "Karnataka",
-      "Madhya Pradesh"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra", "Goa", "Gujarat", "Karnataka", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-zinnia-liliput-mixed-color-flower-seeds-16969139421324_600x600.jpg?v=1634205365",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-zinnia-liliput-mixed-color-flower-seeds-16969139421324_600x600.jpg?v=1634205365",
@@ -7673,10 +7232,7 @@
     "regionalName": "Gulab",
     "biologicalName": "Dahlia pinnata",
     "botanicalName": "Dahlia spp.",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -7796,9 +7352,7 @@
     "sellerName": "Shree Vastu Creations",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants"
-    ],
+    "categories": ["Outdoor Plants"],
     "sunlightRequirement": "Partial Sun to Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -7810,14 +7364,8 @@
     "regionalName": "Kachnar",
     "biologicalName": "Hydrangea macrophylla",
     "botanicalName": "Hydrangea macrophylla",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-hydrangea-macrophylla-blue-plant_a36409e1-111d-42ee-b9f0-acdb8b24e739_600x600.jpg?v=1634222086",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-hydrangea-macrophylla-blue-plant_a36409e1-111d-42ee-b9f0-acdb8b24e739_600x600.jpg?v=1634222086",
@@ -7930,10 +7478,7 @@
     "sellerName": "Shree Ganesh Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -7945,15 +7490,8 @@
     "regionalName": "Chandani Phul",
     "biologicalName": "Dianthus caryophyllus",
     "botanicalName": "Dianthus caryophyllus",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-carnation-any-color_600x600.jpg?v=1634215476",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-carnation-any-color_600x600.jpg?v=1634215476",
@@ -8066,11 +7604,7 @@
     "sellerName": "Madhav Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -8082,16 +7616,8 @@
     "regionalName": "Bandra Flower",
     "biologicalName": "Lantana camara",
     "botanicalName": "Lantana camara",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-lantana-camara-lavender-plant_600x600.jpg?v=1635576251",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-lantana-camara-lavender-plant-1-854459_540x720.jpg?v=1679750455",
@@ -8204,12 +7730,7 @@
     "sellerName": "Bharat Horticulture Pvt. Ltd.",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -8347,13 +7868,7 @@
     "sellerName": "Sri Kaner Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -8365,12 +7880,8 @@
     "regionalName": "Kanher",
     "biologicalName": "Nerium indicum",
     "botanicalName": "Nerium oleander",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-kaner-dwarf-nerium-oleander-peach-dwarf-plant-176241_600x600.jpg?v=1679750398",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-kaner-dwarf-nerium-oleander-peach-dwarf-plant-1-627261_540x720.jpg?v=1679750398",
@@ -8502,13 +8013,8 @@
     "regionalName": "Bhor",
     "biologicalName": "Salvia splendens",
     "botanicalName": "Salvia splendens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-salvia-splendens-red-plant-16969292218508_600x600.jpg?v=1634227919",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-salvia-splendens-red-plant-16969292218508_600x600.jpg?v=1634227919",
@@ -8641,11 +8147,7 @@
     "regionalName": "Sage",
     "biologicalName": "Salvia officinalis",
     "botanicalName": "Salvia officinalis",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -8767,10 +8269,7 @@
     "sellerName": "Sri Krishna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Air Purifying Plants"
-    ],
+    "categories": ["Indoor Plants", "Air Purifying Plants"],
     "sunlightRequirement": "Indirect Light",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -8782,16 +8281,8 @@
     "regionalName": "Bamboo Palma",
     "biologicalName": "Chamaedorea microspadix",
     "botanicalName": "Chamaedorea microspadix",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Air Purifying",
-      "Indoor Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Air Purifying", "Indoor Plants"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-chamaedorea-microspadix-hardy-bamboo-palm-pl_600x600.jpg?v=1634215874",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-chamaedorea-microspadix-hardy-bamboo-palm-pl_600x600.jpg?v=1634215874",
@@ -8904,10 +8395,7 @@
     "sellerName": "HinduVeda Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -8919,16 +8407,8 @@
     "regionalName": "Sago Palm",
     "biologicalName": "Cycas revoluta",
     "botanicalName": "Cycas revoluta",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-cycas-plant-sago-palm-cycas-revoluta-plant_600x600.jpg?v=1634217372",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-cycas-plant-sago-palm-cycas-revoluta-plant_600x600.jpg?v=1634217372",
@@ -9041,11 +8521,7 @@
     "sellerName": "Shree Krishna Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -9065,9 +8541,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-asparagus-meyeri-plant_600x600.jpg?v=1636458595",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-asparagus-meyeri-plant-1-675329_540x720.jpg?v=1679749104",
@@ -9180,12 +8654,7 @@
     "sellerName": "Krishna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Bright Indirect Light",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -9197,13 +8666,8 @@
     "regionalName": "Patta Vaali",
     "biologicalName": "Peperomia obtusifolia",
     "botanicalName": "Peperomia obtusifolia",
-    "tags": [
-      "House Warming",
-      "Beginner Friendly"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Beginner Friendly"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-peperomia-obtusifolia-succulent-plant-in-4-inch-10-cm-black-pot-725461_600x600.jpg?v=1684847799",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-peperomia-obtusifolia-plant-1-378650_540x720.jpg?v=1679750816",
@@ -9316,13 +8780,7 @@
     "sellerName": "Shree Horticulture Pvt Ltd",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -9334,16 +8792,8 @@
     "regionalName": "Shinde Ranjani",
     "biologicalName": "Coleus blumei",
     "botanicalName": "Coleus blumei",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Gujarat",
-      "Karnataka",
-      "Madhya Pradesh"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra", "Gujarat", "Karnataka", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-coleus-green-plant-313745_600x600.jpg?v=1679749533",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-coleus-green-plant-1-111990_540x720.jpg?v=1679749533",
@@ -9475,19 +8925,8 @@
     "regionalName": "Vata",
     "biologicalName": "Ficus benjamina",
     "botanicalName": "Ficus benjamina",
-    "tags": [
-      "Home Decor",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Karnataka",
-      "Goa",
-      "Gujarat",
-      "Madhya Pradesh"
-    ],
+    "tags": ["Home Decor", "Indoor Plants", "Low Maintenance", "Gift Ideas"],
+    "shippingStates": ["Maharashtra", "Karnataka", "Goa", "Gujarat", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-ficus-starlight-ficus-benjamina-plant-419736_600x600.jpg?v=1679750037",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-ficus-starlight-ficus-benjamina-plant-1-309826_540x720.jpg?v=1679750037",
@@ -9620,15 +9059,8 @@
     "regionalName": "Rubber Tree",
     "biologicalName": "Ficus elastica",
     "botanicalName": "Ficus elastica",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-rubber-tree-rubber-plant-ficus-elastica-plant_600x600.jpg?v=1680766173",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-rubber-tree-rubber-plant-ficus-elastica-plant_600x600.jpg?v=1680766173",
@@ -9741,9 +9173,7 @@
     "sellerName": "Shree Vinayak Plants",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants"
-    ],
+    "categories": ["Outdoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -9755,20 +9185,8 @@
     "regionalName": "Vata",
     "biologicalName": "Ficus pumila",
     "botanicalName": "Ficus pumila",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Gujarat",
-      "Karnataka",
-      "Goa",
-      "Rajasthan"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra", "Gujarat", "Karnataka", "Goa", "Rajasthan"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-creeping-fig-pant-ficus-pumila-plant-634439_600x600.jpg?v=1679749644",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-creeping-fig-pant-ficus-pumila-plant-634439_600x600.jpg?v=1679749644",
@@ -9881,10 +9299,7 @@
     "sellerName": "Shree Krishna Plants",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -9904,9 +9319,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-japanese-golden-ogon-sedum-plant_600x600.jpg?v=1634222580",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-japanese-golden-ogon-sedum-plant-1_540x720.jpg?v=1634222578",
@@ -10019,11 +9432,7 @@
     "sellerName": "Shree Horticulture",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -10035,14 +9444,8 @@
     "regionalName": "Kaantali Phool",
     "biologicalName": "Euphorbia milii",
     "botanicalName": "Euphorbia milii",
-    "tags": [
-      "House Warming",
-      "Indoor Decoration",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Indoor Decoration", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-euphorbia-white-pink-succulent-plant_600x600.jpg?v=1635854676",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-euphorbia-white-pink-succulent-plant-1-396737_540x720.jpg?v=1679749892",
@@ -10155,12 +9558,7 @@
     "sellerName": "Shree Plant Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -10172,13 +9570,8 @@
     "regionalName": "Haworthia",
     "biologicalName": "Haworthia attenuata",
     "botanicalName": "Haworthia attenuata",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-haworthia-attenuata-succulent-plant_600x600.jpg?v=1634221215",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-haworthia-attenuata-succulent-plant-1_540x720.jpg?v=1634221213",
@@ -10291,13 +9684,7 @@
     "sellerName": "Shree Vishnu Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -10309,14 +9696,8 @@
     "regionalName": "Marathi: Gulabi Patta",
     "biologicalName": "Echeveria elegans",
     "botanicalName": "Echeveria elegans",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-echeveria-elegans-rose-succulent-plant_600x600.jpg?v=1634218430",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-echeveria-elegans-rose-succulent-plant_600x600.jpg?v=1634218430",
@@ -10448,15 +9829,8 @@
     "regionalName": "Kalanchoe",
     "biologicalName": "Kalanchoe pinnata",
     "botanicalName": "Kalanchoe pinnata",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plant-kalanchoe-red-plant-in-5-inch-13-cm-grower-round-plastic-black-pot-775800_600x600.jpg?v=1679750397",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plant-kalanchoe-red-plant-in-5-inch-13-cm-grower-round-plastic-black-pot-2-263842_540x720.jpg?v=1679750397",
@@ -10589,16 +9963,8 @@
     "regionalName": "AkhrotPati",
     "biologicalName": "Sedum Adolphii",
     "botanicalName": "Sedum Adolphii",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-sedum-adolphii-succulent-plant_600x600.jpg?v=1634228198",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-sedum-adolphii-succulent-plant_600x600.jpg?v=1634228198",
@@ -10711,9 +10077,7 @@
     "sellerName": "Hindu Plant Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants"
-    ],
+    "categories": ["Outdoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -10733,13 +10097,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Karnataka",
-      "Gujarat",
-      "Madhya Pradesh"
-    ],
+    "shippingStates": ["Maharashtra", "Goa", "Karnataka", "Gujarat", "Madhya Pradesh"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-popular-outdoor-plants-for-gardening-on-terrace-16969219211404_600x600.jpg?v=1634226628",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-combo-packs-plants-popular-outdoor-plants-for-gardening-on-terrace-16969219211404_600x600.jpg?v=1634226628",
@@ -10852,10 +10210,7 @@
     "sellerName": "Shree Garden Enterprises",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -10867,14 +10222,8 @@
     "regionalName": "Gulabjadi",
     "biologicalName": "Gardenia jasminoides",
     "botanicalName": "Gardenia jasminoides",
-    "tags": [
-      "House Warming",
-      "Gift",
-      "Indoor Decor"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift", "Indoor Decor"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-gardenia-ananta-plant-723969_600x600.jpg?v=1679750052",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-gardenia-ananta-plant-1-565644_540x720.jpg?v=1679750052",
@@ -10987,11 +10336,7 @@
     "sellerName": "Shree Ganesha Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -11003,13 +10348,8 @@
     "regionalName": "Chai Paatra",
     "biologicalName": "Camellia sinensis",
     "botanicalName": "Camellia sinensis",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-plants-camellia-sinensis-plant-16968681685132_600x600.jpg?v=1634215353",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-camellia-sinensis-plant-16968681685132_600x600.jpg?v=1634215353",
@@ -11122,12 +10462,7 @@
     "sellerName": "Bharat Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -11139,14 +10474,8 @@
     "regionalName": "Chandani",
     "biologicalName": "Lobularia maritima",
     "botanicalName": "Lobularia maritima",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-gerbera-micro-mini-mixed-color-flower-seeds-16969073918092_600x600.jpg?v=1634203962",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-gerbera-micro-mini-mixed-color-flower-seeds-16969073918092_600x600.jpg?v=1634203962",
@@ -11259,13 +10588,7 @@
     "sellerName": "Krishna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -11277,15 +10600,8 @@
     "regionalName": "Pansy",
     "biologicalName": "Viola tricolor",
     "botanicalName": "Viola tricolor",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-pansy-f1-scarlet-red-blotch-flower-seeds-16969103966348_600x600.jpg?v=1634204465",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-pansy-f1-scarlet-red-blotch-flower-seeds-16969103966348_600x600.jpg?v=1634204465",
@@ -11398,13 +10714,7 @@
     "sellerName": "Krishna Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -11416,15 +10726,8 @@
     "regionalName": "Pansy",
     "biologicalName": "Viola tricolor",
     "botanicalName": "Viola tricolor",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-pansy-f1-scarlet-red-blotch-flower-seeds-16969103966348_600x600.jpg?v=1634204465",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-pansy-f1-scarlet-red-blotch-flower-seeds-16969103966348_600x600.jpg?v=1634204465",
@@ -11683,9 +10986,7 @@
     "sellerName": "Shree Ganesha Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants"
-    ],
+    "categories": ["Outdoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -11697,12 +10998,8 @@
     "regionalName": "Gulchaadi",
     "biologicalName": "Gaillardia × grandiflora",
     "botanicalName": "Gaillardia × grandiflora",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-gaillardia-f1-finest-mixed-color-flower-seeds-16969073000588_600x600.jpg?v=1634203912",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-gaillardia-f1-finest-mixed-color-flower-seeds-16969073000588_600x600.jpg?v=1634203912",
@@ -11815,10 +11112,7 @@
     "sellerName": "Ganesh Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Seasonal Plants",
-      "Flowering Plants"
-    ],
+    "categories": ["Seasonal Plants", "Flowering Plants"],
     "sunlightRequirement": "Partial Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Fertile, well-draining soil",
@@ -11830,10 +11124,7 @@
     "regionalName": "Chhatri Phool",
     "biologicalName": "Antirrhinum majus",
     "botanicalName": "Antirrhinum Snapdragons",
-    "tags": [
-      "Gift Plant",
-      "Decorative Plant"
-    ],
+    "tags": ["Gift Plant", "Decorative Plant"],
     "shippingStates": [
       "Pune (Maharashtra)",
       "Mumbai (Maharashtra)",
@@ -11954,11 +11245,7 @@
     "sellerName": "Anand Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Garden Plants",
-      "Indoor Beauties",
-      "Low Maintenance Wonders"
-    ],
+    "categories": ["Garden Plants", "Indoor Beauties", "Low Maintenance Wonders"],
     "sunlightRequirement": "Partial Sun to Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy soil with good drainage",
@@ -11970,11 +11257,7 @@
     "regionalName": "नील फूल",
     "biologicalName": "Hyacinthoides non-scripta",
     "botanicalName": "Campanula rotundifolia",
-    "tags": [
-      "Home Decor",
-      "Gardening Essentials",
-      "Low Maintenance"
-    ],
+    "tags": ["Home Decor", "Gardening Essentials", "Low Maintenance"],
     "shippingStates": [
       "Mumbai, Maharashtra",
       "Pune, Maharashtra",
@@ -12024,12 +11307,7 @@
     "sellerName": "Ganesh Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Indoor Plants",
-      "Flowering Plants",
-      "Gift Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Indoor Plants", "Flowering Plants", "Gift Plants", "Low Maintenance"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy soil with good drainage",
@@ -12041,12 +11319,7 @@
     "regionalName": "अमरिल्लिस",
     "biologicalName": "Hippeastrum hybrids",
     "botanicalName": "Amaryllis belladonna",
-    "tags": [
-      "Housewarming Gift",
-      "Winter Bloom",
-      "Vibrant Flowers",
-      "Low Maintenance"
-    ],
+    "tags": ["Housewarming Gift", "Winter Bloom", "Vibrant Flowers", "Low Maintenance"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -12162,13 +11435,7 @@
     "sellerName": "Shree Hari Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -12180,16 +11447,8 @@
     "regionalName": "Freesia",
     "biologicalName": "Freesia",
     "botanicalName": "Freesia",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-freesia-orange-bulbs-set-of-5-542941_600x600.jpg?v=1679750038",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-freesia-orange-bulbs-set-of-5-542941_600x600.jpg?v=1679750038",
@@ -12329,9 +11588,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-ranunculus-pink-bulbs-570563_600x600.jpg?v=1679750992",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-ranunculus-pink-bulbs-570563_600x600.jpg?v=1679750992",
@@ -12464,17 +11721,8 @@
     "regionalName": "Surajmukhi",
     "biologicalName": "Ipomoea purpurea",
     "botanicalName": "Ipomoea purpurea",
-    "tags": [
-      "House Warming",
-      "Garden",
-      "Climbing",
-      "Easy Care"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)",
-      "Goa (India)",
-      "Gujarat (India)"
-    ],
+    "tags": ["House Warming", "Garden", "Climbing", "Easy Care"],
+    "shippingStates": ["Maharashtra (India)", "Goa (India)", "Gujarat (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-ipomoea-morning-glory-plant_600x600.jpg?v=1634222227",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-ipomoea-morning-glory-plant_600x600.jpg?v=1634222227",
@@ -12587,9 +11835,7 @@
     "sellerName": "Shree Krupa Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants"
-    ],
+    "categories": ["Outdoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy soil",
@@ -12601,14 +11847,8 @@
     "regionalName": "Jasmine",
     "biologicalName": "Jasminum sambac",
     "botanicalName": "Arabian Jasmine",
-    "tags": [
-      "Gift Ideas",
-      "Wedding Decorations",
-      "Aromatherapy"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["Gift Ideas", "Wedding Decorations", "Aromatherapy"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-jasminum-sambac-mogra-arabian-jasmine_600x600.jpg?v=1634222612",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-g-jasminum-sambac-mogra-arabian-jasmine-1_540x720.jpg?v=1634222610",
@@ -12721,10 +11961,7 @@
     "sellerName": "Shree Hari Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -12736,17 +11973,8 @@
     "regionalName": "Hari Matar",
     "biologicalName": "Lathyrus odoratus",
     "botanicalName": "Lathyrus odoratus",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra",
-      "Goa",
-      "Gujarat",
-      "Karnataka"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra", "Goa", "Gujarat", "Karnataka"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-peas-azad-p-3-desi-vegetable-seeds-16969165799564_600x600.jpg?v=1634204518",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-seeds-peas-azad-p1-desi-vegetable-seeds-16969165734028_600x600.jpg?v=1634204525",
@@ -12859,11 +12087,7 @@
     "sellerName": "Shree Phool Garden Pvt. Ltd.",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -12875,12 +12099,7 @@
     "regionalName": "Sadabahar",
     "biologicalName": "Catharanthus roseus",
     "botanicalName": "Catharanthus roseus",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -13000,12 +12219,7 @@
     "sellerName": "Brahma Enterprises",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio"],
     "sunlightRequirement": "Partial Sun",
     "moistureRequirement": "Moderate",
     "soilType": "Loamy, well-drained soil",
@@ -13017,13 +12231,7 @@
     "regionalName": "Blood Heart",
     "biologicalName": "Clerodendrum thomsoniae",
     "botanicalName": "Clerodendrum thomsoniae",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -13145,13 +12353,7 @@
     "sellerName": "Shivam Florals",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance",
-      "Patio",
-      "Living Room"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance", "Patio", "Living Room"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -13171,9 +12373,7 @@
       "Easy to Grow",
       "Air Cleaner Plants"
     ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-hymenocallis-caribaea-spider-lilly-plant_600x600.jpg?v=1634222120",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-hymenocallis-caribaea-spider-lilly-plant-1_540x720.jpg?v=1634222117",
@@ -13305,12 +12505,8 @@
     "regionalName": "गुलाबी फूल",
     "biologicalName": "Canna indica",
     "botanicalName": "Canna",
-    "tags": [
-      "House Warming"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-canna-yellow-flower-with-green-leaves-plant-566111_600x600.jpg?v=1679749395",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-canna-yellow-flower-with-green-leaves-plant-2-168020_540x720.jpg?v=1679749395",
@@ -13443,13 +12639,8 @@
     "regionalName": "Kalachandani",
     "biologicalName": "Zantedeschia spp.",
     "botanicalName": "Zantedeschia spp.",
-    "tags": [
-      "House Warming",
-      "Gift Ideas"
-    ],
-    "shippingStates": [
-      "Maharashtra (India)"
-    ],
+    "tags": ["House Warming", "Gift Ideas"],
+    "shippingStates": ["Maharashtra (India)"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-g-plants-calla-lily-yellow-plant-in-6-inch-15-cm-grower-round-plastic-black-pot-742955_600x600.jpg?v=1679749392",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-plants-calla-lily-yellow-plant-in-6-inch-15-cm-grower-round-plastic-black-pot-1-686520_540x720.jpg?v=1679749392",
@@ -13562,10 +12753,7 @@
     "sellerName": "Bharatiya Nursery",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -13577,14 +12765,8 @@
     "regionalName": "गुलाब पौधा",
     "biologicalName": "Hosta spp.",
     "botanicalName": "Hosta",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance"
-    ],
-    "shippingStates": [
-      "Maharashtra"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance"],
+    "shippingStates": ["Maharashtra"],
     "primaryImage": "https://nurserylive.com/cdn/shop/products/nurserylive-hosta-plant_600x600.png?v=1634221892",
     "secondaryImages": [
       "https://nurserylive.com/cdn/shop/products/nurserylive-hosta-plant_600x600.png?v=1634221892",
@@ -13697,10 +12879,7 @@
     "sellerName": "Shree Plant Traders",
     "availability": "In Stock",
     "quantityAvailable": 50,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -13712,12 +12891,7 @@
     "regionalName": "Jade Plant",
     "biologicalName": "Portulacaria Afra",
     "botanicalName": "Portulacaria Afra",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Gujarat (India)",
@@ -13836,11 +13010,7 @@
     "sellerName": "Shree Ganesh Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants",
-      "Low Maintenance"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants", "Low Maintenance"],
     "sunlightRequirement": "Full Sun",
     "moistureRequirement": "Low",
     "soilType": "Well-drained loamy soil",
@@ -13852,13 +13022,7 @@
     "regionalName": "Ficus Bonsai",
     "biologicalName": "Ficus microcarpa",
     "botanicalName": "Ficus microcarpa",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants",
-      "Easy to Grow"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants", "Easy to Grow"],
     "shippingStates": [
       "Maharashtra (India)",
       "Goa (India)",
@@ -13897,10 +13061,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -13912,12 +13073,7 @@
     "regionalName": "धनिया (Dhaniya)",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -13953,10 +13109,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -13968,12 +13121,7 @@
     "regionalName": "धनिया (Dhaniya)",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -14009,10 +13157,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -14024,12 +13169,7 @@
     "regionalName": "धनिया (Dhaniya)",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -14065,10 +13205,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -14080,12 +13217,7 @@
     "regionalName": "धनिया (Dhaniya)",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",
@@ -14121,10 +13253,7 @@
     "sellerName": "Shivendra Nursery",
     "availability": "Out of Stock",
     "quantityAvailable": 0,
-    "categories": [
-      "Outdoor Plants",
-      "Indoor Plants"
-    ],
+    "categories": ["Outdoor Plants", "Indoor Plants"],
     "sunlightRequirement": "Partial Shade",
     "moistureRequirement": "Moderate",
     "soilType": "Well-drained loamy soil",
@@ -14136,12 +13265,7 @@
     "regionalName": "धनिया (Dhaniya)",
     "biologicalName": "Philodendron scandens",
     "botanicalName": "Philodendron scandens",
-    "tags": [
-      "House Warming",
-      "Gift Ideas",
-      "Low Maintenance",
-      "Exotic Plants"
-    ],
+    "tags": ["House Warming", "Gift Ideas", "Low Maintenance", "Exotic Plants"],
     "shippingStates": [
       "Maharashtra (India)",
       "Karnataka (India)",

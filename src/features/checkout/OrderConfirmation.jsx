@@ -16,17 +16,10 @@ const OrderConfirmation = () => {
         <div className="mb-4 flex justify-center">
           <Check className="h-16 w-16 text-green-500" />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-          Order Confirmed!
-        </h1>
-        <p className="mt-4 text-gray-500">
-          Order #{order.id}
-        </p>
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Order Confirmed!</h1>
+        <p className="mt-4 text-gray-500">Order #{order.id}</p>
         <div className="mt-10">
-          <Link
-            to="/"
-            className="rounded-md bg-[#1c3035] px-6 py-3 text-white hover:bg-opacity-90"
-          >
+          <Link to="/" className="hover:bg-opacity-90 rounded-md bg-[#1c3035] px-6 py-3 text-white">
             Continue Shopping
           </Link>
         </div>
