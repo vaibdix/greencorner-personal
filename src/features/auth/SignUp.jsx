@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { context } from '../../store/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
 import { Eye, EyeOff } from 'lucide-react'; // Import the Eye and EyeOff icons from lucide-react
+import google from '../../assets/svg/light.svg'
 
 const SignUp = () => {
   const { state, signup } = useContext(context);
@@ -98,24 +99,8 @@ const SignUp = () => {
             <div className="rounded-lg py-6 md:p-8">
               <div className="mb-10 text-3xl">Sign up to get Started</div>
               <form onSubmit={handleSubmit}>
-                <button
-                  id="googleSignInBtn"
-                  className="mb-4 flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 326667 333333"
-                    shapeRendering="geometricPrecision"
-                    textRendering="geometricPrecision"
-                    imageRendering="optimizeQuality"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    className="mr-3 h-6 w-6"
-                  >
-                    {/* Google icon SVG */}
-                  </svg>
-                  <span className="text-gray-700">Sign up with Google</span>
-                </button>
+                
+                <img src={google} alt='google'/>
 
                 <div className="relative m-6 flex items-center justify-center">
                   <div className="grow border-t border-gray-300"></div>
