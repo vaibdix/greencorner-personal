@@ -107,7 +107,7 @@ const PlantCard = ({ id, name, type, price, imageUrl, bgColor, rating, sunlight 
         </div>
 
         <div className="flex items-center justify-center">
-          <img className="rounded-xl" src={imageUrl} alt={name} />
+          <img className="rounded-xl text-md" src={imageUrl} alt={name} />
         </div>
       </div>
 

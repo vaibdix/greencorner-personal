@@ -24,7 +24,7 @@ const FilterSection = ({
     <>
       {/* Desktop Filter */}
       <aside className="hidden border p-4 lg:block">
-        <div className="border-b p-5 text-xl font-semibold">Filter</div>
+        <div className="border-b -mt-3 p-5 text-xl font-semibold">Filter</div>
 
         {/* Availability */}
         <h3 className="mt-4 pl-5 text-lg font-medium">Availability</h3>
