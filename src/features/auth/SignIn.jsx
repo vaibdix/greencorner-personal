@@ -337,9 +337,11 @@ import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from luc
 import { context } from '../../store/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
 import google from '../../assets/svg/light.svg';
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 const SignIn = () => {
-  const { state, login } = useContext(context);
+  const { state, login, googleLogin } = useContext(context);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -359,6 +361,26 @@ const SignIn = () => {
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
+
+  // Add Google login handler
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (response) => {
+      try {
+        const userInfo = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${response.access_token}` },
+        });
+
+        // Pass the user info directly to your context
+        await googleLogin(userInfo.data);
+        navigate('/');
+      } catch (error) {
+        console.error('Google login error:', error);
+      }
+    },
+    onError: () => {
+      console.error('Google login failed');
+    },
+  });
 
   const validateForm = () => {
     const newErrors = {
@@ -423,10 +445,15 @@ const SignIn = () => {
             <div className="rounded-lg py-5 md:p-8 lg:p-16">
               <div className="mb-2 text-gray-400">WELCOME BACK 👋🏻</div>
               <div className="mb-8 text-3xl">Continue to Your Account</div>
-
+              <button
+                type="button"
+                onClick={() => handleGoogleLogin()}
+                className="flex h-12 w-full items-center justify-center rounded-full border-gray-300 bg-[#E3F3FB] p-3"
+              >
+                <img src={google} alt="google" className="mr-3 h-6 w-6" />
+                <span className="text-gray-700">Sign in with Google</span>
+              </button>
               <form onSubmit={handleSubmit}>
-                <img src={google} alt="google" />
-
                 <div className="relative m-6 flex items-center justify-center">
                   <div className="grow border-t border-gray-300"></div>
                   <span className="mx-4 text-gray-400">Or use Email</span>

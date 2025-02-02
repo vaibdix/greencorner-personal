@@ -19,6 +19,13 @@ export const authReducer = (state, action) => {
         isAuthenticated: true,
         error: null,
       };
+    case ACTIONS.GOOGLE_LOGIN:
+      return {
+        ...state,
+        user: action.payload,
+        isAuthenticated: true,
+        error: null,
+      };
     case ACTIONS.SET_ERROR:
       return {
         ...state,
