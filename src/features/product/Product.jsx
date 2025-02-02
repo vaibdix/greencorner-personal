@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon } from 'lucide-react';
+import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon, Heart } from 'lucide-react';
 import { StarIcon } from 'lucide-react';
 import Review from '../review/Review';
+import CardFiveProduct from './CardFiveProduct';
 import { useParams } from 'react-router-dom';
 import { context } from '../../store/AppContext';
 import potimage from '../../assets/images/potImage.png';
@@ -13,7 +14,7 @@ const Product = () => {
   const [mainImage, setMainImage] = useState('');
   const [error, setError] = useState(null);
 
-  const { addToCart } = useContext(context);
+  const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useContext(context);
 
   useEffect(() => {
     fetch('http://localhost:3000/plants')
@@ -55,6 +56,23 @@ const Product = () => {
       quantity: 1,
     };
     addToCart(cartItem);
+  };
+
+  const handleAddToWishlist = () => {
+    const productData = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      imageUrl: product.primaryImage,
+    };
+
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+      toast.success('Removed from wishlist!');
+    } else {
+      addToWishlist(productData);
+      toast.success('Added to wishlist!');
+    }
   };
 
   return (
@@ -111,9 +129,19 @@ const Product = () => {
 
             {/* Product Details */}
             <div className="flex w-full flex-col justify-center max-lg:mx-auto max-lg:max-w-[608px]">
-              <h2 className="mb-2 text-3xl leading-10 font-semibold text-gray-900">
-                {product.name}
-              </h2>
+              <div className="mb-2 flex items-center justify-between">
+                <h2 className="text-3xl leading-10 font-semibold text-gray-900">{product.name}</h2>
+                <button
+                  onClick={handleAddToWishlist}
+                  className="p-2 transition-all hover:scale-110"
+                >
+                  <Heart
+                    className={`h-6 w-6 ${
+                      isInWishlist(product.id) ? 'fill-red-400 text-red-400' : 'text-red-400'
+                    }`}
+                  />
+                </button>
+              </div>
 
               <div className="mb-6 flex flex-col sm:flex-row sm:items-center">
                 <h6 className="mr-5 border-gray-200 pr-5 text-2xl leading-9 font-semibold text-gray-900 sm:border-r">
@@ -345,6 +373,7 @@ const Product = () => {
           {/* Reviews */}
           <Review reviews={product.reviews} />
         </div>
+        <CardFiveProduct />
       </section>
     </>
   );
