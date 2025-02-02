@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './fonts.css';
 
 @theme {
   --color-sage-50: #f8faf8;
@@ -22,6 +23,9 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+  html {
+    font-family: 'Manrope', system-ui, sans-serif;
   }
 }
 
