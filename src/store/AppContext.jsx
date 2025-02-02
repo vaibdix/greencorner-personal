@@ -2,9 +2,17 @@ import { createContext, useReducer, useEffect } from 'react';
 import { ACTIONS } from './context/actions';
 import { authReducer, initialState } from './reducers/reducer';
 import { api } from './context/api';
+import axios from 'axios'; // Add this import
 
 export const context = createContext();
 
+// Add to your imports
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+// Get Google Client ID from environment variables
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+// Wrap your AppContext with GoogleOAuthProvider
 const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
@@ -115,28 +123,51 @@ const AppContext = ({ children }) => {
     return state.wishlist.some((item) => item.id === plantId);
   };
 
+  // Add Google login function
+  const googleLogin = async (userData) => {
+    try {
+      // Directly set the user data from Google
+      const googleUser = {
+        email: userData.email,
+        name: userData.name,
+        picture: userData.picture,
+        username: userData.given_name,
+        provider: 'google'
+      };
+      
+      dispatch({ type: ACTIONS.SET_USER, payload: googleUser });
+      localStorage.setItem('user', JSON.stringify(googleUser));
+    } catch (error) {
+      console.error('Google login error:', error);
+      dispatch({ type: ACTIONS.SET_ERROR, payload: 'An error occurred during Google login' });
+    }
+  };
+
   return (
-    <context.Provider
-      value={{
-        state,
-        dispatch,
-        login,
-        signup,
-        logout,
-        fetchPlants,
-        setCurrentPlant,
-        addToCart,
-        removeFromCart,
-        updateCartQuantity,
-        clearCart,
-        cartTotal,
-        addToWishlist,
-        removeFromWishlist,
-        isInWishlist,
-      }}
-    >
-      {children}
-    </context.Provider>
+    <GoogleOAuthProvider clientId={googleClientId}>
+      <context.Provider
+        value={{
+          state,
+          dispatch,
+          login,
+          signup,
+          logout,
+          fetchPlants,
+          setCurrentPlant,
+          addToCart,
+          removeFromCart,
+          updateCartQuantity,
+          clearCart,
+          cartTotal,
+          addToWishlist,
+          removeFromWishlist,
+          isInWishlist,
+          googleLogin,
+        }}
+      >
+        {children}
+      </context.Provider>
+    </GoogleOAuthProvider>
   );
 };
 

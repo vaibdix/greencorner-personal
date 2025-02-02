@@ -5,6 +5,7 @@ import logo from '../../../assets/images/newlogo.png';
 import userImage from '../../../assets/images/user.jpg';
 import SearchModal from './SearchModal';
 import { Command } from 'lucide-react';
+import heart from '../../../assets/svg/heart.svg';
 import { useEffect } from 'react';
 
 const Header = () => {
@@ -33,7 +34,7 @@ const Header = () => {
     const handleCommandK = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        setIsSearchModalOpen(true); 
+        setIsSearchModalOpen(true);
       }
     };
 
@@ -44,6 +45,11 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (state.user) {
+      console.log('Complete User Object:', state.user);
+    }
+  }, [state.user]);
 
   return (
     <div className="sticky top-0 z-50">
@@ -137,20 +143,7 @@ const Header = () => {
 
               {/* Wishlist Icon */}
               <Link to="/wishlist" className="relative p-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-gray-700"
-                >
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                </svg>
+                <img src={heart} />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                     {wishlistCount}
@@ -190,10 +183,22 @@ const Header = () => {
                     onClick={toggleProfileDropdown}
                     className="flex items-center space-x-2 rounded-lg p-2"
                   >
-                    <span className="hidden text-sm font-medium text-gray-700 sm:block">
-                      {state.user?.username}
-                    </span>
-                    <img src={userImage} alt="User" className="h-6 w-6 rounded-full object-cover" />
+                    {/* <span className="hidden text-sm font-medium text-gray-700 sm:block">
+                      {state.user?.username} */}
+                    {/* {state.user?.name || state.user?.username} */}
+                    {/* </span> */}
+                    {state.user?.picture ? (
+                      <img
+                        src={state.user.picture}
+                        alt="Profile"
+                        className="h-6 w-6 rounded-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200">
+                        {state.user?.username?.charAt(0).toUpperCase() || 'U'}
+                      </div>
+                    )}
                   </button>
 
                   {isProfileDropdownOpen && (
