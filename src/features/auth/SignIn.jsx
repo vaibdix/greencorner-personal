@@ -337,7 +337,7 @@ import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from luc
 import { context } from '../../store/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
 import google from '../../assets/svg/light.svg';
-import { useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin, GoogleLogin, googleLogout } from '@react-oauth/google';
 import axios from 'axios';
 
 const SignIn = () => {
@@ -453,6 +453,20 @@ const SignIn = () => {
                 <img src={google} alt="google" className="mr-3 h-6 w-6" />
                 <span className="text-gray-700">Sign in with Google</span>
               </button>
+
+              {/* Easy google auth implmentation */}
+              {/* <GoogleLogin
+                onSuccess={async (credentialResponse) => {
+                  console.log(credentialResponse)
+                  navigate('/')
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+                auto_select={true}
+              /> */}
+
+
               <form onSubmit={handleSubmit}>
                 <div className="relative m-6 flex items-center justify-center">
                   <div className="grow border-t border-gray-300"></div>
