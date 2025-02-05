@@ -20,6 +20,7 @@ const About = lazy(() => import('../pages/about/About'));
 const PlantCare = lazy(() => import('../pages/plantCare/PlantCare'));
 import OrderSummary from '../features/orderSummary/OrderSummary';
 import Profile from '../components/layout/Header/Profile';
+import SeeAllUsers from '../features/admin/components/addPlant/SeeAllUsers';
 
 export const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
         path: '/order-confirmation',
         element: <OrderConfirmation />,
       },
+      {
+        path: 'seeallusers',
+        element: <SeeAllUsers />,
+      }
     ],
   },
   {
