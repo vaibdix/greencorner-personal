@@ -22,10 +22,17 @@ import OrderSummary from '../features/orderSummary/OrderSummary';
 import Profile from '../components/layout/Header/Profile';
 import SeeAllUsers from '../features/admin/components/addPlant/SeeAllUsers';
 
+// admin routes
+import Admin from '../features/admin/Admin';
+import AdminSettings from '../features/admin/components/Settings';
+import Plants from '../features/admin/Plants';
+import AddUser from '../features/admin/components/addPlant/AddUser';
+
+
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />, // Use MainLayout as the wrapper
+    element: <MainLayout />,
     children: [
       {
         path: '/',
@@ -86,6 +93,37 @@ export const router = createBrowserRouter([
       {
         path: 'seeallusers',
         element: <SeeAllUsers />,
+      }
+    ],
+  },
+  // Add new admin routes
+  {
+    path: '/admin',
+    element: <Admin />,
+    children: [
+      {
+        path: '',
+        element: <Admin />,
+      },
+      {
+        path: 'users',
+        element: <SeeAllUsers />,
+      },
+      {
+        path: 'products',
+        element: <Plants />,
+      },
+      {
+        path: 'add-plant',
+        element: <AddPlant />,
+      },
+      {
+        path: 'settings',
+        element: <AdminSettings />,
+      },
+      {
+        path: '/admin/add-user',
+        element: <AddUser />
       }
     ],
   },
