@@ -8,6 +8,8 @@ export const initialState = {
   currentPlant: null,
   cart: JSON.parse(localStorage.getItem('cart')) || [],
   wishlist: JSON.parse(localStorage.getItem('wishlist')) || [],
+  users: [],
+  reviews: [],
 };
 
 export const authReducer = (state, action) => {
@@ -98,7 +100,21 @@ export const authReducer = (state, action) => {
         ...state,
         wishlist: state.wishlist.filter((item) => item.id !== action.payload),
       };
-
+    case ACTIONS.DELETE_PLANT:
+      return {
+        ...state,
+        plants: state.plants.filter((plant) => plant.id !== action.payload),
+      };
+    case ACTIONS.SET_USERS:
+      return {
+        ...state,
+        users: action.payload,
+      };
+    case ACTIONS.DELETE_USER:
+      return {
+        ...state,
+        users: state.users.filter((user) => user._id !== action.payload),
+      };
     default:
       return state;
   }
