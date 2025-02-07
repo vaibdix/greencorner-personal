@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './fonts.css';
+/* @import url('https://fonts.cdnfonts.com/css/lufga'); */
 
 @theme {
   --color-sage-50: #f8faf8;
@@ -26,6 +27,7 @@
   }
   html {
     font-family: 'Manrope', system-ui, sans-serif;
+    /* font-family: 'Lufga', sans-serif; */
   }
 }
 
@@ -107,5 +109,31 @@
 
   .animate-slide-up {
     animation: slide-up 0.5s ease-out;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient-slow {
+    animation: gradient 15s ease infinite;
+  }
+
+  .bg-aurora {
+    position: relative;
+    background-size: 400% 400%;
+  }
+
+  .bg-aurora::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255,182,255,0.2), rgba(255,182,255,0) 50%),
+                radial-gradient(circle at 80% 20%, rgba(182,182,255,0.2), rgba(182,182,255,0) 50%),
+                radial-gradient(circle at 20% 80%, rgba(182,255,255,0.2), rgba(182,255,255,0) 50%);
+    filter: blur(20px);
+    z-index: -1;
   }
 }
