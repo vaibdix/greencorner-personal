@@ -91,19 +91,19 @@ const UsersAdmin = () => {
       </div>
 
       {/* Search and Page Size Controls */}
-      <div className="flex items-center space-x-4 mb-4">
+      <div className="mb-4 flex items-center space-x-4">
         <div className="relative max-w-xs">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg w-full"
+            className="w-full rounded-lg border border-[#CACCE2] py-2 pr-4 pl-10"
             placeholder="Search users..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
         <select
-          className="border border-gray-200 rounded-lg px-3 py-2"
+          className="rounded-lg border border-[#CACCE2] px-3 py-2"
           value={itemsPerPage}
           onChange={(e) => setItemsPerPage(Number(e.target.value))}
         >
@@ -116,89 +116,115 @@ const UsersAdmin = () => {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto min-h-[520px]">
+      <div className="m-1 overflow-x-auto rounded-md border border-[#CACCE2]">
         <div className="inline-block min-w-full align-middle">
-          <div className="overflow-hidden min-h-[250px] md:rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+          <div className="min-h-[250px] overflow-hidden md:rounded-lg">
+            <table className="min-w-full divide-y divide-[#CACCE2]">
+              <thead className="text-white">
                 <tr>
                   <th scope="col" className="relative w-12 px-6 sm:w-16 sm:px-8">
                     <input
                       type="checkbox"
                       checked={selectedUsers.length === currentUsers.length}
                       onChange={handleSelectAll}
-                      className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 sm:left-6"
+                      className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border border-[#CACCE2] text-blue-600 sm:left-6"
                     />
                   </th>
-                  <th scope="col" className="px-3 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
+                  <th
+                    scope="col"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase sm:table-cell"
+                  >
                     User ID
                   </th>
-                  <th scope="col" className="px-3 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase"
+                  >
                     User
                   </th>
-                  <th scope="col" className="px-3 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                  <th
+                    scope="col"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase md:table-cell"
+                  >
                     Email
                   </th>
-                  <th scope="col" className="px-3 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden lg:table-cell">
+                  <th
+                    scope="col"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase lg:table-cell"
+                  >
                     Role
                   </th>
-                  <th scope="col" className="px-3 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-3 py-4 text-right text-xs font-medium tracking-wider text-gray-900 uppercase"
+                  >
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 bg-white">
+              <tbody className="divide-y divide-[#c1c3e8]">
                 {currentUsers.map((user) => (
-                  <tr key={user._id}>
+                  <tr key={user._id} className="hover:bg-[#c1c3e8]/20 transition-colors duration-150">
                     <td className="relative w-12 px-6 sm:w-16 sm:px-8">
                       <input
                         type="checkbox"
                         checked={selectedUsers.includes(user._id)}
                         onChange={() => handleSelectUser(user._id)}
-                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 sm:left-6"
+                        className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 sm:left-6"
                       />
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 hidden sm:table-cell">
+                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap sm:table-cell">
                       #{user.id}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4">
+                    <td className="px-3 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="h-10 w-10 flex-shrink-0">
                           <img
-                            src={user.avatar || `https://ui-avatars.com/api/?name=${user.name}&background=random`}
+                            src={
+                              user.avatar ||
+                              `https://ui-avatars.com/api/?name=${user.name}&background=random`
+                            }
                             alt={user.name}
                             className="h-10 w-10 rounded-full object-cover"
                           />
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                          <div className="text-sm text-gray-500 md:hidden">{user.email}</div>
-                          <div className="text-xs text-gray-500 lg:hidden">
-                            <span className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${
-                              user.role === 'admin' ? 'bg-purple-100 text-purple-800' : 'bg-green-100 text-green-800'
-                            }`}>
+                          <div className="text-sm font-medium text-white">{user.name}</div>
+                          <div className="text-sm md:hidden">{user.email}</div>
+                          <div className="text-xs lg:hidden">
+                            <span
+                              className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
+                                user.role === 'admin'
+                                  ? 'bg-purple-100 text-purple-800'
+                                  : 'bg-green-100 text-green-800'
+                              }`}
+                            >
                               {user.role || 'user'}
                             </span>
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 hidden md:table-cell">
+                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 md:table-cell">
                       {user.email}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 hidden lg:table-cell">
-                      <span className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${
-                        user.role === 'admin' ? 'bg-purple-100 text-purple-800' : 'bg-green-100 text-green-800'
-                      }`}>
+                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 lg:table-cell">
+                      <span
+                        className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
+                          user.role === 'admin'
+                            ? 'bg-purple-100 text-purple-800'
+                            : 'bg-green-100 text-green-800'
+                        }`}
+                      >
                         {user.role || 'user'}
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-right text-sm font-medium">
+                    <td className="px-3 py-4 text-right text-sm font-medium whitespace-nowrap">
                       <button
                         className="text-red-600 hover:text-red-900"
                         onClick={() => handleDeleteClick(user)}
                       >
-                        <Trash2 className="h-5 w-5" />
+                        <Trash2 className="mr-5 h-5 w-5" />
                       </button>
                     </td>
                   </tr>
@@ -210,28 +236,29 @@ const UsersAdmin = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between mt-4">
+      <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="px-3 py-1 border rounded disabled:opacity-50"
+            className="rounded border border-[#CACCE2] px-3 py-1 text-gray-900 disabled:opacity-50"
           >
             Previous
           </button>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-gray-900">
             Page {currentPage} of {totalPages}
           </span>
           <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="px-3 py-1 border rounded disabled:opacity-50"
+            className="rounded border border-[#CACCE2] px-3 py-1 text-gray-900 disabled:opacity-50"
           >
             Next
           </button>
         </div>
         <div className="text-sm text-gray-600">
-          Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredUsers.length)} of {filteredUsers.length} results
+          Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredUsers.length)} of{' '}
+          {filteredUsers.length} results
         </div>
       </div>
 
@@ -250,9 +277,7 @@ const UsersAdmin = () => {
                     <Trash2 className="h-6 w-6 text-red-600" />
                   </div>
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <h3 className="text-lg font-medium leading-6 text-gray-900">
-                      Delete User
-                    </h3>
+                    <h3 className="text-lg leading-6 font-medium text-white">Delete User</h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
                         Are you sure you want to delete this user? This action cannot be undone.
