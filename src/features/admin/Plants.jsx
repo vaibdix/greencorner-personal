@@ -93,13 +93,13 @@ const Plants = () => {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto min-h-[520px]">
-        <div className="inline-block min-w-full align-middle">
-          <div className="overflow-hidden min-h-[250px]">
+      <div className="relative overflow-hidden border md:rounded-lg">
+        <div className="overflow-x-auto">
+          <div className="inline-block min-w-full">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left">
+                  <th className="px-3 py-3 sm:px-6 text-left">
                     <input
                       type="checkbox"
                       checked={selectedPlants.length === currentItems.length}
@@ -107,27 +107,30 @@ const Plants = () => {
                       className="rounded border-gray-300 text-blue-600"
                     />
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Plant ID
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    ID
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Image
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Plant Name
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Name
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Price
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Stock
+                  </th>
+                  <th className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
                 {currentItems.map((plant) => (
-                  <tr key={plant._id}>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                  <tr key={plant._id} className="hover:bg-gray-50">
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
                       <input
                         type="checkbox"
                         checked={selectedPlants.includes(plant._id)}
@@ -135,28 +138,39 @@ const Plants = () => {
                         className="rounded border-gray-300 text-blue-600"
                       />
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-sm text-gray-900">#{plant.id}</span>
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
+                      <span className="text-xs sm:text-sm text-gray-900">#{plant.id}</span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
                       <img
                         src={plant.primaryImage}
                         alt={plant.name}
-                        className="h-10 w-10 rounded-full object-cover"
+                        className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover"
                       />
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-sm text-gray-900">{plant.name}</span>
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
+                      <span className="text-xs sm:text-sm text-gray-900">{plant.name}</span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="text-sm text-gray-900">₹{plant.price}</span>
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
+                      <span className="text-xs sm:text-sm text-gray-900">₹{plant.price}</span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
+                      <span className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${
+                        plant.quantityAvailable > 10 
+                          ? 'bg-green-100 text-green-800' 
+                          : plant.quantityAvailable > 0 
+                          ? 'bg-yellow-100 text-yellow-800' 
+                          : 'bg-red-100 text-red-800'
+                      }`}>
+                        {plant.quantityAvailable || 0}
+                      </span>
+                    </td>
+                    <td className="px-3 py-3 sm:px-6 whitespace-nowrap">
                       <button
                         className="text-red-600 hover:text-red-900"
                         onClick={() => handleDelete(plant._id)}
                       >
-                        <Trash2 className="h-5 w-5" />
+                        <Trash2 className="h-4 w-4 sm:h-5 sm:w-5" />
                       </button>
                     </td>
                   </tr>
@@ -167,8 +181,8 @@ const Plants = () => {
         </div>
       </div>
 
-      {/* Pagination */}
-      <div className="flex items-center justify-between mt-4">
+      {/* Update pagination for better mobile view */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
@@ -188,7 +202,7 @@ const Plants = () => {
             Next
           </button>
         </div>
-        <div className="text-sm text-gray-600">
+        <div className="text-xs sm:text-sm text-gray-600">
           Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredPlants.length)} of {filteredPlants.length} results
         </div>
       </div>
