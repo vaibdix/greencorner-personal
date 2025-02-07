@@ -253,7 +253,7 @@ const Header = () => {
                         User Login
                       </Link>
                       <Link
-                        to="/addnewplant"
+                        to="/admin/signin"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       >
                         Admin Login

@@ -27,6 +27,8 @@ import Admin from '../features/admin/Admin';
 import AdminSettings from '../features/admin/components/Settings';
 import Plants from '../features/admin/Plants';
 import AddUser from '../features/admin/components/addPlant/AddUser';
+import AdminSignin from '../features/admin/components/signin/AdminSignin';
+import Analytics from '../features/admin/Analytics';
 
 
 export const router = createBrowserRouter([
@@ -93,18 +95,23 @@ export const router = createBrowserRouter([
       {
         path: 'seeallusers',
         element: <SeeAllUsers />,
-      }
+      },
     ],
   },
-  // Add new admin routes
+  // Add admin signin route separately
+  {
+    path: '/admin/signin',
+    element: <AdminSignin />,
+  },
+  // Update admin routes to exclude signin
   {
     path: '/admin',
     element: <Admin />,
     children: [
-      {
-        path: '',
-        element: <Admin />,
-      },
+      // {
+      //   path: '',
+      //   element: <Admin />,
+      // },
       {
         path: 'users',
         element: <SeeAllUsers />,
@@ -122,9 +129,13 @@ export const router = createBrowserRouter([
         element: <AdminSettings />,
       },
       {
+        path: 'analytics',
+        element: <Analytics />
+      },
+      {
         path: '/admin/add-user',
-        element: <AddUser />
-      }
+        element: <AddUser />,
+      },
     ],
   },
   {
