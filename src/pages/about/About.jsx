@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Leaf, Heart, Truck, Shield } from 'lucide-react';
 
@@ -32,6 +32,10 @@ const About = () => {
       description: 'We stand behind the quality of every plant we sell.',
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen">
