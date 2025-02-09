@@ -87,6 +87,11 @@ const Header = () => {
                     About
                   </Link>
                 </li>
+                <li>
+                  <Link to="/contact" className="text-gray-700 hover:text-[#1C3035]">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 

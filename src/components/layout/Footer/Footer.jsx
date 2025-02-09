@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/newlogo.png';
 
 const Footer = () => {
@@ -20,19 +21,19 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Company</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/home" className="text-white hover:text-gray-300">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/category" className="text-white hover:text-gray-300">
                   Collection
-                </a>
+                </Link>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/about" className="text-white hover:text-gray-300">
                   About us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -41,19 +42,19 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Site Map</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/plantcare" className="text-white">
                   Plant Care
-                </a>
+                </Link>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/category" className="text-white">
                   New Arrivals{' '}
-                </a>
+                </Link>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <Link to="/category" className="text-white">
                   Community
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -83,18 +84,33 @@ const Footer = () => {
             <h4 className="mb-7 text-lg font-medium text-white">Social</h4>
             <ul className="text-sm transition-all duration-500">
               <li className="mb-3">
-                <a href="#" className="text-white">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300"
+                >
                   Facebook
                 </a>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
-                  Instagram{' '}
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300"
+                >
+                  Instagram
                 </a>
               </li>
               <li className="mb-3">
-                <a href="#" className="text-white">
-                  LinkedIn{' '}
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300"
+                >
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -104,7 +120,8 @@ const Footer = () => {
         <div className="border-t border-gray-200 py-7">
           <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
             <span className="text-center text-sm text-white">
-              ©<a href="https://Plant it..io/">The Green Corner</a> 2024, All rights reserved.
+              ©<a href="https://Plant it..io/">The Green Corner</a> {new Date().getFullYear()} All
+              rights reserved.
             </span>
             <div className="mt-4 flex space-x-4 sm:justify-center lg:mt-0">
               <a href="#" className="flex h-9 w-9 items-center justify-center rounded-full">
