@@ -1,6 +1,5 @@
-
-
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, Suspense } from 'react';
+import Skeleton from 'react-loading-skeleton'; // Import Skeleton
 import {
   BarChart,
   Bar,
@@ -15,10 +14,18 @@ import {
   Cell,
   AreaChart,
   Area,
-  // Add ComposedChart to imports
   ComposedChart,
 } from 'recharts';
 import { context } from '../../store/AppContext';
+
+// Skeleton component for loading placeholders
+const SkeletonCard = () => (
+  <div className="rounded-xl bg-white p-8">
+    <Skeleton height={40} width="80%" />
+    <Skeleton height={20} width="60%" className="mt-2" />
+    <Skeleton height={40} width="50%" className="mt-6" />
+  </div>
+);
 
 const Analytics = () => {
   const { state, fetchPlants } = useContext(context);
@@ -41,12 +48,23 @@ const Analytics = () => {
       }
     };
     loadData();
-  }, []); // Remove fetchPlants from dependency array to prevent infinite loops
+  }, []);
 
   if (isLoading) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
+      <div className="min-h-screen p-8">
+        {/* Skeleton UI */}
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+        </div>
       </div>
     );
   }
@@ -108,9 +126,7 @@ const Analytics = () => {
     <div className="min-h-screen rounded-lg bg-gray-50 p-8 text-gray-800">
       {/* Header */}
       <div className="mb-12">
-        <h1 className="text-3xl font-semibold">
-          Analytics <span className="text-emerald-500">Dashboard</span>
-        </h1>
+        <h1 className="text-xl font-semibold">Plants Dashboard</h1>
         <p className="mt-2 text-gray-500">Real-time insights for your plant business</p>
       </div>
 
@@ -137,8 +153,6 @@ const Analytics = () => {
           </p>
           <p className="mt-1 text-sm text-gray-500">Products currently out of stock</p>
         </div>
-
-        
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">

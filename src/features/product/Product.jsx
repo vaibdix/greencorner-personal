@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Suspense } from 'react';
 import { ShoppingBag, Star, Wallet, Plus, Minus, PlusIcon, Heart } from 'lucide-react';
 import { StarIcon } from 'lucide-react';
 import Review from '../review/Review';
@@ -7,6 +7,83 @@ import { useParams } from 'react-router-dom';
 import { context } from '../../store/AppContext';
 import potimage from '../../assets/images/potImage.png';
 import potImageNoPlant from '../../assets/images/potImageNoPlant.png';
+import { toast } from 'react-hot-toast';
+
+const ProductSkeleton = () => (
+  <div className="relative animate-pulse py-5 lg:py-14">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-4">
+      {/* Breadcrumb Skeleton */}
+      <div className="mb-5 flex gap-2">
+        <div className="h-6 w-20 rounded bg-gray-200"></div>
+        <div className="h-6 w-4 rounded bg-gray-200"></div>
+        <div className="h-6 w-24 rounded bg-gray-200"></div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+        {/* Image Skeleton */}
+        <div>
+          <div className="h-[600px] w-full rounded-xl bg-gray-200"></div>
+          <div className="mt-6 ml-7 flex gap-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-16 w-16 rounded-lg bg-gray-200"></div>
+            ))}
+          </div>
+        </div>
+
+        {/* Details Skeleton */}
+        <div className="space-y-6">
+          <div className="flex justify-between">
+            <div className="h-8 w-2/3 rounded bg-gray-200"></div>
+            <div className="h-8 w-8 rounded-full bg-gray-200"></div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className="h-8 w-32 rounded bg-gray-200"></div>
+            <div className="flex gap-1">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="h-5 w-5 rounded bg-gray-200"></div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-10 w-24 rounded-full bg-gray-200"></div>
+            ))}
+          </div>
+
+          <div className="h-16 w-full rounded-lg bg-gray-200"></div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="h-14 rounded-lg bg-gray-200"></div>
+            <div className="h-14 rounded-lg bg-gray-200"></div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="h-32 rounded-lg bg-gray-200"></div>
+            <div className="h-32 rounded-lg bg-gray-200"></div>
+          </div>
+
+          <div className="space-y-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-14 rounded-lg bg-gray-200"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Reviews Skeleton */}
+      <div className="mt-16">
+        <div className="h-8 w-48 rounded bg-gray-200"></div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-48 rounded-lg bg-gray-200"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const Product = () => {
   const { id } = useParams();
@@ -43,8 +120,9 @@ const Product = () => {
   if (error) {
     return <div className="p-4 text-center text-red-500">Error: {error}</div>;
   }
+
   if (!product) {
-    return <div className="p-4 text-center">Loading...</div>;
+    return <ProductSkeleton />;
   }
 
   const handleAddToCart = () => {
@@ -56,6 +134,14 @@ const Product = () => {
       quantity: 1,
     };
     addToCart(cartItem);
+    toast.success('Added to cart!', {
+      icon: '🛍️',
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    });
   };
 
   const handleAddToWishlist = () => {
@@ -76,7 +162,7 @@ const Product = () => {
   };
 
   return (
-    <>
+    <Suspense fallback={<ProductSkeleton />}>
       <section className="relative py-5 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-4">
           <nav aria-label="Breadcrumb" className="mb-5">
@@ -375,7 +461,7 @@ const Product = () => {
         </div>
         <CardFiveProduct />
       </section>
-    </>
+    </Suspense>
   );
 };
 

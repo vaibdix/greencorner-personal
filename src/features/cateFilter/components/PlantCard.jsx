@@ -4,6 +4,7 @@ import { context } from '../../../store/AppContext';
 import { toast } from 'react-hot-toast';
 import { Heart, SunDim, CloudAlert, CloudSun, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Suspense } from 'react';
 
 const sunlightRequirement = {
   'Full Sun': <Sun />,
@@ -64,80 +65,112 @@ const PlantCard = ({
   };
 
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="w-auto rounded-lg"
-      onClick={handleClick}
-    >
-      <div className={`${bgColor} relative`}>
-        <div className="absolute top-3 left-3 rounded-full bg-[#1c3035] px-3 py-[6px] text-xs text-white">
-          50% OFF
-        </div>
-
-        <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-[#1c3035]">
-          <span className="text-xs">{getSunlightIcon(sunlight)}</span>
-        </div>
-
-        <div className="flex items-center justify-center">
-          <img
-            className="h-auto w-full rounded-xl object-cover"
-            src={displayImage}
-            alt={`${name} plant`}
-            onError={handleImageError}
-            loading="lazy"
-          />
-        </div>
-      </div>
-
-      <div className="mt-2">
-        <span className="flex w-full flex-col text-sm opacity-50 sm:flex-row sm:items-center sm:justify-between">
-          <span className="flex items-end">{type}</span>
-          <div className="mt-1 flex items-center sm:mt-0 sm:ml-auto">
-            <span className="text-sm">{renderStars(rating)}</span>
-            <span className="ml-2 text-sm">{rating}</span>
+    <Suspense fallback={<SkeletonLoader />}>
+      <motion.div
+        whileHover={{ y: -5 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="w-auto rounded-lg"
+        onClick={handleClick}
+      >
+        <div className={`${bgColor} relative`}>
+          <div className="absolute top-3 left-3 rounded-full bg-[#1c3035] px-3 py-[6px] text-xs text-white">
+            50% OFF
           </div>
-        </span>
 
-        <div className="grid grid-flow-row grid-cols-2 grid-rows-2">
-          <div className="name text-md col-span-1 row-span-1">{name}</div>
+          <div className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-[#1c3035]">
+            <span className="text-xs">{getSunlightIcon(sunlight)}</span>
+          </div>
 
-          <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
-            <Heart
-              width={18}
-              className={`cursor-pointer ${isInWishlist(id) ? 'fill-red-400 text-red-400' : 'text-red-400'}`}
-              onClick={handleAddToFav}
+          <div className="flex items-center justify-center">
+            <img
+              className="h-auto w-full rounded-xl object-cover"
+              src={displayImage}
+              alt={`${name} plant`}
+              onError={handleImageError}
+              loading="lazy"
             />
-            <div
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white transition-all hover:bg-[#2a454d] active:scale-95"
-              onClick={handleAddToCart}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-shopping-bag"
-              >
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                <path d="M3 6h18" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </svg>
-            </div>
           </div>
-
-          <div className="price col-span-1 row-span-1 text-sm">₹ {price}</div>
-          <div className="col-span-1 row-span-1"></div>
         </div>
+
+        <div className="mt-2">
+          <span className="flex w-full flex-col text-sm opacity-50 sm:flex-row sm:items-center sm:justify-between">
+            <span className="flex items-end">{type}</span>
+            <div className="mt-1 flex items-center sm:mt-0 sm:ml-auto">
+              <span className="text-sm">{renderStars(rating)}</span>
+              <span className="ml-2 text-sm">{rating}</span>
+            </div>
+          </span>
+
+          <div className="grid grid-flow-row grid-cols-2 grid-rows-2">
+            <div className="name text-md col-span-1 row-span-1">{name}</div>
+
+            <div className="basket col-span-1 row-span-2 mt-2 flex justify-end gap-2 sm:ml-auto">
+              <Heart
+                width={18}
+                className={`cursor-pointer ${isInWishlist(id) ? 'fill-red-400 text-red-400' : 'text-red-400'}`}
+                onClick={handleAddToFav}
+              />
+              <div
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1c3035] text-white transition-all hover:bg-[#2a454d] active:scale-95"
+                onClick={handleAddToCart}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-shopping-bag"
+                >
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                  <path d="M3 6h18" />
+                  <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+              </div>
+            </div>
+
+            <div className="price col-span-1 row-span-1 text-sm">₹ {price}</div>
+            <div className="col-span-1 row-span-1"></div>
+          </div>
+        </div>
+      </motion.div>
+    </Suspense>
+  );
+};
+
+// Update the SkeletonLoader to better match the PlantCard layout
+export const SkeletonLoader = () => {
+  return (
+    <div className="w-auto animate-pulse rounded-lg">
+      <div className="relative">
+        <div className="h-64 w-full rounded-xl bg-gray-200"></div>
+        <div className="absolute top-3 left-3 h-6 w-16 rounded-full bg-gray-300"></div>
+        <div className="absolute top-3 right-3 h-8 w-8 rounded-full bg-gray-300"></div>
       </div>
-    </motion.div>
+
+      <div className="mt-2 space-y-2">
+        <div className="flex justify-between">
+          <div className="h-4 w-24 rounded bg-gray-200"></div>
+          <div className="h-4 w-16 rounded bg-gray-200"></div>
+        </div>
+
+        <div className="grid grid-cols-2">
+          <div className="h-5 w-32 rounded bg-gray-200"></div>
+          <div className="flex justify-end gap-2">
+            <div className="h-7 w-7 rounded-full bg-gray-200"></div>
+            <div className="h-7 w-7 rounded-full bg-gray-200"></div>
+          </div>
+        </div>
+
+        <div className="h-5 w-20 rounded bg-gray-200"></div>
+      </div>
+    </div>
   );
 };
 
