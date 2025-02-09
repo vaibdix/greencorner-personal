@@ -72,6 +72,51 @@
   margin-inline: 4px;
 }
 
+.skeleton-input {
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton-input.h-24 {
+  height: 96px;
+}
+
+.skeleton-checkbox {
+  height: 20px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton-btn {
+  height: 48px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 8px;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton-image {
+  height: 100%;
+  background-color: #e0e0e0;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #c7c7c7;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
 @layer utilities {
   @keyframes spin-slow {
     to {
@@ -112,9 +157,15 @@
   }
 
   @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .animate-gradient-slow {
@@ -130,9 +181,13 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255,182,255,0.2), rgba(255,182,255,0) 50%),
-                radial-gradient(circle at 80% 20%, rgba(182,182,255,0.2), rgba(182,182,255,0) 50%),
-                radial-gradient(circle at 20% 80%, rgba(182,255,255,0.2), rgba(182,255,255,0) 50%);
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 182, 255, 0.2),
+        rgba(255, 182, 255, 0) 50%
+      ),
+      radial-gradient(circle at 80% 20%, rgba(182, 182, 255, 0.2), rgba(182, 182, 255, 0) 50%),
+      radial-gradient(circle at 20% 80%, rgba(182, 255, 255, 0.2), rgba(182, 255, 255, 0) 50%);
     filter: blur(20px);
     z-index: -1;
   }

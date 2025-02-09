@@ -1,5 +1,281 @@
 import axios from 'axios';
+import { Suspense } from 'react';
 import { useState } from 'react';
+
+export const SkeletonPlant = () => {
+  return (
+    <div className="">
+      <div className="mx-auto max-w-4xl animate-pulse rounded-lg bg-white p-8 shadow-md">
+        <h3 className="mb-5 h-7 w-48 rounded bg-gray-300 text-lg font-semibold"></h3>
+        <form className="space-y-6">
+          {/* Basic Information Section */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div className="col-span-2">
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-24 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* reviews */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+              <div className="flex items-center">
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+              <div className="flex items-center">
+                <div className="mt-1 block h-24 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+              <div className="flex items-center">
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="h-9 w-24 rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-white shadow-xs"></div>
+              </div>
+            </div>
+
+            {/* Displaying the Reviews */}
+            <div className="mt-6 space-y-4">
+              {[1, 2].map((index) => (
+                <div key={index} className="border-t pt-4">
+                  <h5 className="h-5 w-32 rounded bg-gray-300 font-semibold text-gray-800"></h5>
+                  <div className="flex items-center space-x-2">
+                    <span className="h-4 w-20 rounded bg-gray-300 text-sm text-gray-600"></span>
+                    <span className="text-sm text-gray-600">•</span>
+                    <span className="h-4 w-20 rounded bg-gray-300 text-sm text-gray-600"></span>
+                  </div>
+                  <p className="h-4 w-48 rounded bg-gray-300 text-sm text-gray-600"></p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Seller Information Section */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="col-span-2">
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Sales and Inventory Section */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label className="block h-5 w-36 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-28 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-28 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-2 space-y-2">
+                  <div className="flex items-center">
+                    <div className="h-4 w-4 rounded-sm border-gray-300 bg-gray-300 text-green-600 focus:ring-green-500"></div>
+                    <label className="ml-2 h-4 w-24 rounded bg-gray-300 text-sm text-gray-700"></label>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="h-4 w-4 rounded-sm border-gray-300 bg-gray-300 text-green-600 focus:ring-green-500"></div>
+                    <label className="ml-2 h-4 w-24 rounded bg-gray-300 text-sm text-gray-700"></label>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="h-4 w-4 rounded-sm border-gray-300 bg-gray-300 text-green-600 focus:ring-green-500"></div>
+                    <label className="ml-2 h-4 w-24 rounded bg-gray-300 text-sm text-gray-700"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Plant Details Section */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div>
+                <label className="block h-5 w-36 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-36 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Plant Details Section - Continued */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-32 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Botanical Information */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-28 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-28 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Information */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label className="block h-5 w-28 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-20 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-20 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Images Section */}
+          <div className="rounded-md bg-gray-50 p-6">
+            <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <label className="block h-5 w-32 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+
+              <div>
+                <label className="block h-5 w-24 rounded bg-gray-300 text-sm font-medium text-gray-700"></label>
+                <div className="mt-1 block h-10 w-full rounded-md border border-gray-300 bg-gray-300 px-3 py-2 shadow-xs"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-end space-x-4">
+            <div className="h-9 w-20 rounded-md border border-gray-300 bg-gray-300 px-4 py-2 text-sm font-medium text-gray-700 shadow-xs"></div>
+            <div className="h-9 w-20 rounded-md bg-gray-300 px-4 py-2 text-sm font-medium text-white shadow-xs"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 const AddPlantDemo = () => {
   const [newReview, setNewReview] = useState({
@@ -150,9 +426,9 @@ const AddPlantDemo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <Suspense fallback={<SkeletonPlant />}>
       <div className="mx-auto max-w-4xl rounded-lg bg-white p-8 shadow-md">
-        <h3 className="mb-6 text-center text-2xl font-bold text-gray-800">Add a New Plant</h3>
+        <h3 className="mb-5 text-lg font-semibold">Add a New Plant</h3>
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Information Section */}
           <div className="rounded-md bg-gray-50 p-6">
@@ -749,7 +1025,7 @@ const AddPlantDemo = () => {
           </div>
         </form>
       </div>
-    </div>
+    </Suspense>
   );
 };
 

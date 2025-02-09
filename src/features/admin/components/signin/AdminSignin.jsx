@@ -54,11 +54,11 @@
 //       // Use the existing API method
 //       const response = await api.getUsers();
 //       const users = response.data;
-      
+
 //       // Find admin user
 //       const adminUser = users.find(
-//         (user) => user.email === email && 
-//         user.password === password && 
+//         (user) => user.email === email &&
+//         user.password === password &&
 //         user.role === 'admin'
 //       );
 
@@ -147,8 +147,6 @@
 // };
 
 // export default AdminSignin;
-
-
 
 import React, { useState, useContext } from 'react';
 import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from lucide-react

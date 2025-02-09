@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, Suspense } from 'react';
 import { Trash2, X, Search } from 'lucide-react';
 import { context } from '../../store/AppContext';
 import { api } from '../../store/context/api';
 import { ACTIONS } from '../../store/context/actions';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const UsersAdmin = () => {
   const { state, dispatch } = useContext(context);
@@ -13,12 +15,15 @@ const UsersAdmin = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [selectedUsers, setSelectedUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Track loading state
 
   // Filter users based on search term
-  const filteredUsers = state.users?.filter(user =>
-    user.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email?.toLowerCase().includes(searchTerm.toLowerCase())
-  ) || [];
+  const filteredUsers =
+    state.users?.filter(
+      (user) =>
+        user.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.email?.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
 
   // Calculate pagination
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -29,7 +34,7 @@ const UsersAdmin = () => {
   // Handle select all
   const handleSelectAll = (e) => {
     if (e.target.checked) {
-      setSelectedUsers(currentUsers.map(user => user._id));
+      setSelectedUsers(currentUsers.map((user) => user._id));
     } else {
       setSelectedUsers([]);
     }
@@ -37,19 +42,20 @@ const UsersAdmin = () => {
 
   // Handle individual select
   const handleSelectUser = (userId) => {
-    setSelectedUsers(prev => 
-      prev.includes(userId) 
-        ? prev.filter(id => id !== userId)
-        : [...prev, userId]
+    setSelectedUsers((prev) =>
+      prev.includes(userId) ? prev.filter((id) => id !== userId) : [...prev, userId]
     );
   };
 
   const fetchUsers = async () => {
+    setIsLoading(true); // Set loading state to true
     try {
       const response = await api.getUsers();
       dispatch({ type: ACTIONS.SET_USERS, payload: response.data });
+      setIsLoading(false); // Set loading state to false once data is fetched
     } catch (error) {
       console.error('Error fetching users:', error);
+      setIsLoading(false); // Stop loading on error
     }
   };
 
@@ -63,7 +69,7 @@ const UsersAdmin = () => {
       console.error('No user ID provided');
       return;
     }
-    
+
     try {
       await api.deleteUser(userToDelete._id);
       dispatch({ type: ACTIONS.DELETE_USER, payload: userToDelete._id });
@@ -84,7 +90,7 @@ const UsersAdmin = () => {
         <h2 className="text-lg font-semibold">Users Management</h2>
         <Link
           to="/admin/add-user"
-          className="text-sm font-medium text-blue-600 hover:text-blue-700"
+          className="rounded-md border border-[#1c1c1c] p-2 text-sm font-medium hover:bg-[#1c1c1c] hover:text-white"
         >
           Add New User
         </Link>
@@ -93,17 +99,17 @@ const UsersAdmin = () => {
       {/* Search and Page Size Controls */}
       <div className="mb-4 flex items-center space-x-4">
         <div className="relative max-w-xs">
-          <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400" />
+          <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#1c1c1c]" />
           <input
             type="text"
-            className="w-full rounded-lg border border-[#CACCE2] py-2 pr-4 pl-10"
+            className="w-full rounded-lg border border-[#1c1c1c] py-2 pr-4 pl-10"
             placeholder="Search users..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
         <select
-          className="rounded-lg border border-[#CACCE2] px-3 py-2"
+          className="rounded-lg border border-[#1c1c1c] px-3 py-2"
           value={itemsPerPage}
           onChange={(e) => setItemsPerPage(Number(e.target.value))}
         >
@@ -116,119 +122,131 @@ const UsersAdmin = () => {
       </div>
 
       {/* Table */}
-      <div className="m-1 overflow-x-auto rounded-md border border-[#CACCE2]">
+      <div className="m-1 overflow-x-auto rounded-md border border-[#c1c3e8] bg-white">
         <div className="inline-block min-w-full align-middle">
           <div className="min-h-[250px] overflow-hidden md:rounded-lg">
-            <table className="min-w-full divide-y divide-[#CACCE2]">
-              <thead className="text-white">
+            <table className="min-w-full divide-y">
+              <thead className="bg-[#1c1c1c] text-white">
                 <tr>
                   <th scope="col" className="relative w-12 px-6 sm:w-16 sm:px-8">
                     <input
                       type="checkbox"
                       checked={selectedUsers.length === currentUsers.length}
                       onChange={handleSelectAll}
-                      className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border border-[#CACCE2] text-blue-600 sm:left-6"
+                      className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border text-blue-600 sm:left-6"
                     />
                   </th>
                   <th
                     scope="col"
-                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase sm:table-cell"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-white uppercase sm:table-cell"
                   >
                     User ID
                   </th>
                   <th
                     scope="col"
-                    className="px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase"
+                    className="px-3 py-4 text-left text-xs font-medium tracking-wider text-white uppercase"
                   >
                     User
                   </th>
                   <th
                     scope="col"
-                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase md:table-cell"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-white uppercase md:table-cell"
                   >
                     Email
                   </th>
                   <th
                     scope="col"
-                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-gray-900 uppercase lg:table-cell"
+                    className="hidden px-3 py-4 text-left text-xs font-medium tracking-wider text-white uppercase lg:table-cell"
                   >
                     Role
                   </th>
                   <th
                     scope="col"
-                    className="px-3 py-4 text-right text-xs font-medium tracking-wider text-gray-900 uppercase"
+                    className="px-3 py-4 text-right text-xs font-medium tracking-wider text-white uppercase"
                   >
                     Actions
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#c1c3e8]">
-                {currentUsers.map((user) => (
-                  <tr key={user._id} className="hover:bg-[#c1c3e8]/20 transition-colors duration-150">
-                    <td className="relative w-12 px-6 sm:w-16 sm:px-8">
-                      <input
-                        type="checkbox"
-                        checked={selectedUsers.includes(user._id)}
-                        onChange={() => handleSelectUser(user._id)}
-                        className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 sm:left-6"
-                      />
-                    </td>
-                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap sm:table-cell">
-                      #{user.id}
-                    </td>
-                    <td className="px-3 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <div className="h-10 w-10 flex-shrink-0">
-                          <img
-                            src={
-                              user.avatar ||
-                              `https://ui-avatars.com/api/?name=${user.name}&background=random`
-                            }
-                            alt={user.name}
-                            className="h-10 w-10 rounded-full object-cover"
-                          />
-                        </div>
-                        <div className="ml-4">
-                          <div className="text-sm font-medium text-white">{user.name}</div>
-                          <div className="text-sm md:hidden">{user.email}</div>
-                          <div className="text-xs lg:hidden">
-                            <span
-                              className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
-                                user.role === 'admin'
-                                  ? 'bg-purple-100 text-purple-800'
-                                  : 'bg-green-100 text-green-800'
-                              }`}
-                            >
-                              {user.role || 'user'}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 md:table-cell">
-                      {user.email}
-                    </td>
-                    <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 lg:table-cell">
-                      <span
-                        className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
-                          user.role === 'admin'
-                            ? 'bg-purple-100 text-purple-800'
-                            : 'bg-green-100 text-green-800'
-                        }`}
-                      >
-                        {user.role || 'user'}
-                      </span>
-                    </td>
-                    <td className="px-3 py-4 text-right text-sm font-medium whitespace-nowrap">
-                      <button
-                        className="text-red-600 hover:text-red-900"
-                        onClick={() => handleDeleteClick(user)}
-                      >
-                        <Trash2 className="mr-5 h-5 w-5" />
-                      </button>
+                {isLoading ? (
+                  // Skeleton loader while data is loading
+                  <tr>
+                    <td colSpan="6" className="py-10 text-center">
+                      <Skeleton count={6} height={40} />
                     </td>
                   </tr>
-                ))}
+                ) : (
+                  currentUsers.map((user) => (
+                    <tr
+                      key={user._id}
+                      className="transition-colors duration-150 hover:bg-[#c1c3e8]/20"
+                    >
+                      <td className="relative w-12 px-6 sm:w-16 sm:px-8">
+                        <input
+                          type="checkbox"
+                          checked={selectedUsers.includes(user._id)}
+                          onChange={() => handleSelectUser(user._id)}
+                          className="absolute top-1/2 left-4 -mt-2 h-4 w-4 rounded border-gray-300 text-blue-600 sm:left-6"
+                        />
+                      </td>
+                      <td className="hidden px-3 py-4 text-sm whitespace-nowrap sm:table-cell">
+                        #{user.id}
+                      </td>
+                      <td className="px-3 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <div className="h-10 w-10 flex-shrink-0">
+                            <img
+                              src={
+                                user.avatar ||
+                                `https://ui-avatars.com/api/?name=${user.name}&background=random`
+                              }
+                              alt={user.name}
+                              className="h-10 w-10 rounded-full object-cover"
+                            />
+                          </div>
+                          <div className="ml-4">
+                            <div className="text-sm font-medium text-white">{user.name}</div>
+                            <div className="text-sm md:hidden">{user.email}</div>
+                            <div className="text-xs lg:hidden">
+                              <span
+                                className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
+                                  user.role === 'admin'
+                                    ? 'bg-purple-100 text-purple-800'
+                                    : 'bg-green-100 text-green-800'
+                                }`}
+                              >
+                                {user.role || 'user'}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 md:table-cell">
+                        {user.email}
+                      </td>
+                      <td className="hidden px-3 py-4 text-sm whitespace-nowrap text-gray-900 lg:table-cell">
+                        <span
+                          className={`inline-flex rounded-full px-2 text-xs leading-5 font-semibold ${
+                            user.role === 'admin'
+                              ? 'bg-purple-100 text-purple-800'
+                              : 'bg-green-100 text-green-800'
+                          }`}
+                        >
+                          {user.role || 'user'}
+                        </span>
+                      </td>
+                      <td className="px-3 py-4 text-right text-sm font-medium whitespace-nowrap">
+                        <button
+                          className="text-red-600 hover:text-red-900"
+                          onClick={() => handleDeleteClick(user)}
+                        >
+                          <Trash2 className="mr-5 h-5 w-5" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
@@ -241,7 +259,7 @@ const UsersAdmin = () => {
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="rounded border border-[#CACCE2] px-3 py-1 text-gray-900 disabled:opacity-50"
+            className="rounded border border-[#1c1c1c] px-3 py-1 disabled:opacity-50"
           >
             Previous
           </button>
@@ -251,7 +269,7 @@ const UsersAdmin = () => {
           <button
             onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
-            className="rounded border border-[#CACCE2] px-3 py-1 text-gray-900 disabled:opacity-50"
+            className="rounded border border-[#1c1c1c] px-3 py-1 disabled:opacity-50"
           >
             Next
           </button>

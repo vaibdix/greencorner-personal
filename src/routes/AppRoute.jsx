@@ -16,6 +16,7 @@ import Wishlist from '../features/Wishlist/Wishlist';
 import AddPlant from '../features/admin/components/addPlant/AddPlantDemo';
 import OrderConfirmation from '../features/checkout/OrderConfirmation';
 
+const Contact = lazy(() => import('../pages/contact/Contact'));
 const About = lazy(() => import('../pages/about/About'));
 const PlantCare = lazy(() => import('../pages/plantCare/PlantCare'));
 import OrderSummary from '../features/orderSummary/OrderSummary';
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
         path: 'seeallusers',
         element: <SeeAllUsers />,
       },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
     ],
   },
   // Add admin signin route separately
@@ -130,7 +135,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'analytics',
-        element: <Analytics />
+        element: <Analytics />,
       },
       {
         path: '/admin/add-user',

@@ -1,9 +1,61 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Sun, Droplets, Wind, Thermometer, Clock, Calendar, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 const PlantCare = () => {
   const [activeSection, setActiveSection] = useState('basics');
   const [activeGuide, setActiveGuide] = useState('indoor');
+
+  // Enhanced animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, ease: 'easeOut' },
+  };
+
+  const scrollVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const cardVariants = {
+    initial: { opacity: 0, y: 20, scale: 0.95 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+    hover: {
+      scale: 1.03,
+      y: -5,
+      transition: {
+        duration: 0.2,
+        ease: 'easeInOut',
+      },
+    },
+  };
 
   const careBasics = [
     {
@@ -117,59 +169,84 @@ const PlantCare = () => {
   ];
 
   return (
-    <div className="from-sage-50 to-sage-100 min-h-screen bg-linear-to-b">
-      {/* Hero Section */}
+    <div className="from-sage-50 to-sage-100 min-h-screen bg-gradient-to-b">
+      {/* Hero Section with enhanced animations */}
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
         className="relative h-[80vh] overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
       >
-        <div className="absolute inset-0">
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        >
           <img
             src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3"
             alt="Plant Care Hero"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
-        </div>
+        </motion.div>
 
         <div className="relative z-10 flex h-full items-center justify-center text-center">
-          <div className="max-w-3xl px-4">
-            <h1 className="mb-6 text-5xl font-light tracking-tight text-white sm:text-7xl">
+          <motion.div
+            className="max-w-3xl px-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1, ease: 'easeOut' }}
+          >
+            <motion.h1
+              className="mb-6 text-5xl font-light tracking-tight text-white sm:text-7xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
               The Art of Plant Care
-            </h1>
-            <p className="text-lg text-gray-200 sm:text-xl">
+            </motion.h1>
+            <motion.p
+              className="text-lg text-gray-200 sm:text-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+            >
               Discover the secrets to helping your plants thrive through every season
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </motion.section>
 
-      {/* Care Basics Grid */}
+      {/* Care Basics Grid with enhanced animations */}
       <section className="mx-auto max-w-7xl px-4 py-24">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="mb-16 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={scrollVariants}
         >
           <h2 className="mb-4 text-3xl font-light tracking-tight text-gray-900 sm:text-4xl">
             Essential Care Guidelines
           </h2>
-          <p className="text-gray-600">
+          <p className="mb-5 text-gray-600">
             Master these fundamentals to keep your plants healthy and thriving
           </p>
         </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           {careBasics.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 + 0.5 }}
-              className="group rounded-lg bg-white p-8 shadow-xs transition-all hover:shadow-md"
+              variants={cardVariants}
+              whileHover="hover"
+              className="group rounded-lg bg-white p-8 shadow-sm transition-all hover:shadow-lg"
             >
               <div className="bg-sage-100 text-sage-600 group-hover:bg-sage-200 mb-4 inline-block rounded-full p-3 transition-all">
                 {item.icon}
@@ -178,14 +255,19 @@ const PlantCare = () => {
               <p className="text-gray-600">{item.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
-      {/* Interactive Care Guide */}
-
+      {/* Interactive Care Guide with enhanced animations */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <motion.div className="mb-16 text-center">
+          <motion.div
+            className="mb-16 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="mb-4 text-3xl font-light tracking-tight text-gray-900 sm:text-4xl">
               Detailed Care Guides
             </h2>
@@ -208,18 +290,22 @@ const PlantCare = () => {
 
           <motion.div
             key={activeGuide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
             className="grid gap-8 lg:grid-cols-2"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <div className="overflow-hidden rounded-lg">
+            <motion.div
+              className="overflow-hidden rounded-lg"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <img
                 src={detailedGuides[activeGuide].image}
                 alt={detailedGuides[activeGuide].title}
                 className="h-full w-full object-cover"
               />
-            </div>
+            </motion.div>
             <div className="space-y-6">
               <h3 className="text-2xl font-medium">{detailedGuides[activeGuide].title} Care</h3>
               <ul className="space-y-4">
@@ -237,23 +323,41 @@ const PlantCare = () => {
         </div>
       </section>
 
-      {/* Seasonal Care Guide */}
+      {/* Seasonal Care Guide with enhanced animations */}
       <section className="bg-sage-50 py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <motion.div className="mb-16 text-center">
+          <motion.div
+            className="mb-16 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="mb-4 text-3xl font-light tracking-tight text-gray-900 sm:text-4xl">
               Seasonal Care Guide
             </h2>
           </motion.div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <motion.div
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {seasonalCare.map((season, index) => (
               <motion.div
                 key={season.season}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="overflow-hidden rounded-lg bg-white shadow-xs"
+                variants={cardVariants}
+                whileHover={{
+                  scale: 1.03,
+                  y: -5,
+                  transition: {
+                    duration: 0.2,
+                    ease: 'easeInOut',
+                  },
+                }}
+                className="overflow-hidden rounded-lg bg-white shadow-sm"
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -275,7 +379,7 @@ const PlantCare = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
