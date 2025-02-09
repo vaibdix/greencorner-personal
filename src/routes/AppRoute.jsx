@@ -15,6 +15,7 @@ import Wishlist from '../features/Wishlist/Wishlist';
 // import AddPlant from '../../features/admin/components/addPlant/AddPlant';
 import AddPlant from '../features/admin/components/addPlant/AddPlantDemo';
 import OrderConfirmation from '../features/checkout/OrderConfirmation';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 const Contact = lazy(() => import('../pages/contact/Contact'));
 const About = lazy(() => import('../pages/about/About'));
@@ -108,15 +109,14 @@ export const router = createBrowserRouter([
     path: '/admin/signin',
     element: <AdminSignin />,
   },
-  // Update admin routes to exclude signin
   {
     path: '/admin',
-    element: <Admin />,
+    element: (
+      <ProtectedRoute>
+        <Admin />
+      </ProtectedRoute>
+    ),
     children: [
-      // {
-      //   path: '',
-      //   element: <Admin />,
-      // },
       {
         path: 'users',
         element: <SeeAllUsers />,

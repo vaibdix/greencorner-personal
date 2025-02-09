@@ -1,8 +1,10 @@
 import { ACTIONS } from '../context/actions';
 
+// Add isAdmin to initial state
 export const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || null,
   isAuthenticated: !!localStorage.getItem('user'),
+  isAdmin: false, // Add this line
   error: null,
   plants: [],
   currentPlant: null,
@@ -19,6 +21,7 @@ export const authReducer = (state, action) => {
         ...state,
         user: action.payload,
         isAuthenticated: true,
+        isAdmin: action.payload?.role === 'admin', // Add this line
         error: null,
       };
     case ACTIONS.GOOGLE_LOGIN:

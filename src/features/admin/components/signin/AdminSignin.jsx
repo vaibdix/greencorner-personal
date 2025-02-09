@@ -148,7 +148,7 @@
 
 // export default AdminSignin;
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react'; // Import the correct icons from lucide-react
 import { context } from '../../../../store/AppContext'; // import the context
 import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
@@ -161,24 +161,21 @@ const AdminSignin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [errors, setErrors] = useState({ email: '', password: '' }); // Add this line
+  const navigate = useNavigate();
 
-  // Error state for form validation
-  const [errors, setErrors] = useState({
-    email: '',
-    password: '',
-  });
-
-  const navigate = useNavigate(); // Initialize navigation hook
-
-  const handleNavigateToSignUp = () => {
-    navigate('/signup'); // Navigate to the signup page
-  };
+  // Redirect if already logged in as admin
+  useEffect(() => {
+    if (state.user && state.user.role === 'admin') {
+      navigate('/admin');
+    }
+  }, [state.user, navigate]);
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
 
-  // Add Google login handler
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (response) => {
       try {
@@ -186,68 +183,75 @@ const AdminSignin = () => {
           headers: { Authorization: `Bearer ${response.access_token}` },
         });
 
-        // Pass the user info directly to your context
-        await googleLogin(userInfo.data);
-        navigate('/admin');
+        // Check if the Google user is an admin
+        const adminResponse = await axios.get(`http://localhost:3000/users?email=${userInfo.data.email}`);
+        const adminUser = adminResponse.data.find(user => user.role === 'admin');
+
+        if (adminUser) {
+          await googleLogin({
+            ...userInfo.data,
+            role: 'admin'
+          });
+          navigate('/admin');
+        } else {
+          setError('This Google account does not have admin privileges');
+        }
       } catch (error) {
         console.error('Google login error:', error);
+        setError('Login failed. Please try again.');
       }
     },
     onError: () => {
-      console.error('Google login failed');
+      setError('Google login failed');
     },
   });
 
   const validateForm = () => {
-    const newErrors = {
-      email: '',
-      password: '',
-    };
+    const newErrors = { email: '', password: '' };
+    let isValid = true;
 
     // Email validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!email) {
       newErrors.email = 'Email is required';
+      isValid = false;
     } else if (!emailRegex.test(email)) {
       newErrors.email = 'Please enter a valid email';
+      isValid = false;
     }
 
     // Password validation
     if (!password) {
       newErrors.password = 'Password is required';
+      isValid = false;
     } else if (password.length < 6) {
       newErrors.password = 'Password must be at least 6 characters long';
+      isValid = false;
     }
 
     setErrors(newErrors);
-
-    // If no errors, return true
-    return !newErrors.email && !newErrors.password;
+    return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
-    // Validate form before submitting
     if (!validateForm()) {
       return;
     }
 
-    // Trigger login with email and password
-    login(email, password);
-
-    // Check if login was successful
-    if (state.error) {
-      alert('Wrong email or password');
-    } else if (state.user) {
-      // Check if user is admin
-      if (state.user.role === 'admin') {
-        alert('Admin login successful');
-        navigate('/admin'); // Navigate to the admin dashboard
+    try {
+      await login(email, password);
+      
+      // Check if the logged-in user is an admin
+      if (state.user && state.user.role === 'admin') {
+        navigate('/admin');
       } else {
-        alert('You are not Admin try again');
-        // navigate('/'); // Navigate to home page for regular users
+        setError('You do not have admin privileges');
       }
+    } catch (error) {
+      setError('Invalid credentials');
     }
   };
 
@@ -322,7 +326,7 @@ const AdminSignin = () => {
 
                 <button
                   className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white"
-                  disabled={!!errors.email || !!errors.password} // Disable button if form is invalid
+                  disabled={!!errors.email || !!errors.password}
                 >
                   CONTINUE
                 </button>
@@ -331,15 +335,7 @@ const AdminSignin = () => {
                   Service
                 </div>
               </form>
-              <div className="mt-8 text-center text-gray-400">
-                Don't have an account?{' '}
-                <span
-                  onClick={handleNavigateToSignUp} // Add the click handler
-                  className="cursor-pointer font-bold text-gray-800"
-                >
-                  Sign up for free
-                </span>
-              </div>
+              {/* Remove the sign up section since this is admin-only */}
             </div>
           </div>
         </div>

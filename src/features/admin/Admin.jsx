@@ -42,6 +42,13 @@ const Admin = () => {
 
   // Add useEffect to fetch users
   useEffect(() => {
+    // Redirect to login if not authenticated or not admin
+    if (!state.user || state.user.role !== 'admin') {
+      navigate('/admin/signin');
+      return;
+    }
+
+    // Fetch users only if authenticated as admin
     const fetchUsers = async () => {
       try {
         const response = await api.getUsers();
@@ -51,11 +58,11 @@ const Admin = () => {
       }
     };
     fetchUsers();
-  }, []); // Empty dependency array means this runs once when component mounts
+  }, [state.user, navigate, dispatch]);
 
   const handleLogout = () => {
     logout();
-    navigate('/admin/signin');
+    navigate('/admin/signin', { replace: true });
   };
 
   return (
