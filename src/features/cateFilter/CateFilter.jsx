@@ -4,9 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { context } from '../../store/AppContext';
 import { Filter } from 'lucide-react';
 
-import PlantCard from './components/PlantCard';
+import PlantCard, { SkeletonLoader } from './components/PlantCard';
 import FilterSection from './components/FilterSection';
 import Pagination from './components/Pagination';
+import Skeleton from 'react-loading-skeleton';
 
 const CateFilter = () => {
   const { state, fetchPlants } = useContext(context);
@@ -166,9 +167,12 @@ const Section = ({ plants: contextPlants }) => {
         />
 
         <div className="scroll grid grid-cols-2 gap-3 p-4 sm:grid-cols-2 sm:gap-6 sm:p-7 md:grid-cols-3 lg:grid-cols-4">
-          {currentPlants.map((plant) => (
-            <PlantCard key={plant.id} {...plant} type={plant.categories[0]} />
-          ))}
+          {contextPlants.length === 0
+            ? // Skeleton loader when plants data is being fetched
+              [...Array(20)].map((_, index) => <SkeletonLoader key={index} />)
+            : currentPlants.map((plant) => (
+                <PlantCard key={plant.id} {...plant} type={plant.categories[0]} />
+              ))}
         </div>
         <div className="col-span-full">
           <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
