@@ -22,7 +22,7 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [loading, setLoading] = useState(true); // Set to true to simulate loading state
+  const [loading, setLoading] = useState(true);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -48,7 +48,6 @@ const Contact = () => {
     console.log('Form submitted:', formData);
   };
 
-  // Simulate loading state being over after 3 seconds
   setTimeout(() => setLoading(false), 3000);
 
   return (

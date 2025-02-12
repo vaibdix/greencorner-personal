@@ -1,20 +1,17 @@
 import { useState } from 'react';
 
 export const RatingComponent = () => {
-  const [rating, setRating] = useState(0); // state to track the rating
-  const [hovered, setHovered] = useState(0); // state to track hover effect
+  const [rating, setRating] = useState(0);
+  const [hovered, setHovered] = useState(0);
 
-  // Handle star hover
   const handleMouseEnter = (index) => {
     setHovered(index + 1);
   };
 
-  // Handle mouse leave
   const handleMouseLeave = () => {
-    setHovered(rating); // Reset hover state to current rating
+    setHovered(rating);
   };
 
-  // Handle star click (set rating)
   const handleStarClick = (index) => {
     setRating(index + 1);
   };

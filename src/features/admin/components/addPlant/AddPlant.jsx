@@ -68,7 +68,6 @@ const AddPlant = () => {
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();
-    // Add the review to the plant object
     setPlant((prevPlant) => ({
       ...prevPlant,
       reviews: [...prevPlant.reviews, review],
@@ -435,7 +434,6 @@ const AddPlant = () => {
           />
         </div>
 
-        {/* Submit Button */}
         <button type="submit">Submit</button>
       </form>
       <ToastContainer />

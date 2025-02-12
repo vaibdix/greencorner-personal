@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
-import { context } from '../../store/AppContext'; // import the context
-import { useNavigate } from 'react-router-dom'; // import useNavigate for navigation
-import { Eye, EyeOff } from 'lucide-react'; // Import the Eye and EyeOff icons from lucide-react
+import { context } from '../../store/AppContext';
+import { useNavigate } from 'react-router-dom';
+import { Eye, EyeOff } from 'lucide-react';
 import google from '../../assets/svg/light.svg';
 
 const SignUp = () => {
@@ -61,7 +61,6 @@ const SignUp = () => {
       password: '',
     };
 
-    // Email validation
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!state.email) {
       newErrors.email = 'Email is required';
@@ -69,19 +68,16 @@ const SignUp = () => {
       newErrors.email = 'Please enter a valid email';
     }
 
-    // Username validation
     if (!state.username) {
       newErrors.username = 'Username is required';
     }
 
-    // Contact validation
     if (!state.contact) {
       newErrors.contact = 'Contact is required';
     } else if (!/^\d{10}$/.test(state.contact)) {
       newErrors.contact = 'Please enter a valid 10-digit phone number';
     }
 
-    // Password validation
     if (!state.password) {
       newErrors.password = 'Password is required';
     }
@@ -178,7 +174,6 @@ const SignUp = () => {
                     </div>
                   )}
 
-                  {/* Tooltip with password rules (only visible when password field is focused) */}
                   {isPasswordFocused && (
                     <div
                       id="tooltip-right"
@@ -208,7 +203,7 @@ const SignUp = () => {
                   className="mt-4 h-12 w-full rounded-md bg-[#1C3035] px-6 text-sm text-white"
                   disabled={
                     !!errors.email || !!errors.username || !!errors.contact || !!errors.password
-                  } // Disable button if form is invalid
+                  }
                 >
                   GET STARTED
                 </button>

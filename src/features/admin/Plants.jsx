@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { api } from '../../store/context/api';
 import { ACTIONS } from '../../store/context/actions';
 
-// Skeleton UI for loading state
 const SkeletonTable = () => (
   <div className="relative overflow-hidden border border-[#c1c3e8] md:rounded-lg">
     <div className="overflow-x-auto">
@@ -74,7 +73,6 @@ const Plants = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedPlants, setSelectedPlants] = useState([]);
 
-  // Filter plants based on search term
   const filteredPlants =
     state.plants?.filter(
       (plant) =>
@@ -82,13 +80,11 @@ const Plants = () => {
         plant.id?.toString().includes(searchTerm)
     ) || [];
 
-  // Calculate pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredPlants.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredPlants.length / itemsPerPage);
 
-  // Handle select all
   const handleSelectAll = (e) => {
     if (e.target.checked) {
       setSelectedPlants(currentItems.map((plant) => plant._id));
@@ -97,7 +93,6 @@ const Plants = () => {
     }
   };
 
-  // Handle individual select
   const handleSelectPlant = (plantId) => {
     setSelectedPlants((prev) =>
       prev.includes(plantId) ? prev.filter((id) => id !== plantId) : [...prev, plantId]
@@ -129,7 +124,6 @@ const Plants = () => {
         </Link>
       </div>
 
-      {/* Search and Page Size Controls */}
       <div className="mb-4 flex items-center space-x-4">
         <div className="relative max-w-xs">
           <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-[#1c1c1c]" />
@@ -154,7 +148,6 @@ const Plants = () => {
         </select>
       </div>
 
-      {/* Table */}
       <Suspense fallback={<SkeletonTable />}>
         <div className="relative overflow-hidden border border-[#c1c3e8] md:rounded-lg">
           <div className="overflow-x-auto">
@@ -247,7 +240,6 @@ const Plants = () => {
         </div>
       </Suspense>
 
-      {/* Update pagination for better mobile view */}
       <div className="mt-4 flex flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-2">
           <button

@@ -20,7 +20,6 @@ const ProductSkeleton = () => (
       </div>
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-        {/* Image Skeleton */}
         <div>
           <div className="h-[600px] w-full rounded-xl bg-gray-200"></div>
           <div className="mt-6 ml-7 flex gap-4">
@@ -30,7 +29,6 @@ const ProductSkeleton = () => (
           </div>
         </div>
 
-        {/* Details Skeleton */}
         <div className="space-y-6">
           <div className="flex justify-between">
             <div className="h-8 w-2/3 rounded bg-gray-200"></div>
@@ -199,7 +197,7 @@ const Product = () => {
                   alt="Main Product"
                 />
               </div>
-              {/* Image Thumbnails below the main image */}
+
               <div className="mt-6 ml-7 flex justify-start gap-4 p-2">
                 {product.secondaryImages.map((image, index) => (
                   <div key={index} onClick={() => setMainImage(image)} className="cursor-pointer">
@@ -299,7 +297,6 @@ const Product = () => {
                 </button>
               </div>
 
-              {/* Add to Cart and Buy Now buttons */}
               <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <button
                   onClick={handleAddToCart}

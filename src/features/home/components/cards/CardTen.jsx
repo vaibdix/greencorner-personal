@@ -168,13 +168,11 @@ const CardTen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch plants if not already loaded
     if (plants.length === 0) {
       fetchPlants();
     }
   }, []);
 
-  // Get first 5 best-selling plants (you might want to add a best-seller flag in your data)
   const bestSellerPlants = plants.slice(6, 16);
 
   if (loading) return <div>Loading best sellers...</div>;

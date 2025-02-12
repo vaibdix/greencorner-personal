@@ -173,13 +173,11 @@ const CardFive = () => {
     }
   }, []);
 
-  // Get first 5 best-selling plants (you might want to add a best-seller flag in your data)
   const bestSellerPlants = plants.slice(0, 5);
 
   if (loading) return <div>Loading best sellers...</div>;
   if (error) return <div>Error loading best sellers: {error}</div>;
 
-  // In the CardFive component's return, remove ToastContainer
   return (
     <>
       <h3 className="mt-12 -mb-5 pl-4 text-2xl sm:pl-14 sm:text-3xl">BestSellers</h3>

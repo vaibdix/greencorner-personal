@@ -2,11 +2,9 @@ import { createContext, useReducer, useEffect } from 'react';
 import { ACTIONS } from './context/actions';
 import { authReducer, initialState } from './reducers/reducer';
 import { api } from './context/api';
-import axios from 'axios'; // Add this import
 
 export const context = createContext();
 
-// Add to your imports
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 // Get Google Client ID from environment variables

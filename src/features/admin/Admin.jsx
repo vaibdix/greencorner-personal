@@ -31,7 +31,6 @@ import { IndianRupee } from 'lucide-react';
 import { Suspense } from 'react';
 
 const Admin = () => {
-  // Update the context destructuring to include dispatch
   const { state, logout, dispatch } = useContext(context);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -40,15 +39,12 @@ const Admin = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Add useEffect to fetch users
   useEffect(() => {
-    // Redirect to login if not authenticated or not admin
     if (!state.user || state.user.role !== 'admin') {
       navigate('/admin/signin');
       return;
     }
 
-    // Fetch users only if authenticated as admin
     const fetchUsers = async () => {
       try {
         const response = await api.getUsers();
@@ -67,7 +63,6 @@ const Admin = () => {
 
   return (
     <div className="flex min-h-screen bg-[#CACCE2]/40">
-      {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
         <div
           className="bg-opacity-50 fixed inset-0 bg-gray-600 transition-opacity lg:hidden"
@@ -75,14 +70,12 @@ const Admin = () => {
         />
       )}
 
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-40 h-screen w-64 transform border-r border-gray-700 bg-[#161616] transition-transform duration-200 ease-in-out lg:translate-x-0 ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex h-full flex-col">
-          {/* Close button for mobile */}
           <button
             className="absolute top-4 right-4 p-1 text-white lg:hidden"
             onClick={() => setIsSidebarOpen(false)}
@@ -90,7 +83,6 @@ const Admin = () => {
             <X className="h-6 w-6" />
           </button>
 
-          {/* Logo */}
           <div className="flex h-16 items-center border-b border-gray-700 px-6">
             <img src={logo} alt="" />
 
@@ -158,7 +150,6 @@ const Admin = () => {
             </Link>
           </nav>
 
-          {/* Tools Section */}
           <div className="border-t border-gray-700 p-4">
             <h3 className="mb-2 px-4 text-xs font-semibold text-gray-400 uppercase">Tools</h3>
             <Link
@@ -181,10 +172,8 @@ const Admin = () => {
 
       {/* Main Content */}
       <div className="flex-1 lg:pl-64">
-        {/* Header */}
         <header className="sticky top-0 z-30 border-b border-gray-200 bg-white">
           <div className="flex h-16 items-center justify-between px-4 sm:px-6">
-            {/* Mobile menu button */}
             <button className="p-2 lg:hidden" onClick={() => setIsSidebarOpen(true)}>
               <Menu className="h-6 w-6" />
             </button>
@@ -243,7 +232,6 @@ const Admin = () => {
           </div>
         </header>
 
-        {/* Dashboard Content */}
         <main className="p-4 sm:p-6">
           <Routes>
             <Route

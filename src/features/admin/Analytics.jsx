@@ -18,7 +18,6 @@ import {
 } from 'recharts';
 import { context } from '../../store/AppContext';
 
-// Skeleton component for loading placeholders
 const SkeletonCard = () => (
   <div className="rounded-xl bg-white p-8">
     <Skeleton height={40} width="80%" />
@@ -53,7 +52,6 @@ const Analytics = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen p-8">
-        {/* Skeleton UI */}
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           <SkeletonCard />
           <SkeletonCard />
@@ -81,7 +79,6 @@ const Analytics = () => {
     );
   }
 
-  // Revenue Analysis
   const revenueData = state.plants
     .map((plant) => ({
       name: plant.name?.substring(0, 15),
@@ -91,7 +88,6 @@ const Analytics = () => {
     .sort((a, b) => b.revenue - a.revenue)
     .slice(0, 8);
 
-  // Stock Status Analysis
   const stockStatus = [
     { name: 'Out of Stock', value: state.plants.filter((p) => !p.quantityAvailable).length },
     {
@@ -105,7 +101,6 @@ const Analytics = () => {
     },
   ];
 
-  // Price Range Distribution
   const priceRanges = [
     { name: '₹0-500', value: state.plants.filter((p) => p.price <= 500).length },
     {
@@ -119,18 +114,15 @@ const Analytics = () => {
     { name: '₹2000+', value: state.plants.filter((p) => p.price > 2000).length },
   ];
 
-  // Pastel color palette
   const COLORS = ['#A8D0FF', '#BFD8B8', '#FFB3C1', '#FFF3B0', '#D4A6F7', '#F6D7B9'];
 
   return (
     <div className="min-h-screen rounded-lg bg-gray-50 p-8 text-gray-800">
-      {/* Header */}
       <div className="mb-12">
         <h1 className="text-xl font-semibold">Plants Dashboard</h1>
         <p className="mt-2 text-gray-500">Real-time insights for your plant business</p>
       </div>
 
-      {/* Summary Cards */}
       <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
         <div className="rounded-xl bg-rose-50 p-6">
           <h3 className="text-sm font-medium text-gray-600">Total Products</h3>
@@ -156,7 +148,6 @@ const Analytics = () => {
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-        {/* Revenue by Product */}
         <div className="rounded-xl bg-white p-8 transition-all duration-300 hover:shadow-xl">
           <h2 className="text-xl font-light text-gray-700">Top Products by Revenue</h2>
           <p className="mt-1 text-sm text-gray-500">Performance analysis of top 8 products</p>
@@ -212,7 +203,6 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* Stock Status */}
         <div className="rounded-xl bg-white p-8 transition-all duration-300 hover:shadow-xl">
           <h2 className="text-xl font-light text-gray-700">Stock Distribution</h2>
           <p className="mt-1 text-sm text-gray-500">Current inventory status</p>
@@ -262,7 +252,6 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* Price Distribution */}
         <div className="rounded-xl bg-white p-8 transition-all duration-300 hover:shadow-xl">
           <h2 className="text-xl font-light text-gray-700">Price Analysis</h2>
           <p className="mt-1 text-sm text-gray-500">Product price range distribution</p>

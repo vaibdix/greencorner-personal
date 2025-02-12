@@ -8,7 +8,6 @@ import applelogo from '../../assets/svg/applepay.svg';
 import card from '../../assets/svg/card.svg';
 import paytm from '../../assets/svg/paytm.svg';
 
-// Skeleton Loader Component
 const SkeletonLoader = () => (
   <div className="space-y-6">
     <div className="h-12 w-full animate-pulse bg-gray-300"></div>
@@ -75,12 +74,9 @@ const Checkout = () => {
         status: 'pending',
       };
 
-      // In a real app, you'd make an API call here
-      // For now, we'll simulate saving to local storage
       const existingOrders = JSON.parse(localStorage.getItem('orders') || '[]');
       localStorage.setItem('orders', JSON.stringify([...existingOrders, order]));
 
-      // Clear cart and redirect
       clearCart();
       toast.success('Order placed successfully!');
       navigate('/order-confirmation', { state: { order } });
@@ -89,14 +85,12 @@ const Checkout = () => {
     }
   };
 
-  // Update input handling to clear errors
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-    // Clear error when user types
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,

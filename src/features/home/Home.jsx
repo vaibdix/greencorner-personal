@@ -1,4 +1,3 @@
-// src/pages/Home/Home.jsx
 import Hero from './components/hero/Hero';
 import CardFive from './components/cards/CardFive';
 import CardTen from './components/cards/CardTen';
@@ -10,7 +9,6 @@ const Home = () => {
     <div>
       <Hero />
       <CardFive />
-      {/* <HomeCategory /> */}
       <CouponAdvertise />
       <CardTen />
       <NewsLetter />

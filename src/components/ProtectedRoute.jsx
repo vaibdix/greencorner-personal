@@ -4,7 +4,7 @@ import { context } from '../store/AppContext';
 
 const ProtectedRoute = ({ children }) => {
   const { state } = useContext(context);
-  
+
   if (!state.user || state.user.role !== 'admin') {
     return <Navigate to="/admin/signin" replace />;
   }

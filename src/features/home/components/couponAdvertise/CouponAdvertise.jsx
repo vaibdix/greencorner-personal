@@ -18,7 +18,6 @@ const CouponAdvertise = () => {
         </motion.h2>
 
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
-          {/* Interior Decoration Card */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -71,7 +70,6 @@ const CouponAdvertise = () => {
               />
             </motion.div>
 
-            {/* Garden Plant Card */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}

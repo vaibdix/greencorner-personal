@@ -60,7 +60,7 @@ export const SkeletonPlant = () => {
               </div>
             </div>
 
-            {/* Displaying the Reviews */}
+            {/* Reviews */}
             <div className="mt-6 space-y-4">
               {[1, 2].map((index) => (
                 <div key={index} className="border-t pt-4">
@@ -174,7 +174,6 @@ export const SkeletonPlant = () => {
             </div>
           </div>
 
-          {/* Plant Details Section - Continued */}
           <div className="rounded-md bg-gray-50 p-6">
             <h4 className="mb-4 h-6 w-40 rounded bg-gray-300 text-lg font-semibold text-gray-700"></h4>
             <div className="grid gap-6 md:grid-cols-3">
@@ -298,7 +297,7 @@ const AddPlantDemo = () => {
     description: '',
     price: '',
     rating: 4,
-    reviews: [newReview], // Initialize as an array
+    reviews: [newReview],
     totalSalesLastMonth: 0,
     sellerName: 'Pune Plant Co.',
     sellerAddress: {
@@ -330,30 +329,8 @@ const AddPlantDemo = () => {
     refundPolicy: '',
   });
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   if (name.startsWith('seller_')) {
-  //     // Handle seller address fields
-  //     const addressField = name.replace('seller_', '');
-  //     setPlantData((prev) => ({
-  //       ...prev,
-  //       sellerAddress: {
-  //         ...prev.sellerAddress,
-  //         [addressField]: value,
-  //       },
-  //     }));
-  //   } else {
-  //     // Handle all other fields
-  //     setPlantData((prev) => ({
-  //       ...prev,
-  //       [name]: value,
-  //     }));
-  //   }
-  // };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // Convert string to number for numeric fields
     const numericFields = ['id', 'price', 'rating', 'totalSalesLastMonth', 'quantityAvailable'];
     const processedValue = numericFields.includes(name) ? Number(value) : value;
 
@@ -384,15 +361,12 @@ const AddPlantDemo = () => {
     }));
   };
 
-  // Fix the review handling logic
   const handleAddReview = () => {
     if (newReview.username && newReview.comment) {
-      // Changed from reviewerName and reviewText
       setPlantData((prev) => ({
         ...prev,
         reviews: [...prev.reviews, { ...newReview }],
       }));
-      // Reset the review form with correct field names
       setNewReview({
         username: '',
         rating: '',
@@ -408,7 +382,6 @@ const AddPlantDemo = () => {
       const response = await axios.post('http://localhost:3000/plants', plantData);
       if (response.status === 200 || response.status === 201) {
         alert('Plant added successfully!');
-        // Reset form or redirect as needed
       }
     } catch (error) {
       console.error('Error adding plant:', error);

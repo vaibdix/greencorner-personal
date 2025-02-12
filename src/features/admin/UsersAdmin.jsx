@@ -15,9 +15,8 @@ const UsersAdmin = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [selectedUsers, setSelectedUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Filter users based on search term
   const filteredUsers =
     state.users?.filter(
       (user) =>
@@ -31,7 +30,6 @@ const UsersAdmin = () => {
   const currentUsers = filteredUsers.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
 
-  // Handle select all
   const handleSelectAll = (e) => {
     if (e.target.checked) {
       setSelectedUsers(currentUsers.map((user) => user._id));
@@ -40,7 +38,6 @@ const UsersAdmin = () => {
     }
   };
 
-  // Handle individual select
   const handleSelectUser = (userId) => {
     setSelectedUsers((prev) =>
       prev.includes(userId) ? prev.filter((id) => id !== userId) : [...prev, userId]
@@ -48,14 +45,14 @@ const UsersAdmin = () => {
   };
 
   const fetchUsers = async () => {
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true);
     try {
       const response = await api.getUsers();
       dispatch({ type: ACTIONS.SET_USERS, payload: response.data });
-      setIsLoading(false); // Set loading state to false once data is fetched
+      setIsLoading(false);
     } catch (error) {
       console.error('Error fetching users:', error);
-      setIsLoading(false); // Stop loading on error
+      setIsLoading(false);
     }
   };
 
@@ -121,7 +118,6 @@ const UsersAdmin = () => {
         </select>
       </div>
 
-      {/* Table */}
       <div className="m-1 overflow-x-auto rounded-md border border-[#c1c3e8] bg-white">
         <div className="inline-block min-w-full align-middle">
           <div className="min-h-[250px] overflow-hidden md:rounded-lg">
@@ -170,7 +166,6 @@ const UsersAdmin = () => {
               </thead>
               <tbody className="divide-y divide-[#c1c3e8]">
                 {isLoading ? (
-                  // Skeleton loader while data is loading
                   <tr>
                     <td colSpan="6" className="py-10 text-center">
                       <Skeleton count={6} height={40} />

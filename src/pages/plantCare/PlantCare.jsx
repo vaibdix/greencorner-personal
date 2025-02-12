@@ -6,7 +6,6 @@ const PlantCare = () => {
   const [activeSection, setActiveSection] = useState('basics');
   const [activeGuide, setActiveGuide] = useState('indoor');
 
-  // Enhanced animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -218,7 +217,6 @@ const PlantCare = () => {
         </div>
       </motion.section>
 
-      {/* Care Basics Grid with enhanced animations */}
       <section className="mx-auto max-w-7xl px-4 py-24">
         <motion.div
           initial="hidden"
@@ -258,7 +256,6 @@ const PlantCare = () => {
         </motion.div>
       </section>
 
-      {/* Interactive Care Guide with enhanced animations */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4">
           <motion.div
@@ -323,7 +320,6 @@ const PlantCare = () => {
         </div>
       </section>
 
-      {/* Seasonal Care Guide with enhanced animations */}
       <section className="bg-sage-50 py-24">
         <div className="mx-auto max-w-7xl px-4">
           <motion.div

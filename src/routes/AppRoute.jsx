@@ -32,7 +32,6 @@ import AddUser from '../features/admin/components/addPlant/AddUser';
 import AdminSignin from '../features/admin/components/signin/AdminSignin';
 import Analytics from '../features/admin/Analytics';
 
-
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -104,7 +103,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  // Add admin signin route separately
+
   {
     path: '/admin/signin',
     element: <AdminSignin />,

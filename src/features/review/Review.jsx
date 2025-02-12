@@ -6,10 +6,8 @@ import { ThumbsDown } from 'lucide-react';
 const Review = ({ reviews }) => {
   const [showAllReviews, setShowAllReviews] = useState(false);
 
-  // Default number of reviews to show
   const initialReviewCount = 3;
 
-  // Show all reviews if 'showAllReviews' is true
   const reviewsToDisplay = showAllReviews ? reviews : reviews.slice(0, initialReviewCount);
 
   return (
@@ -67,7 +65,6 @@ const Review = ({ reviews }) => {
           <p>No reviews yet. Be the first to review this product!</p>
         )}
 
-        {/* Show more/less button */}
         {reviews.length > initialReviewCount && (
           <button
             onClick={() => setShowAllReviews(!showAllReviews)}

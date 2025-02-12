@@ -13,7 +13,6 @@ const CateFilter = () => {
   const { state, fetchPlants } = useContext(context);
   const { plants } = state;
 
-  //To scroll directly on top firstly if navigated from certain page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -97,7 +96,6 @@ const Section = ({ plants: contextPlants }) => {
 
   const applyFilters = () => {
     let filtered = [...contextPlants];
-    // Filter by availability (checking the string values from the API)
     if (availability.inStock) {
       filtered = filtered.filter((plant) => plant.availability === 'In Stock');
     }
